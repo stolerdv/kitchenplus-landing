@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — KitchenPlus</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #fafafa;
+            padding: 24px;
+        }
+        .container { max-width: 760px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+        h1 { font-size: 28px; margin-bottom: 8px; }
+        h2 { font-size: 20px; margin-top: 32px; margin-bottom: 12px; color: #2d2d2d; }
+        h3 { font-size: 16px; margin-top: 20px; margin-bottom: 8px; }
+        p, li { font-size: 15px; color: #333; }
+        p { margin-bottom: 12px; }
+        ul, ol { margin-left: 24px; margin-bottom: 12px; }
+        li { margin-bottom: 6px; }
+        .date { color: #888; font-size: 14px; margin-bottom: 24px; }
+        table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+        th, td { border: 1px solid #e0e0e0; padding: 10px 12px; text-align: left; }
+        th { background: #f5f5f5; font-weight: 600; }
+        a { color: #4a7c59; }
+        .highlight { background: #f9f9f2; border-left: 3px solid #4a7c59; padding: 12px 16px; margin: 16px 0; border-radius: 4px; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>Privacy Policy</h1>
+<p class="date">Effective date: March 4, 2026 &nbsp;|&nbsp; Last updated: March 4, 2026</p>
+
+<p>TOO KitchenPlus.kz ("KitchenPlus", "we", "us", or "our") operates the KitchenPlus mobile application (the "App"). This Privacy Policy explains how we collect, use, store, and protect your personal data when you use the App.</p>
+
+<p>By using KitchenPlus, you agree to the collection and use of information as described in this policy. If you do not agree, please do not use the App.</p>
+
+<h2>1. Information We Collect</h2>
+
+<h3>1.1 Information You Provide</h3>
+<ul>
+    <li><strong>Account data:</strong> email address, first and last name, profile photo, language preference (Russian, English, or Kazakh).</li>
+    <li><strong>Authentication data:</strong> password (stored in hashed form only), or third-party sign-in tokens (Apple ID, Google).</li>
+    <li><strong>Family data:</strong> family name, family photo, family member names, member types (child, woman, man), and portion coefficients.</li>
+    <li><strong>Recipe data:</strong> recipes you create including title, description, ingredients, preparation steps, photos, and videos.</li>
+    <li><strong>Kitchen inventory:</strong> item names, quantities, measurement units, categories, and expiry dates.</li>
+    <li><strong>Meal plans:</strong> calendar entries, meal types, and portion assignments per family member.</li>
+    <li><strong>Shopping lists:</strong> ingredient names, quantities, and purchase status.</li>
+    <li><strong>Social interactions:</strong> recipe ratings, comments, favorites, collections, and reports.</li>
+    <li><strong>Ingredient requests:</strong> names and descriptions of ingredients you suggest adding to our catalog.</li>
+    <li><strong>Receipt images:</strong> photos of grocery receipts you upload for AI-powered item recognition.</li>
+</ul>
+
+<h3>1.2 Information Collected Automatically</h3>
+<ul>
+    <li><strong>Platform:</strong> whether you use iOS or Android (for subscription routing).</li>
+    <li><strong>Server logs:</strong> HTTP request method, URL path, response status code, and response time. These logs do not contain personal identifiers.</li>
+</ul>
+
+<h3>1.3 Information We Do NOT Collect</h3>
+<ul>
+    <li>Device identifiers (IDFA, Android Advertising ID)</li>
+    <li>Precise or approximate location</li>
+    <li>Contacts, calendar, or other phone data</li>
+    <li>Browsing history</li>
+    <li>Third-party analytics or tracking (no Firebase Analytics, Amplitude, etc.)</li>
+</ul>
+
+<h2>2. How We Use Your Information</h2>
+
+<table>
+    <thead>
+        <tr><th>Purpose</th><th>Data used</th><th>Legal basis (GDPR)</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Account creation and authentication</td><td>Email, name, password hash, OAuth tokens</td><td>Contract performance</td></tr>
+        <tr><td>Providing core App functionality (meal planning, recipes, shopping lists, kitchen inventory)</td><td>Family data, recipes, meal plans, shopping lists, kitchen items</td><td>Contract performance</td></tr>
+        <tr><td>AI-powered features (receipt scanning, recipe tag suggestions, menu recommendations, recipe translation, kitchen assistant)</td><td>Receipt images, recipe text, family context, kitchen inventory</td><td>Contract performance / Consent</td></tr>
+        <tr><td>Subscription management and payment processing</td><td>User ID, purchase receipts, platform</td><td>Contract performance</td></tr>
+        <tr><td>Email communication (verification codes, password reset)</td><td>Email address</td><td>Contract performance</td></tr>
+        <tr><td>Content moderation (recipe reports)</td><td>Report reason, description</td><td>Legitimate interest</td></tr>
+        <tr><td>Service improvement and bug fixing</td><td>Server logs (anonymized)</td><td>Legitimate interest</td></tr>
+    </tbody>
+</table>
+
+<h2>3. Third-Party Services</h2>
+
+<p>We share data with the following service providers, solely to operate the App:</p>
+
+<table>
+    <thead>
+        <tr><th>Service</th><th>Purpose</th><th>Data shared</th><th>Location</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Neon (PostgreSQL)</td><td>Database storage</td><td>All account and content data</td><td>US/EU</td></tr>
+        <tr><td>Upstash (Redis)</td><td>Caching and rate limiting</td><td>Session tokens</td><td>US/EU</td></tr>
+        <tr><td>Cloudflare R2</td><td>Photo/image storage</td><td>Uploaded images</td><td>Global CDN</td></tr>
+        <tr><td>Cloudflare Stream</td><td>Video processing and streaming</td><td>Uploaded videos</td><td>Global CDN</td></tr>
+        <tr><td>Google Gemini API</td><td>AI features (receipt parsing, recommendations, translations)</td><td>Receipt images, recipe text, family context (no personal identifiers)</td><td>US</td></tr>
+        <tr><td>RevenueCat</td><td>Subscription management</td><td>User ID, purchase receipts, subscription status</td><td>US</td></tr>
+        <tr><td>Resend</td><td>Transactional email delivery</td><td>Email address, email content</td><td>US</td></tr>
+        <tr><td>Apple App Store / Google Play</td><td>Payment processing</td><td>Purchase receipts, transaction IDs</td><td>US</td></tr>
+        <tr><td>Railway</td><td>Application hosting</td><td>Application logs</td><td>US</td></tr>
+    </tbody>
+</table>
+
+<p>We do not sell your personal data to any third party. Data shared with service providers is used solely for the purposes described above.</p>
+
+<h2>4. AI Data Processing</h2>
+
+<div class="highlight">
+    <p>When you use AI-powered features (receipt scanning, recipe suggestions, menu planning, kitchen assistant), relevant data is sent to Google Gemini API for processing. This includes recipe text, receipt images, family context (member count, portion sizes), and kitchen inventory — but <strong>never</strong> your email, name, or other personal identifiers.</p>
+    <p>AI requests are processed in real time and are not stored by us after the response is returned. Google's data processing policies apply to data sent to their API.</p>
+</div>
+
+<h2>5. Data Storage and Security</h2>
+
+<ul>
+    <li>Passwords are stored using one-way cryptographic hashing (bcrypt). We never store plaintext passwords.</li>
+    <li>Authentication tokens (JWT) are stored in your device's secure storage (Keychain on iOS, EncryptedSharedPreferences on Android).</li>
+    <li>Media uploads use time-limited presigned URLs (expiring within 1 hour).</li>
+    <li>All API communication is encrypted via HTTPS/TLS.</li>
+    <li>Server access is protected by rate limiting and input validation.</li>
+</ul>
+
+<h2>6. Data Retention</h2>
+
+<ul>
+    <li><strong>Account data:</strong> retained as long as your account exists.</li>
+    <li><strong>Content you create</strong> (recipes, meal plans, shopping lists): retained as long as your account exists.</li>
+    <li><strong>Verification codes:</strong> ephemeral, expire within minutes.</li>
+    <li><strong>Authentication tokens:</strong> invalidated on logout.</li>
+    <li><strong>Server logs:</strong> retained for up to 30 days for debugging, then deleted.</li>
+    <li><strong>Receipt images sent to AI:</strong> not stored after processing.</li>
+</ul>
+
+<p>When you delete your account, all associated data is permanently removed from our systems, including family data, recipes, ratings, comments, and media files.</p>
+
+<h2>7. Your Rights</h2>
+
+<p>Depending on your location, you may have the following rights under applicable data protection laws (including GDPR):</p>
+
+<ul>
+    <li><strong>Access:</strong> request a copy of the personal data we hold about you.</li>
+    <li><strong>Rectification:</strong> correct inaccurate or incomplete data.</li>
+    <li><strong>Erasure:</strong> request deletion of your account and all associated data.</li>
+    <li><strong>Portability:</strong> receive your data in a structured, machine-readable format.</li>
+    <li><strong>Restriction:</strong> request that we limit processing of your data.</li>
+    <li><strong>Objection:</strong> object to processing based on legitimate interest.</li>
+    <li><strong>Withdraw consent:</strong> where processing is based on consent, you may withdraw it at any time.</li>
+</ul>
+
+<p>To exercise any of these rights, contact us at <a href="mailto:admin@kitchenplus.kz">admin@kitchenplus.kz</a>. We will respond within 30 days.</p>
+
+<h2>8. Children's Privacy</h2>
+
+<p>KitchenPlus is not directed at children under 13. We do not knowingly collect personal data from children under 13. If you believe a child under 13 has provided us with personal data, please contact us and we will delete it promptly.</p>
+
+<p>Family member profiles (including children) are created and managed by the adult account holder. No separate accounts are created for children.</p>
+
+<h2>9. International Data Transfers</h2>
+
+<p>Your data may be processed in countries outside your country of residence (including the United States and EU). We ensure appropriate safeguards are in place, including the use of service providers that comply with applicable data protection standards.</p>
+
+<h2>10. Cookies and Tracking</h2>
+
+<p>The KitchenPlus App does not use cookies, web beacons, pixel tags, or any tracking technologies. We do not engage in cross-app or cross-site tracking.</p>
+
+<h2>11. Changes to This Policy</h2>
+
+<p>We may update this Privacy Policy from time to time. We will notify you of material changes by posting the updated policy in the App or by email. The "Last updated" date at the top indicates the most recent revision.</p>
+
+<h2>12. Contact Us</h2>
+
+<p>If you have questions about this Privacy Policy or your personal data:</p>
+<ul>
+    <li><strong>Company:</strong> TOO KitchenPlus.kz</li>
+    <li><strong>Email:</strong> <a href="mailto:admin@kitchenplus.kz">admin@kitchenplus.kz</a></li>
+</ul>
+
+</div>
+</body>
+</html>
