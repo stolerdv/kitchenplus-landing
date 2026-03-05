@@ -1,5 +1,17 @@
 import { useRef, useEffect, useState } from "react";
-import { Apple, Play, CheckCircle2 } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
+
+function AppleLogo() {
+  return (
+    <svg width="20" height="20" viewBox="0 0 814 1000" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+      <path d="M788.1 340.9c-5.8 4.5-108.2 62.2-108.2 190.5 0 148.4 130.3 200.9 134.2 202.2-.6 3.2-20.7 71.9-68.7 141.9-42.8 61.6-87.5 123.1-155.5 123.1s-85.5-39.5-164-39.5c-76 0-103.7 40.8-165.9 40.8s-105-57.8-155.5-127.4C46 790.7 0 663 0 541.8c0-207.5 135.4-317.3 269-317.3 70.1 0 128.4 46.4 172.5 46.4 42.8 0 109.6-49 192.5-49 30.9 0 133.5 2.6 198.3 99zM554.1 158.4c31.5-38 53.7-90.7 53.7-143.4 0-7.7-.6-15.4-1.9-21.8-50.7 1.9-110.7 33.7-147.2 77.6-28.2 32.7-54.4 85.4-54.4 138.7 0 8.3 1.3 16.6 1.9 19.2 3.2.6 8.3 1.3 13.4 1.3 45.3 0 102.3-30.3 134.5-71.6z"/>
+    </svg>
+  );
+}
+
+function GooglePlayLogo() {
+  return <img src="/images/google-play.png" width={22} height={22} alt="Google Play" style={{ objectFit: "contain" }} />;
+}
 
 export function FinalCTA() {
   const ref = useRef<HTMLDivElement>(null);
@@ -88,7 +100,7 @@ export function FinalCTA() {
             className="flex items-center justify-center gap-3 bg-white hover:bg-[#F0F7F4] text-[#1B2A1A] px-7 py-4 rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
             style={{ fontWeight: 700, fontSize: "16px" }}
           >
-            <Apple size={22} />
+            <AppleLogo />
             <span>
               <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>Скачать для</span>
               iPhone
@@ -98,7 +110,7 @@ export function FinalCTA() {
             className="flex items-center justify-center gap-3 bg-white hover:bg-[#F0F7F4] text-[#1B2A1A] px-7 py-4 rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
             style={{ fontWeight: 700, fontSize: "16px" }}
           >
-            <Play size={20} className="fill-[#1B2A1A]" />
+            <GooglePlayLogo />
             <span>
               <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>Скачать для</span>
               Android

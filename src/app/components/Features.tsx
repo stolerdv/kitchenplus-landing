@@ -1,12 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Calendar, ShoppingCart, BarChart2, Users, BookOpen, Camera, Check } from "lucide-react";
 
-const groceryImg = "https://images.unsplash.com/photo-1661713093950-89ff279c6610?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmcmVzaCUyMHZlZ2V0YWJsZXMlMjBncm9jZXJ5JTIwc2hvcHBpbmclMjBsaXN0fGVufDF8fHx8MTc3MjcwNjM0MXww&ixlib=rb-4.1.0&q=80&w=1080";
-const mealPrepImg = "https://images.unsplash.com/photo-1490818387583-1baba5e638af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
-const foodFlatImg = "/images/cooking-tablet.jpg";
-const familyImg = "/images/hero-family.jpg";
+const groceryImg = "/images/happy-family-shopping.jpg";
+const mealPrepImg = "/images/woman-shopping.jpg";
+const foodFlatImg = "/images/flatlay-groceries-scale.jpg";
+const familyImg = "/images/family-kitchen.jpg";
 const recipeImg = "https://images.unsplash.com/photo-1466637574441-749b8f19452f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
-const receiptImg = "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
+const receiptImg = "/images/woman-phone.jpg";
 
 const features = [
   {
