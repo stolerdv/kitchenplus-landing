@@ -86,7 +86,7 @@ export function PainPoints() {
   ];
 
   return (
-    <section className="py-20 lg:py-28" style={{ background: "#F7F3EE", fontFamily: "Manrope, sans-serif" }}>
+    <section className="py-14 lg:py-28" style={{ background: "#F7F3EE", fontFamily: "Manrope, sans-serif" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div

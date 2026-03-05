@@ -116,7 +116,7 @@ export function Pricing({ currency }: { currency: Currency }) {
   return (
     <section
       id="pricing"
-      className="py-20 lg:py-28"
+      className="py-14 lg:py-28"
       style={{ background: "#F7F3EE", fontFamily: "Manrope, sans-serif" }}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -189,9 +189,7 @@ export function Pricing({ currency }: { currency: Currency }) {
                   background: plan.color,
                   border: `2px solid ${plan.border}`,
                   opacity: visible ? 1 : 0,
-                  transform: visible
-                    ? plan.popular ? "translateY(-8px)" : "translateY(0)"
-                    : "translateY(30px)",
+                  transform: visible ? "translateY(0)" : "translateY(30px)",
                   transition: "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
                   transitionDelay: `${i * 0.1}s`,
                 }}

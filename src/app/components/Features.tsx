@@ -235,12 +235,12 @@ export function Features() {
   ];
 
   return (
-    <section id="features" className="py-20 lg:py-28 bg-white" style={{ fontFamily: "Manrope, sans-serif" }}>
+    <section id="features" className="py-14 lg:py-28 bg-white" style={{ fontFamily: "Manrope, sans-serif" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div
           ref={titleRef}
-          className="text-center mb-16 lg:mb-20"
+          className="text-center mb-10 lg:mb-20"
           style={{
             opacity: titleVisible ? 1 : 0,
             transform: titleVisible ? "translateY(0)" : "translateY(20px)",
@@ -268,7 +268,7 @@ export function Features() {
         </div>
 
         {/* Feature blocks */}
-        <div className="space-y-20 lg:space-y-28">
+        <div className="space-y-12 lg:space-y-28">
           {features.map((f, i) => (
             <FeatureBlock key={i} feature={f} />
           ))}

@@ -34,7 +34,7 @@ export function FinalCTA() {
   return (
     <section
       id="download"
-      className="py-20 lg:py-28 relative overflow-hidden"
+      className="py-14 lg:py-28 relative overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #2D6A4F 0%, #1B5E3A 50%, #0F3D26 100%)",
         fontFamily: "Manrope, sans-serif",

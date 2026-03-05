@@ -38,7 +38,7 @@ export function ForProfessionals() {
     <section
       id="specialists"
       ref={ref}
-      className="py-20 lg:py-28 overflow-hidden relative"
+      className="py-14 lg:py-28 overflow-hidden relative"
       style={{
         background: "linear-gradient(135deg, #1B2A1A 0%, #0F1A0F 60%, #1A2A20 100%)",
         fontFamily: "Manrope, sans-serif",
@@ -172,7 +172,7 @@ export function ForProfessionals() {
 
               {/* Floating stats */}
               <div
-                className="absolute -left-5 top-44 bg-white rounded-2xl shadow-xl p-4"
+                className="hidden lg:block absolute -left-5 top-44 bg-white rounded-2xl shadow-xl p-4"
                 style={{ animation: "float 4s ease-in-out infinite" }}
               >
                 <p style={{ fontSize: "10px", color: "#888", marginBottom: "4px" }}>{t.prof_card_1_label}</p>
@@ -181,7 +181,7 @@ export function ForProfessionals() {
               </div>
 
               <div
-                className="absolute -right-5 bottom-16 bg-white rounded-2xl shadow-xl p-4"
+                className="hidden lg:block absolute -right-5 bottom-16 bg-white rounded-2xl shadow-xl p-4"
                 style={{ animation: "float 4s ease-in-out infinite 1s" }}
               >
                 <p style={{ fontSize: "10px", color: "#888", marginBottom: "4px" }}>{t.prof_card_2_label}</p>

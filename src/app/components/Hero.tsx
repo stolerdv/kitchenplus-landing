@@ -159,12 +159,11 @@ export function Hero() {
             >
               {/* Phone frame */}
               <div
-                className="relative rounded-[2.5rem] overflow-hidden shadow-2xl"
+                className="relative rounded-[2.5rem] overflow-hidden shadow-2xl max-h-[380px] sm:max-h-[500px] lg:max-h-[580px]"
                 style={{
                   background: "#1B2A1A",
                   padding: "10px",
                   aspectRatio: "9/17",
-                  maxHeight: "580px",
                 }}
               >
                 <div className="rounded-[2rem] overflow-hidden h-full">
@@ -206,7 +205,7 @@ export function Hero() {
 
               {/* Floating cards */}
               <div
-                className="absolute -left-8 top-16 bg-white rounded-2xl shadow-xl p-3 min-w-[140px]"
+                className="hidden md:block absolute -left-8 top-16 bg-white rounded-2xl shadow-xl p-3 min-w-[140px]"
                 style={{ animation: "float 4s ease-in-out infinite" }}
               >
                 <div className="flex items-center gap-2">
@@ -219,7 +218,7 @@ export function Hero() {
               </div>
 
               <div
-                className="absolute right-4 top-1/3 bg-white rounded-2xl shadow-xl p-3 min-w-[150px]"
+                className="hidden md:block absolute right-4 top-1/3 bg-white rounded-2xl shadow-xl p-3 min-w-[150px]"
                 style={{ animation: "float 4s ease-in-out infinite 1.5s" }}
               >
                 <div className="flex items-center gap-2">
@@ -232,7 +231,7 @@ export function Hero() {
               </div>
 
               <div
-                className="absolute -left-10 bottom-44 bg-white rounded-2xl shadow-xl p-3 min-w-[150px]"
+                className="hidden md:block absolute -left-10 bottom-44 bg-white rounded-2xl shadow-xl p-3 min-w-[150px]"
                 style={{ animation: "float 4s ease-in-out infinite 0.75s" }}
               >
                 <p style={{ fontSize: "10px", color: "#888" }}>{t.hero_whole_family}</p>

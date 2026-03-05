@@ -93,7 +93,7 @@ export function FAQ() {
   return (
     <section
       id="faq"
-      className="py-20 lg:py-28"
+      className="py-14 lg:py-28"
       style={{ background: "#F7F3EE", fontFamily: "Manrope, sans-serif" }}
     >
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
