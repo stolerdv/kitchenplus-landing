@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { useLang } from "../../contexts/LangContext";
+import React from "react";
 
 function Counter({ target, suffix, duration = 1500 }: { target: number; suffix: string; duration?: number }) {
   const [count, setCount] = useState(0);
