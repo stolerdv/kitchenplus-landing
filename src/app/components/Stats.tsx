@@ -1,11 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-
-const stats = [
-  { value: 500, suffix: "+", label: "ингредиентов в базе КБЖУ", icon: "🥦" },
-  { value: 1000, suffix: "+", label: "рецептов в каталоге", icon: "🍽️" },
-  { value: 4.8, suffix: "★", label: "рейтинг в App Store", icon: "⭐" },
-  { value: 3, suffix: "", label: "языка интерфейса", icon: "🌍" },
-];
+import { useLang } from "../../contexts/LangContext";
 
 function Counter({ target, suffix, duration = 1500 }: { target: number; suffix: string; duration?: number }) {
   const [count, setCount] = useState(0);
@@ -48,6 +42,15 @@ function Counter({ target, suffix, duration = 1500 }: { target: number; suffix: 
 }
 
 export function Stats() {
+  const { t } = useLang();
+
+  const stats = [
+    { value: 500, suffix: "+", label: t.stats_ingredients, icon: "🥦" },
+    { value: 1000, suffix: "+", label: t.stats_recipes, icon: "🍽️" },
+    { value: 5.0, suffix: "★", label: t.stats_rating, icon: "⭐" },
+    { value: 3, suffix: "", label: t.stats_languages, icon: "🌍" },
+  ];
+
   return (
     <section
       className="py-8 border-y border-[#E8E4DC]"

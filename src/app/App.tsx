@@ -10,30 +10,35 @@ import { Testimonials } from "./components/Testimonials";
 import { FAQ } from "./components/FAQ";
 import { FinalCTA } from "./components/FinalCTA";
 import { Footer } from "./components/Footer";
+import { DownloadModal } from "./components/DownloadModal";
 import { useRegion } from "../hooks/useRegion";
+import { LangProvider } from "../contexts/LangContext";
 
 export default function App() {
   const region = useRegion();
 
   return (
-    <div
-      style={{
-        fontFamily: "Manrope, sans-serif",
-        WebkitFontSmoothing: "antialiased",
-        MozOsxFontSmoothing: "grayscale",
-      }}
-    >
-      <Navbar locale={region.locale} />
-      <Hero />
-      <Stats />
-      <PainPoints />
-      <Features />
-      <ForProfessionals />
-      <Pricing currency={region.currency} />
-      <Testimonials />
-      <FAQ />
-      <FinalCTA />
-      <Footer />
-    </div>
+    <LangProvider initialLang={region.locale}>
+      <div
+        style={{
+          fontFamily: "Manrope, sans-serif",
+          WebkitFontSmoothing: "antialiased",
+          MozOsxFontSmoothing: "grayscale",
+        }}
+      >
+        <Navbar />
+        <Hero />
+        <Stats />
+        <PainPoints />
+        <Features />
+        <ForProfessionals />
+        <Pricing currency={region.currency} />
+        <Testimonials />
+        <FAQ />
+        <FinalCTA />
+        <Footer />
+        <DownloadModal />
+      </div>
+    </LangProvider>
   );
 }

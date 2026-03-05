@@ -1,17 +1,15 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import type { Locale } from "../../hooks/useRegion";
+import { useLang } from "../../contexts/LangContext";
 
+const LANG_TO_LOCALE: Record<string, Locale> = { RU: "ru", EN: "en", KZ: "kk" };
 const LOCALE_TO_LANG: Record<Locale, string> = { ru: "RU", kk: "KZ", en: "EN" };
 
-export function Navbar({ locale }: { locale: Locale }) {
+export function Navbar() {
+  const { lang, setLang, t } = useLang();
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [lang, setLang] = useState(() => LOCALE_TO_LANG[locale] ?? "RU");
-
-  useEffect(() => {
-    setLang(LOCALE_TO_LANG[locale] ?? "RU");
-  }, [locale]);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -20,10 +18,10 @@ export function Navbar({ locale }: { locale: Locale }) {
   }, []);
 
   const navLinks = [
-    { label: "Возможности", href: "#features" },
-    { label: "Для специалистов", href: "#specialists" },
-    { label: "Тарифы", href: "#pricing" },
-    { label: "FAQ", href: "#faq" },
+    { label: t.nav_features, href: "#features" },
+    { label: t.nav_specialists, href: "#specialists" },
+    { label: t.nav_pricing, href: "#pricing" },
+    { label: t.nav_faq, href: "#faq" },
   ];
 
   const handleScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -32,6 +30,8 @@ export function Navbar({ locale }: { locale: Locale }) {
     if (el) el.scrollIntoView({ behavior: "smooth" });
     setMobileOpen(false);
   };
+
+  const currentLangLabel = LOCALE_TO_LANG[lang] ?? "RU";
 
   return (
     <>
@@ -81,11 +81,11 @@ export function Navbar({ locale }: { locale: Locale }) {
                 {["RU", "EN", "KZ"].map((l) => (
                   <button
                     key={l}
-                    onClick={() => setLang(l)}
+                    onClick={() => setLang(LANG_TO_LOCALE[l])}
                     style={{
                       fontSize: "13px",
-                      fontWeight: lang === l ? 700 : 400,
-                      color: lang === l ? "#2D6A4F" : "#888",
+                      fontWeight: currentLangLabel === l ? 700 : 400,
+                      color: currentLangLabel === l ? "#2D6A4F" : "#888",
                     }}
                     className="px-1 hover:text-[#2D6A4F] transition-colors"
                   >
@@ -100,7 +100,7 @@ export function Navbar({ locale }: { locale: Locale }) {
                 className="bg-[#2D6A4F] hover:bg-[#245840] text-white px-5 py-2.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5"
                 style={{ fontSize: "14px", fontWeight: 600 }}
               >
-                Скачать
+                {t.nav_download}
               </a>
             </div>
 
@@ -128,6 +128,22 @@ export function Navbar({ locale }: { locale: Locale }) {
                 {link.label}
               </a>
             ))}
+            {/* Mobile lang switcher */}
+            <div className="flex gap-3 px-3 py-2">
+              {["RU", "EN", "KZ"].map((l) => (
+                <button
+                  key={l}
+                  onClick={() => setLang(LANG_TO_LOCALE[l])}
+                  style={{
+                    fontSize: "13px",
+                    fontWeight: currentLangLabel === l ? 700 : 400,
+                    color: currentLangLabel === l ? "#2D6A4F" : "#888",
+                  }}
+                >
+                  {l}
+                </button>
+              ))}
+            </div>
             <div className="pt-3 border-t border-[#E8E4DC] mt-2">
               <a
                 href="#download"
@@ -135,7 +151,7 @@ export function Navbar({ locale }: { locale: Locale }) {
                 className="block w-full bg-[#2D6A4F] text-white text-center py-3 rounded-xl"
                 style={{ fontSize: "15px", fontWeight: 600 }}
               >
-                Скачать бесплатно
+                {t.nav_download_mobile}
               </a>
             </div>
           </div>

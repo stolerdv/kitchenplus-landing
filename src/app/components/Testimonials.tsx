@@ -1,40 +1,33 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Star, Quote } from "lucide-react";
+import { useLang } from "../../contexts/LangContext";
 
-const testimonials = [
-  {
-    name: "Анна Сергеева",
-    role: "Мама троих детей, Москва",
-    avatar: "https://i.pravatar.cc/80?img=47",
-    rating: 5,
-    text: "Наконец-то перестала думать что готовить! Составляю меню на воскресенье — и вся неделя спланирована. Список покупок генерируется сам, в магазине хожу только по нему. Сэкономила и деньги, и нервы.",
-  },
-  {
-    name: "Екатерина Волкова",
-    role: "Нутрициолог, 47 клиентов",
-    avatar: "https://i.pravatar.cc/80?img=44",
-    rating: 5,
-    text: "Работаю с клиентами стало в разы проще. Раньше отправляла PDF — теряли, не открывали. Сейчас отправляю ссылку — клиент открывает в браузере, видит меню и список покупок. Конверсия в соблюдение плана выросла до 80%.",
-  },
-  {
-    name: "Дмитрий Ковалёв",
-    role: "Фитнес-тренер, Алматы",
-    avatar: "https://i.pravatar.cc/80?img=12",
-    rating: 5,
-    text: "Использую Premium уже 8 месяцев. Ведю 24 клиента в питании параллельно с тренировками. Что раньше занимало 2-3 часа на составление плана — теперь 15 минут. Клиенты в восторге от мобильной страницы.",
-  },
-  {
-    name: "Марина Белова",
-    role: "Мама, следит за питанием семьи",
-    avatar: "https://i.pravatar.cc/80?img=32",
-    rating: 5,
-    text: "Муж наконец перестал спрашивать «что на ужин?» — просто смотрит в приложение. КБЖУ считаю для всей семьи, включая ребёнка. Офлайн работа — это очень важно, в магазине нет Wi-Fi.",
-  },
-];
+const AVATARS: Record<string, string[]> = {
+  ru: [
+    "https://i.pravatar.cc/80?img=47",
+    "https://i.pravatar.cc/80?img=44",
+    "https://i.pravatar.cc/80?img=12",
+    "https://i.pravatar.cc/80?img=32",
+  ],
+  en: [
+    "https://i.pravatar.cc/80?img=10",
+    "https://i.pravatar.cc/80?img=20",
+    "https://i.pravatar.cc/80?img=3",
+    "https://i.pravatar.cc/80?img=45",
+  ],
+  kk: [
+    "https://i.pravatar.cc/80?img=36",  // Айгерім — женщина
+    "https://i.pravatar.cc/80?img=26",  // Дана — женщина
+    "https://i.pravatar.cc/80?img=52",  // Арман — мужчина
+    "https://i.pravatar.cc/80?img=49",  // Жанна — женщина
+  ],
+};
 
 export function Testimonials() {
+  const { t, lang } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const avatars = AVATARS[lang] ?? AVATARS.ru;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,6 +39,13 @@ export function Testimonials() {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+
+  const testimonials = [
+    { name: t.test_1_name, role: t.test_1_role, avatar: avatars[0], rating: 5, text: t.test_1_text },
+    { name: t.test_2_name, role: t.test_2_role, avatar: avatars[1], rating: 5, text: t.test_2_text },
+    { name: t.test_3_name, role: t.test_3_role, avatar: avatars[2], rating: 5, text: t.test_3_text },
+    { name: t.test_4_name, role: t.test_4_role, avatar: avatars[3], rating: 5, text: t.test_4_text },
+  ];
 
   return (
     <section
@@ -67,7 +67,7 @@ export function Testimonials() {
             className="inline-block bg-[#FFF3E0] text-[#E07A3D] rounded-full px-4 py-1.5 mb-4"
             style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em" }}
           >
-            ОТЗЫВЫ
+            {t.test_badge}
           </div>
           <h2
             style={{
@@ -78,14 +78,14 @@ export function Testimonials() {
               letterSpacing: "-0.02em",
             }}
           >
-            50,000+ семей уже планируют <br />
-            <span style={{ color: "#2D6A4F" }}>питание с KitchenPlus</span>
+            {t.test_h2_1} <br />
+            <span style={{ color: "#2D6A4F" }}>{t.test_h2_accent}</span>
           </h2>
         </div>
 
         {/* Testimonial grid */}
         <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
-          {testimonials.map((t, i) => (
+          {testimonials.map((testimonial, i) => (
             <div
               key={i}
               className="rounded-2xl p-6 border border-[#E8E4DC] hover:shadow-lg transition-all duration-300 hover:-translate-y-0.5"
@@ -99,22 +99,22 @@ export function Testimonials() {
             >
               <div className="flex items-start gap-3 mb-4">
                 <img
-                  src={t.avatar}
-                  alt={t.name}
+                  src={testimonial.avatar}
+                  alt={testimonial.name}
                   className="w-12 h-12 rounded-full object-cover border-2 border-[#D8F3DC] flex-shrink-0"
                 />
                 <div className="flex-1 min-w-0">
-                  <p style={{ fontSize: "15px", fontWeight: 700, color: "#1B2A1A" }}>{t.name}</p>
-                  <p style={{ fontSize: "12px", color: "#7A7A6A", marginTop: "1px" }}>{t.role}</p>
+                  <p style={{ fontSize: "15px", fontWeight: 700, color: "#1B2A1A" }}>{testimonial.name}</p>
+                  <p style={{ fontSize: "12px", color: "#7A7A6A", marginTop: "1px" }}>{testimonial.role}</p>
                   <div className="flex gap-0.5 mt-1.5">
-                    {Array(t.rating).fill(0).map((_, j) => (
+                    {Array(testimonial.rating).fill(0).map((_, j) => (
                       <Star key={j} size={12} className="fill-[#F4A235] text-[#F4A235]" />
                     ))}
                   </div>
                 </div>
                 <Quote size={24} color="#D8F3DC" className="flex-shrink-0" />
               </div>
-              <p style={{ fontSize: "14px", color: "#4A4A3A", lineHeight: 1.7 }}>{t.text}</p>
+              <p style={{ fontSize: "14px", color: "#4A4A3A", lineHeight: 1.7 }}>{testimonial.text}</p>
             </div>
           ))}
         </div>

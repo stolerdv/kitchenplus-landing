@@ -1,39 +1,11 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import { Clock, Sparkles, TrendingUp, Users } from "lucide-react";
-
-const steps = [
-  { num: "1", label: "Создай календарь для клиента" },
-  { num: "2", label: "Запланируй питание на неделю" },
-  { num: "3", label: "Нажми «Экспорт» → получи ссылку" },
-  { num: "4", label: "Клиент видит план в браузере" },
-];
-
-const benefits = [
-  {
-    icon: <Clock size={20} />,
-    title: "Экономия времени",
-    desc: "План вместо часа занимает 10 минут",
-  },
-  {
-    icon: <Sparkles size={20} />,
-    title: "Профессиональный вид",
-    desc: "Красивая страница с твоим логотипом",
-  },
-  {
-    icon: <TrendingUp size={20} />,
-    title: "Вирусный рост",
-    desc: "Клиент видит KitchenPlus — скачивает сам",
-  },
-  {
-    icon: <Users size={20} />,
-    title: "Несколько клиентов",
-    desc: "Отдельный календарь для каждого",
-  },
-];
+import { useLang } from "../../contexts/LangContext";
 
 const professionalImg = "/images/professional.jpg";
 
 export function ForProfessionals() {
+  const { t } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -47,6 +19,20 @@ export function ForProfessionals() {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+
+  const steps = [
+    { num: "1", label: t.prof_step_1 },
+    { num: "2", label: t.prof_step_2 },
+    { num: "3", label: t.prof_step_3 },
+    { num: "4", label: t.prof_step_4 },
+  ];
+
+  const benefits = [
+    { icon: <Clock size={20} />, title: t.prof_benefit_1_title, desc: t.prof_benefit_1_desc },
+    { icon: <Sparkles size={20} />, title: t.prof_benefit_2_title, desc: t.prof_benefit_2_desc },
+    { icon: <TrendingUp size={20} />, title: t.prof_benefit_3_title, desc: t.prof_benefit_3_desc },
+    { icon: <Users size={20} />, title: t.prof_benefit_4_title, desc: t.prof_benefit_4_desc },
+  ];
 
   return (
     <section
@@ -82,7 +68,7 @@ export function ForProfessionals() {
             >
               <Sparkles size={13} color="#52B788" />
               <span style={{ fontSize: "12px", color: "#52B788", fontWeight: 700, letterSpacing: "0.07em" }}>
-                ДЛЯ ПРОФЕССИОНАЛОВ
+                {t.prof_badge}
               </span>
             </div>
 
@@ -96,11 +82,11 @@ export function ForProfessionals() {
                 marginBottom: "16px",
               }}
             >
-              Для фитнес-тренеров <br />
-              и нутрициологов
+              {t.prof_h2_1} <br />
+              {t.prof_h2_2}
             </h2>
             <p style={{ fontSize: "17px", color: "rgba(255,255,255,0.65)", lineHeight: 1.65, marginBottom: "32px" }}>
-              Составляй планы питания для клиентов и делись ими в один клик. Никаких PDF, никаких приложений на стороне клиента.
+              {t.prof_desc}
             </p>
 
             {/* Description box */}
@@ -109,7 +95,7 @@ export function ForProfessionals() {
               style={{ background: "rgba(255,255,255,0.07)", border: "1px solid rgba(255,255,255,0.1)" }}
             >
               <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.8)", lineHeight: 1.7 }}>
-                Создай план питания для клиента в отдельном календаре. Нажми «Поделиться» — приложение сгенерирует красивую мобильную страницу. Отправь ссылку в мессенджере — клиент видит план и список покупок.
+                {t.prof_box}
               </p>
             </div>
 
@@ -186,24 +172,24 @@ export function ForProfessionals() {
 
               {/* Floating stats */}
               <div
-                className="absolute -left-5 top-8 bg-white rounded-2xl shadow-xl p-4"
+                className="absolute -left-5 top-44 bg-white rounded-2xl shadow-xl p-4"
                 style={{ animation: "float 4s ease-in-out infinite" }}
               >
-                <p style={{ fontSize: "10px", color: "#888", marginBottom: "2px" }}>Клиентов подключено</p>
-                <p style={{ fontSize: "26px", fontWeight: 800, color: "#2D6A4F", lineHeight: 1 }}>24</p>
-                <p style={{ fontSize: "11px", color: "#2D6A4F", marginTop: "1px" }}>↑ 8 за месяц</p>
+                <p style={{ fontSize: "10px", color: "#888", marginBottom: "4px" }}>{t.prof_card_1_label}</p>
+                <p style={{ fontSize: "16px", fontWeight: 800, color: "#1B2A1A", lineHeight: 1 }}>{t.prof_card_1_name}</p>
+                <p style={{ fontSize: "11px", color: "#2D6A4F", marginTop: "4px", fontWeight: 600 }}>{t.prof_card_1_note}</p>
               </div>
 
               <div
                 className="absolute -right-5 bottom-16 bg-white rounded-2xl shadow-xl p-4"
                 style={{ animation: "float 4s ease-in-out infinite 1s" }}
               >
-                <p style={{ fontSize: "10px", color: "#888", marginBottom: "4px" }}>Режим клиента</p>
+                <p style={{ fontSize: "10px", color: "#888", marginBottom: "4px" }}>{t.prof_card_2_label}</p>
                 <div className="flex items-center gap-1.5">
                   <div className="w-2 h-2 bg-green-500 rounded-full" />
-                  <p style={{ fontSize: "13px", fontWeight: 700, color: "#1B2A1A" }}>Онлайн</p>
+                  <p style={{ fontSize: "13px", fontWeight: 700, color: "#1B2A1A" }}>{t.prof_card_2_status}</p>
                 </div>
-                <p style={{ fontSize: "11px", color: "#5A5A4A", marginTop: "2px" }}>Смотрит план</p>
+                <p style={{ fontSize: "11px", color: "#5A5A4A", marginTop: "2px" }}>{t.prof_card_2_note}</p>
               </div>
             </div>
           </div>

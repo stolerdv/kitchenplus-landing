@@ -1,34 +1,8 @@
 import { useState, useRef, useEffect } from "react";
 import { ChevronDown } from "lucide-react";
+import { useLang } from "../../contexts/LangContext";
 
-const faqs = [
-  {
-    q: "Приложение работает без интернета?",
-    a: "Да, базовые функции — просмотр меню, список покупок, рецепты — работают офлайн. Синхронизация происходит при подключении к интернету.",
-  },
-  {
-    q: "Можно ли использовать без подписки?",
-    a: "Да, бесплатный тариф бессрочный и включает все основные функции для одной семьи: список покупок, каталог рецептов, базовый КБЖУ. Без кредитной карты.",
-  },
-  {
-    q: "Как работает AI-анализ чеков?",
-    a: "Сфотографируй чек в приложении. Наш AI распознаёт купленные продукты и автоматически добавляет их в кладовую. Работает с кассовыми чеками большинства магазинов России и Казахстана.",
-  },
-  {
-    q: "Можно ли поделиться планом питания без приложения?",
-    a: "Да. Функция «Экспорт» генерирует ссылку на мобильную веб-страницу — открывается в любом браузере без установки приложения. Идеально для специалистов, которые работают с клиентами.",
-  },
-  {
-    q: "На каком языке работает приложение?",
-    a: "Русский, казахский и английский. Переключение доступно в настройках. Рецепты из каталога также переведены на все три языка.",
-  },
-  {
-    q: "Как считается КБЖУ?",
-    a: "На основе базы 500+ ингредиентов с данными пищевой ценности. При добавлении рецепта в меню КБЖУ рассчитывается автоматически с учётом коэффициента порции каждого члена семьи.",
-  },
-];
-
-function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
+function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -69,7 +43,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
             lineHeight: 1.4,
           }}
         >
-          {faq.q}
+          {q}
         </span>
         <ChevronDown
           size={18}
@@ -84,7 +58,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
         style={{ maxHeight: open ? "300px" : "0", opacity: open ? 1 : 0 }}
       >
         <div className="px-5 pb-4 pt-0">
-          <p style={{ fontSize: "14px", color: "#5A5A4A", lineHeight: 1.7 }}>{faq.a}</p>
+          <p style={{ fontSize: "14px", color: "#5A5A4A", lineHeight: 1.7 }}>{a}</p>
         </div>
       </div>
     </div>
@@ -92,6 +66,7 @@ function FAQItem({ faq, index }: { faq: typeof faqs[0]; index: number }) {
 }
 
 export function FAQ() {
+  const { t } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -105,6 +80,15 @@ export function FAQ() {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+
+  const faqs = [
+    { q: t.faq_1_q, a: t.faq_1_a },
+    { q: t.faq_2_q, a: t.faq_2_a },
+    { q: t.faq_3_q, a: t.faq_3_a },
+    { q: t.faq_4_q, a: t.faq_4_a },
+    { q: t.faq_5_q, a: t.faq_5_a },
+    { q: t.faq_6_q, a: t.faq_6_a },
+  ];
 
   return (
     <section
@@ -127,7 +111,7 @@ export function FAQ() {
             className="inline-block bg-white text-[#2D6A4F] border border-[#B7DEC9] rounded-full px-4 py-1.5 mb-4"
             style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em" }}
           >
-            FAQ
+            {t.faq_badge}
           </div>
           <h2
             style={{
@@ -138,17 +122,17 @@ export function FAQ() {
               letterSpacing: "-0.02em",
             }}
           >
-            Часто задаваемые вопросы
+            {t.faq_h2}
           </h2>
           <p className="mt-3" style={{ fontSize: "16px", color: "#7A7A6A" }}>
-            Не нашли ответ? Напишите нам в поддержку.
+            {t.faq_sub}
           </p>
         </div>
 
         {/* FAQ items */}
         <div className="space-y-3">
           {faqs.map((faq, i) => (
-            <FAQItem key={i} faq={faq} index={i} />
+            <FAQItem key={i} q={faq.q} a={faq.a} index={i} />
           ))}
         </div>
       </div>

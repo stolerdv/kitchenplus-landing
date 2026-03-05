@@ -1,5 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import { CheckCircle2, Star } from "lucide-react";
+import { useLang } from "../../contexts/LangContext";
+import { openDownloadModal } from "./DownloadModal";
 
 function AppleLogo() {
   return (
@@ -14,9 +16,9 @@ function GooglePlayLogo() {
 }
 
 const heroImage = "/images/hero-family.jpg";
-const foodImage = "https://images.unsplash.com/photo-1591103019131-b15874094894?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2xvcmZ1bCUyMGhlYWx0aHklMjBmb29kJTIwZmxhdCUyMGxheSUyMG92ZXJoZWFkfGVufDF8fHx8MTc3MjcwNjM1N3ww&ixlib=rb-4.1.0&q=80&w=1080";
 
 export function Hero() {
+  const { t } = useLang();
   const imgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -39,11 +41,6 @@ export function Hero() {
     };
   }, []);
 
-  const handleScroll = (href: string) => {
-    const el = document.querySelector(href);
-    if (el) el.scrollIntoView({ behavior: "smooth" });
-  };
-
   return (
     <section
       className="relative min-h-screen flex items-center overflow-hidden"
@@ -65,7 +62,6 @@ export function Hero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text Content */}
           <div className="text-center lg:text-left">
-            {/* Headline */}
             <h1
               className="mb-5"
               style={{
@@ -76,38 +72,39 @@ export function Hero() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Питание семьи <br />
-              под контролем.{" "}
-              <span style={{ color: "#2D6A4F" }}>Без стресса.</span>
+              {t.hero_h1_1} <br />
+              {t.hero_h1_2}{" "}
+              <span style={{ color: "#2D6A4F" }}>{t.hero_h1_accent}</span>
             </h1>
 
-            {/* Subheadline */}
             <p
               className="mb-8 max-w-lg mx-auto lg:mx-0"
               style={{ fontSize: "17px", color: "#5A5A4A", lineHeight: 1.65 }}
             >
-              Ваш список покупок и актуальные запасы — всегда под рукой в едином приложении.
+              {t.hero_sub}
             </p>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start mb-7">
               <button
+                onClick={openDownloadModal}
                 className="flex items-center justify-center gap-3 bg-[#1B2A1A] hover:bg-[#0F1A0F] text-white px-6 py-3.5 rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
                 style={{ fontWeight: 600, fontSize: "15px" }}
               >
                 <AppleLogo />
                 <span>
-                  <span style={{ fontSize: "11px", display: "block", opacity: 0.7, lineHeight: 1 }}>Скачать в</span>
+                  <span style={{ fontSize: "11px", display: "block", opacity: 0.7, lineHeight: 1 }}>{t.hero_download_in}</span>
                   App Store
                 </span>
               </button>
               <button
+                onClick={openDownloadModal}
                 className="flex items-center justify-center gap-3 bg-[#1B2A1A] hover:bg-[#0F1A0F] text-white px-6 py-3.5 rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
                 style={{ fontWeight: 600, fontSize: "15px" }}
               >
                 <GooglePlayLogo />
                 <span>
-                  <span style={{ fontSize: "11px", display: "block", opacity: 0.7, lineHeight: 1 }}>Скачать в</span>
+                  <span style={{ fontSize: "11px", display: "block", opacity: 0.7, lineHeight: 1 }}>{t.hero_download_in}</span>
                   Google Play
                 </span>
               </button>
@@ -115,14 +112,10 @@ export function Hero() {
 
             {/* Trust badges */}
             <div className="flex flex-wrap items-center gap-4 justify-center lg:justify-start mb-8">
-              {[
-                "Встроенный голосовой помощник",
-                "Поддержка любых диет",
-                "Работает офлайн",
-              ].map((t) => (
-                <div key={t} className="flex items-center gap-1.5">
+              {[t.hero_trust_1, t.hero_trust_2, t.hero_trust_3].map((text) => (
+                <div key={text} className="flex items-center gap-1.5">
                   <CheckCircle2 size={14} color="#52B788" />
-                  <span style={{ fontSize: "13px", color: "#5A5A4A" }}>{t}</span>
+                  <span style={{ fontSize: "13px", color: "#5A5A4A" }}>{text}</span>
                 </div>
               ))}
             </div>
@@ -151,7 +144,7 @@ export function Hero() {
                   ))}
                 </div>
                 <p style={{ fontSize: "12px", color: "#5A5A4A" }}>
-                  <strong style={{ color: "#1B2A1A" }}>Тысячи</strong> семей уже используют
+                  <strong style={{ color: "#1B2A1A" }}>{t.hero_social_thousands}</strong> {t.hero_social_use}
                 </p>
               </div>
             </div>
@@ -159,7 +152,6 @@ export function Hero() {
 
           {/* Right: Visual */}
           <div className="relative flex justify-center lg:justify-end">
-            {/* Main card with tilt */}
             <div
               ref={imgRef}
               className="relative transition-transform duration-200 ease-out"
@@ -180,8 +172,8 @@ export function Hero() {
                     className="w-full h-full"
                     style={{
                       backgroundImage: `url(${heroImage})`,
-                      backgroundSize: "200% auto",
-                      backgroundPosition: "20% 0%",
+                      backgroundSize: "cover",
+                      backgroundPosition: "56% center",
                       backgroundRepeat: "no-repeat",
                       backgroundColor: "#e8e0d8",
                     }}
@@ -191,17 +183,15 @@ export function Hero() {
                     className="absolute inset-[10px] rounded-[2rem] overflow-hidden"
                     style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(27,42,26,0.7) 100%)" }}
                   >
-                    {/* App header bar */}
                     <div className="absolute top-0 left-0 right-0 p-4 flex items-center justify-between">
                       <div className="w-16 h-1 bg-white/80 rounded-full mx-auto" />
                     </div>
-                    {/* Bottom info card */}
                     <div className="absolute bottom-0 left-0 right-0 p-4">
                       <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-3 shadow-lg">
-                        <p style={{ fontSize: "11px", color: "#2D6A4F", fontWeight: 700 }}>МЕНЮ НА СЕГОДНЯ</p>
-                        <p style={{ fontSize: "14px", color: "#1B2A1A", fontWeight: 700, marginTop: "2px" }}>Куриный суп с овощами</p>
+                        <p style={{ fontSize: "11px", color: "#2D6A4F", fontWeight: 700 }}>{t.hero_today_menu}</p>
+                        <p style={{ fontSize: "14px", color: "#1B2A1A", fontWeight: 700, marginTop: "2px" }}>{t.hero_meal_name}</p>
                         <div className="flex items-center gap-3 mt-1.5">
-                          {[["320", "ккал"], ["28г", "белки"], ["12г", "жиры"], ["25г", "углев"]].map(([v, u]) => (
+                          {[["320", t.hero_kcal], ["28г", t.hero_protein], ["12г", t.hero_fat], ["25г", t.hero_carbs]].map(([v, u]) => (
                             <div key={u} className="text-center">
                               <p style={{ fontSize: "12px", fontWeight: 700, color: "#2D6A4F" }}>{v}</p>
                               <p style={{ fontSize: "9px", color: "#888" }}>{u}</p>
@@ -222,21 +212,21 @@ export function Hero() {
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-[#D8F3DC] rounded-xl flex items-center justify-center text-lg">🥗</div>
                   <div>
-                    <p style={{ fontSize: "10px", color: "#888" }}>Следующий приём</p>
-                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#1B2A1A" }}>Обед в 13:00</p>
+                    <p style={{ fontSize: "10px", color: "#888" }}>{t.hero_next_meal}</p>
+                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_lunch}</p>
                   </div>
                 </div>
               </div>
 
               <div
-                className="absolute -right-8 top-1/3 bg-white rounded-2xl shadow-xl p-3 min-w-[150px]"
+                className="absolute right-4 top-1/3 bg-white rounded-2xl shadow-xl p-3 min-w-[150px]"
                 style={{ animation: "float 4s ease-in-out infinite 1.5s" }}
               >
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 bg-[#FFF3E0] rounded-xl flex items-center justify-center text-lg">🛒</div>
                   <div>
-                    <p style={{ fontSize: "10px", color: "#888" }}>Список покупок</p>
-                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#1B2A1A" }}>23 продукта</p>
+                    <p style={{ fontSize: "10px", color: "#888" }}>{t.hero_shopping_list}</p>
+                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_products}</p>
                   </div>
                 </div>
               </div>
@@ -245,7 +235,7 @@ export function Hero() {
                 className="absolute -left-10 bottom-44 bg-white rounded-2xl shadow-xl p-3 min-w-[150px]"
                 style={{ animation: "float 4s ease-in-out infinite 0.75s" }}
               >
-                <p style={{ fontSize: "10px", color: "#888" }}>Вся семья</p>
+                <p style={{ fontSize: "10px", color: "#888" }}>{t.hero_whole_family}</p>
                 <div className="flex items-center gap-1 mt-1">
                   <div className="flex -space-x-1">
                     {["👨", "👩", "🧒"].map((e, i) => (
@@ -254,7 +244,7 @@ export function Hero() {
                       </div>
                     ))}
                   </div>
-                  <p style={{ fontSize: "11px", fontWeight: 700, color: "#2D6A4F" }}>3 чел. ✓</p>
+                  <p style={{ fontSize: "11px", fontWeight: 700, color: "#2D6A4F" }}>{t.hero_family_count}</p>
                 </div>
               </div>
             </div>

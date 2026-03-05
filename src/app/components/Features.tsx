@@ -1,5 +1,6 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Calendar, ShoppingCart, BarChart2, Users, BookOpen, Camera, Check } from "lucide-react";
+import { useLang } from "../../contexts/LangContext";
 
 const groceryImg = "/images/happy-family-shopping.jpg";
 const mealPrepImg = "/images/woman-shopping.jpg";
@@ -8,106 +9,20 @@ const familyImg = "/images/family-kitchen.jpg";
 const recipeImg = "https://images.unsplash.com/photo-1466637574441-749b8f19452f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 const receiptImg = "/images/woman-phone.jpg";
 
-const features = [
-  {
-    num: "01",
-    icon: <Calendar size={22} />,
-    title: "Меню на неделю за 5 минут",
-    desc: "Открой календарь, выбери день и добавь блюда на завтрак, обед и ужин. Выбирай из каталога готовых рецептов или добавляй свои. Приложение покажет КБЖУ за каждый день и напомнит о следующем приёме пищи.",
-    bullets: [
-      "9 типов приёмов пищи: завтрак, обед, ужин, перекус и др.",
-      "Настраиваемое расписание — включи только нужные",
-      "Порции с учётом каждого члена семьи",
-    ],
-    img: mealPrepImg,
-    imgAlt: "Планирование меню",
-    reverse: false,
-    accent: "#D8F3DC",
-    iconBg: "#2D6A4F",
-  },
-  {
-    num: "02",
-    icon: <ShoppingCart size={22} />,
-    title: "Список покупок генерируется автоматически",
-    desc: "Запланировал меню — список покупок готов. Ингредиенты суммируются по всем блюдам недели с учётом количества порций каждого человека в семье. В магазине фильтруй по отделам.",
-    bullets: [
-      "Автогенерация из меню за один клик",
-      "Фильтр по категории продуктов — удобно в магазине",
-      "Отметка купленного прямо в приложении",
-    ],
-    img: groceryImg,
-    imgAlt: "Список покупок",
-    reverse: true,
-    accent: "#FFF3E0",
-    iconBg: "#E07A3D",
-  },
-  {
-    num: "03",
-    icon: <BarChart2 size={22} />,
-    title: "Знай сколько ешь — каждый день",
-    desc: "Каждый рецепт содержит расчёт КБЖУ на порцию по базе из 500+ ингредиентов. На экране дня — прогресс-бары по нормам калорий, белков, жиров и углеводов. Для каждого члена семьи отдельно.",
-    bullets: [
-      "База 500+ ингредиентов с данными КБЖУ",
-      "Автоматический расчёт на порцию",
-      "Дневная норма и прогресс в реальном времени",
-    ],
-    img: foodFlatImg,
-    imgAlt: "КБЖУ контроль",
-    reverse: false,
-    accent: "#F3F0FF",
-    iconBg: "#7B5EA7",
-  },
-  {
-    num: "04",
-    icon: <Users size={22} />,
-    title: "Учитывает потребности каждого",
-    desc: "Добавь всех членов семьи и настрой коэффициент порции для каждого: 0.5 для маленького ребёнка, 1.2 для взрослого мужчины. Список покупок пересчитывает количества под всю семью.",
-    bullets: [
-      "Коэффициент порции от 0.5 до 2.0 для каждого",
-      "Несколько групп: «Семья», «Дача», «Рабочий офис»",
-      "Общий доступ к плану питания",
-    ],
-    img: familyImg,
-    imgAlt: "Семейные профили",
-    reverse: true,
-    accent: "#FFF0F0",
-    iconBg: "#E05858",
-  },
-  {
-    num: "05",
-    icon: <BookOpen size={22} />,
-    title: "1000 рецептов и твои собственные",
-    desc: "Готовый каталог рецептов с фото, ингредиентами, временем приготовления и КБЖУ. Фильтруй по тегам: вегетарианские, быстрые, без глютена, итальянская кухня, для детей.",
-    bullets: [
-      "100+ тегов: кухня мира, диеты, время готовки",
-      "AI предлагает теги при создании рецепта",
-      "Видео-рецепты и оценки от сообщества",
-    ],
-    img: recipeImg,
-    imgAlt: "Каталог рецептов",
-    reverse: false,
-    accent: "#E8F5E9",
-    iconBg: "#388E3C",
-  },
-  {
-    num: "06",
-    icon: <Camera size={22} />,
-    title: "Сфотографировал чек — продукты на кухне",
-    desc: "Сделай фото кассового чека после похода в магазин. AI распознаёт купленные продукты, добавляет их в твой виртуальный холодильник и вычёркивает из списка покупок.",
-    bullets: [
-      "Распознавание чека за секунды",
-      "Автоматическое пополнение кладовой и холодильника",
-      "Синхронизация со списком покупок",
-    ],
-    img: receiptImg,
-    imgAlt: "AI анализ чеков",
-    reverse: true,
-    accent: "#E3F2FD",
-    iconBg: "#1976D2",
-  },
-];
+type Feature = {
+  num: string;
+  icon: React.ReactNode;
+  title: string;
+  desc: string;
+  bullets: string[];
+  img: string;
+  imgAlt: string;
+  reverse: boolean;
+  accent: string;
+  iconBg: string;
+};
 
-function FeatureBlock({ feature, index }: { feature: typeof features[0]; index: number }) {
+function FeatureBlock({ feature }: { feature: Feature }) {
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -197,7 +112,6 @@ function FeatureBlock({ feature, index }: { feature: typeof features[0]; index: 
             className="w-full object-cover"
             style={{ height: "340px" }}
           />
-          {/* Feature badge overlay */}
           <div className="absolute bottom-4 left-4">
             <div
               className="bg-white/95 backdrop-blur-sm rounded-2xl px-4 py-2.5 shadow-lg flex items-center gap-2"
@@ -214,7 +128,6 @@ function FeatureBlock({ feature, index }: { feature: typeof features[0]; index: 
             </div>
           </div>
         </div>
-        {/* Decorative circle */}
         <div
           className="absolute -z-10 w-64 h-64 rounded-full opacity-30"
           style={{
@@ -231,6 +144,7 @@ function FeatureBlock({ feature, index }: { feature: typeof features[0]; index: 
 }
 
 export function Features() {
+  const { t } = useLang();
   const titleRef = useRef<HTMLDivElement>(null);
   const [titleVisible, setTitleVisible] = useState(false);
 
@@ -244,6 +158,81 @@ export function Features() {
     if (titleRef.current) observer.observe(titleRef.current);
     return () => observer.disconnect();
   }, []);
+
+  const features: Feature[] = [
+    {
+      num: "01",
+      icon: <Calendar size={22} />,
+      title: t.feat_1_title,
+      desc: t.feat_1_desc,
+      bullets: [t.feat_1_b1, t.feat_1_b2, t.feat_1_b3],
+      img: mealPrepImg,
+      imgAlt: t.feat_1_alt,
+      reverse: false,
+      accent: "#D8F3DC",
+      iconBg: "#2D6A4F",
+    },
+    {
+      num: "02",
+      icon: <ShoppingCart size={22} />,
+      title: t.feat_2_title,
+      desc: t.feat_2_desc,
+      bullets: [t.feat_2_b1, t.feat_2_b2, t.feat_2_b3],
+      img: groceryImg,
+      imgAlt: t.feat_2_alt,
+      reverse: true,
+      accent: "#FFF3E0",
+      iconBg: "#E07A3D",
+    },
+    {
+      num: "03",
+      icon: <BarChart2 size={22} />,
+      title: t.feat_3_title,
+      desc: t.feat_3_desc,
+      bullets: [t.feat_3_b1, t.feat_3_b2, t.feat_3_b3],
+      img: foodFlatImg,
+      imgAlt: t.feat_3_alt,
+      reverse: false,
+      accent: "#F3F0FF",
+      iconBg: "#7B5EA7",
+    },
+    {
+      num: "04",
+      icon: <Users size={22} />,
+      title: t.feat_4_title,
+      desc: t.feat_4_desc,
+      bullets: [t.feat_4_b1, t.feat_4_b2, t.feat_4_b3],
+      img: familyImg,
+      imgAlt: t.feat_4_alt,
+      reverse: true,
+      accent: "#FFF0F0",
+      iconBg: "#E05858",
+    },
+    {
+      num: "05",
+      icon: <BookOpen size={22} />,
+      title: t.feat_5_title,
+      desc: t.feat_5_desc,
+      bullets: [t.feat_5_b1, t.feat_5_b2, t.feat_5_b3],
+      img: recipeImg,
+      imgAlt: t.feat_5_alt,
+      reverse: false,
+      accent: "#E8F5E9",
+      iconBg: "#388E3C",
+    },
+    {
+      num: "06",
+      icon: <Camera size={22} />,
+      title: t.feat_6_title,
+      desc: t.feat_6_desc,
+      bullets: [t.feat_6_b1, t.feat_6_b2, t.feat_6_b3],
+      img: receiptImg,
+      imgAlt: t.feat_6_alt,
+      reverse: true,
+      accent: "#E3F2FD",
+      iconBg: "#1976D2",
+    },
+  ];
 
   return (
     <section id="features" className="py-20 lg:py-28 bg-white" style={{ fontFamily: "Manrope, sans-serif" }}>
@@ -262,7 +251,7 @@ export function Features() {
             className="inline-block bg-[#D8F3DC] text-[#2D6A4F] rounded-full px-4 py-1.5 mb-4"
             style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em" }}
           >
-            КАК ЭТО РАБОТАЕТ
+            {t.feat_badge}
           </div>
           <h2
             style={{
@@ -273,15 +262,15 @@ export function Features() {
               letterSpacing: "-0.02em",
             }}
           >
-            Всё что нужно для <br />
-            <span style={{ color: "#2D6A4F" }}>организованного питания</span>
+            {t.feat_h2_1} <br />
+            <span style={{ color: "#2D6A4F" }}>{t.feat_h2_accent}</span>
           </h2>
         </div>
 
         {/* Feature blocks */}
         <div className="space-y-20 lg:space-y-28">
           {features.map((f, i) => (
-            <FeatureBlock key={i} feature={f} index={i} />
+            <FeatureBlock key={i} feature={f} />
           ))}
         </div>
       </div>

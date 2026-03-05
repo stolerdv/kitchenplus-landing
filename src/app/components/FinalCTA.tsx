@@ -1,5 +1,7 @@
 import { useRef, useEffect, useState } from "react";
 import { CheckCircle2 } from "lucide-react";
+import { useLang } from "../../contexts/LangContext";
+import { openDownloadModal } from "./DownloadModal";
 
 function AppleLogo() {
   return (
@@ -14,6 +16,7 @@ function GooglePlayLogo() {
 }
 
 export function FinalCTA() {
+  const { t } = useLang();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -47,7 +50,6 @@ export function FinalCTA() {
           className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #D8F3DC 0%, transparent 70%)" }}
         />
-        {/* Scattered food emojis */}
         <div className="absolute top-8 left-[10%] text-4xl opacity-10 rotate-12">🥗</div>
         <div className="absolute top-16 right-[15%] text-3xl opacity-10 -rotate-6">🥦</div>
         <div className="absolute bottom-12 left-[20%] text-3xl opacity-10 rotate-6">🍎</div>
@@ -70,7 +72,7 @@ export function FinalCTA() {
         >
           <span className="w-2 h-2 bg-[#52B788] rounded-full animate-pulse" />
           <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.85)", fontWeight: 600 }}>
-            Бесплатно · Без кредитной карты
+            {t.cta_eyebrow}
           </span>
         </div>
 
@@ -84,51 +86,48 @@ export function FinalCTA() {
             marginBottom: "16px",
           }}
         >
-          Начни планировать питание <br />
-          <span style={{ color: "#A8DCBC" }}>семьи уже сегодня</span>
+          {t.cta_h2_1} <br />
+          <span style={{ color: "#A8DCBC" }}>{t.cta_h2_accent}</span>
         </h2>
 
         <p
           style={{ fontSize: "18px", color: "rgba(255,255,255,0.65)", lineHeight: 1.6, marginBottom: "36px" }}
         >
-          Бесплатно. Без кредитной карты. Первый план — за 5 минут.
+          {t.cta_sub}
         </p>
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
           <button
+            onClick={openDownloadModal}
             className="flex items-center justify-center gap-3 bg-white hover:bg-[#F0F7F4] text-[#1B2A1A] px-7 py-4 rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
             style={{ fontWeight: 700, fontSize: "16px" }}
           >
             <AppleLogo />
             <span>
-              <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>Скачать для</span>
+              <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>{t.cta_download_for}</span>
               iPhone
             </span>
           </button>
           <button
+            onClick={openDownloadModal}
             className="flex items-center justify-center gap-3 bg-white hover:bg-[#F0F7F4] text-[#1B2A1A] px-7 py-4 rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
             style={{ fontWeight: 700, fontSize: "16px" }}
           >
             <GooglePlayLogo />
             <span>
-              <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>Скачать для</span>
+              <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>{t.cta_download_for}</span>
               Android
             </span>
           </button>
         </div>
 
         {/* Trust badges */}
-        <div className="flex flex-wrap items-center gap-5 justify-center">
-          {[
-            "Бесплатно навсегда",
-            "Работает офлайн",
-            "3 языка: RU, EN, KZ",
-            "4.8★ в App Store",
-          ].map((t) => (
-            <div key={t} className="flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-4 justify-center">
+          {[t.cta_badge_1, t.cta_badge_2, t.cta_badge_3, t.cta_badge_4].map((badge) => (
+            <div key={badge} className="flex items-center gap-1.5">
               <CheckCircle2 size={14} color="#52B788" />
-              <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.65)" }}>{t}</span>
+              <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.65)" }}>{badge}</span>
             </div>
           ))}
         </div>

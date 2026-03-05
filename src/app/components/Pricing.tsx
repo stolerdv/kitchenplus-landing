@@ -1,110 +1,20 @@
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { Check, Zap, Crown, Gift } from "lucide-react";
 import type { Currency } from "../../hooks/useRegion";
+import { useLang } from "../../contexts/LangContext";
 
-// Цены по валютам — меняй здесь когда нужно скорректировать суммы
-// proYearly / premiumYearly — цена в месяц при оплате за год (для отображения "X ₽/мес")
-// proYearTotal / premiumYearTotal — итоговая сумма за год (для строки "X ₽/год")
 const PRICES: Record<Currency, { proMonthly: number; proYearly: number; proYearTotal: number; premiumMonthly: number; premiumYearly: number; premiumYearTotal: number; symbol: string }> = {
   RUB: { proMonthly: 499,   proYearly: 416,  proYearTotal: 4990,  premiumMonthly: 1999,  premiumYearly: 1666, premiumYearTotal: 19990, symbol: "₽" },
   KZT: { proMonthly: 1290,  proYearly: 1083, proYearTotal: 12990, premiumMonthly: 4990,  premiumYearly: 4166, premiumYearTotal: 49990, symbol: "₸" },
   USD: { proMonthly: 4.99,  proYearly: 4.16, proYearTotal: 49.9,  premiumMonthly: 19.99, premiumYearly: 16.66, premiumYearTotal: 199.9, symbol: "$" },
 };
 
-const getPlans = (currency: Currency) => {
-  const p = PRICES[currency];
-  return [
-  {
-    id: "free",
-    icon: <Gift size={22} />,
-    name: "Бесплатно",
-    desc: "Для тех, кто хочет попробовать",
-    priceMonthly: 0,
-    priceYearly: 0,
-    currency: p.symbol,
-    period: "навсегда",
-    color: "#F7F3EE",
-    border: "#E8E4DC",
-    iconBg: "#D8F3DC",
-    iconColor: "#2D6A4F",
-    cta: "Начать бесплатно",
-    ctaBg: "#F7F3EE",
-    ctaText: "#1B2A1A",
-    ctaBorder: "#D0CBC0",
-    features: [
-      "1 семья / группа (до 5 человек)",
-      "Список покупок на 7 дней",
-      "До 10 собственных рецептов",
-      "3 типа приёмов пищи",
-      "Каталог рецептов (без видео)",
-      "Базовый КБЖУ",
-    ],
-  },
-  {
-    id: "pro",
-    icon: <Zap size={22} />,
-    name: "Pro",
-    desc: "Для активных семей и специалистов",
-    priceMonthly: p.proMonthly,
-    priceYearly: p.proYearly,
-    currency: p.symbol,
-    period: "/мес",
-    popular: true,
-    color: "#1B2A1A",
-    border: "#2D6A4F",
-    iconBg: "#2D6A4F",
-    iconColor: "#ffffff",
-    cta: "Попробовать Pro",
-    ctaBg: "#2D6A4F",
-    ctaText: "#ffffff",
-    ctaBorder: "transparent",
-    yearNote: `${p.proYearTotal.toLocaleString("ru-RU")} ${p.symbol}/год`,
-    features: [
-      "До 5 семей / групп (до 10 человек каждая)",
-      "Список покупок на 31 день",
-      "До 50 собственных рецептов",
-      "Все 9 типов приёмов пищи",
-      "До 3 календарей (для клиентов)",
-      "Видео-рецепты",
-      "Комментарии к рецептам",
-      "6 иконок для мест хранения",
-    ],
-  },
-  {
-    id: "premium",
-    icon: <Crown size={22} />,
-    name: "Premium",
-    desc: "Для нутрициологов и активных пользователей",
-    priceMonthly: p.premiumMonthly,
-    priceYearly: p.premiumYearly,
-    currency: p.symbol,
-    period: "/мес",
-    color: "#FFFBF4",
-    border: "#F4A235",
-    iconBg: "#FFF3E0",
-    iconColor: "#E07A3D",
-    cta: "Выбрать Premium",
-    ctaBg: "#E07A3D",
-    ctaText: "#ffffff",
-    ctaBorder: "transparent",
-    yearNote: `${p.premiumYearTotal.toLocaleString("ru-RU")} ${p.symbol}/год`,
-    features: [
-      "До 20 семей / групп (неограниченно)",
-      "До 250 собственных рецептов",
-      "До 10 календарей",
-      "9 иконок для мест хранения",
-      "Приоритетная поддержка",
-      "AI-анализ чеков (неограниченно)",
-    ],
-  },
-];
-};
-
 export function Pricing({ currency }: { currency: Currency }) {
+  const { t } = useLang();
   const [yearly, setYearly] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
-  const plans = getPlans(currency);
+  const p = PRICES[currency];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -116,6 +26,92 @@ export function Pricing({ currency }: { currency: Currency }) {
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
+
+  const plans = [
+    {
+      id: "free",
+      icon: <Gift size={22} />,
+      name: t.price_free_name,
+      desc: t.price_free_desc,
+      priceMonthly: 0,
+      priceYearly: 0,
+      currency: p.symbol,
+      period: t.price_period_forever,
+      color: "#F7F3EE",
+      border: "#E8E4DC",
+      iconBg: "#D8F3DC",
+      iconColor: "#2D6A4F",
+      cta: t.price_free_cta,
+      ctaBg: "#F7F3EE",
+      ctaText: "#1B2A1A",
+      ctaBorder: "#D0CBC0",
+      features: [
+        t.price_free_f1,
+        t.price_free_f2,
+        t.price_free_f3,
+        t.price_free_f4,
+        t.price_free_f5,
+        t.price_free_f6,
+      ],
+    },
+    {
+      id: "pro",
+      icon: <Zap size={22} />,
+      name: "Pro",
+      desc: t.price_pro_desc,
+      priceMonthly: p.proMonthly,
+      priceYearly: p.proYearly,
+      currency: p.symbol,
+      period: t.price_period_month,
+      popular: true,
+      color: "#1B2A1A",
+      border: "#2D6A4F",
+      iconBg: "#2D6A4F",
+      iconColor: "#ffffff",
+      cta: t.price_pro_cta,
+      ctaBg: "#2D6A4F",
+      ctaText: "#ffffff",
+      ctaBorder: "transparent",
+      yearNote: `${p.proYearTotal.toLocaleString("ru-RU")} ${p.symbol}${t.price_year_suffix}`,
+      features: [
+        t.price_pro_f1,
+        t.price_pro_f2,
+        t.price_pro_f3,
+        t.price_pro_f4,
+        t.price_pro_f5,
+        t.price_pro_f6,
+        t.price_pro_f7,
+        t.price_pro_f8,
+      ],
+    },
+    {
+      id: "premium",
+      icon: <Crown size={22} />,
+      name: "Premium",
+      desc: t.price_prem_desc,
+      priceMonthly: p.premiumMonthly,
+      priceYearly: p.premiumYearly,
+      currency: p.symbol,
+      period: t.price_period_month,
+      color: "#FFFBF4",
+      border: "#F4A235",
+      iconBg: "#FFF3E0",
+      iconColor: "#E07A3D",
+      cta: t.price_prem_cta,
+      ctaBg: "#E07A3D",
+      ctaText: "#ffffff",
+      ctaBorder: "transparent",
+      yearNote: `${p.premiumYearTotal.toLocaleString("ru-RU")} ${p.symbol}${t.price_year_suffix}`,
+      features: [
+        t.price_prem_f1,
+        t.price_prem_f2,
+        t.price_prem_f3,
+        t.price_prem_f4,
+        t.price_prem_f5,
+        t.price_prem_f6,
+      ],
+    },
+  ];
 
   return (
     <section
@@ -138,7 +134,7 @@ export function Pricing({ currency }: { currency: Currency }) {
             className="inline-block bg-[#D8F3DC] text-[#2D6A4F] rounded-full px-4 py-1.5 mb-4"
             style={{ fontSize: "12px", fontWeight: 700, letterSpacing: "0.08em" }}
           >
-            ТАРИФЫ
+            {t.price_badge}
           </div>
           <h2
             style={{
@@ -150,14 +146,14 @@ export function Pricing({ currency }: { currency: Currency }) {
               marginBottom: "12px",
             }}
           >
-            Начни бесплатно, расти <br />
-            <span style={{ color: "#2D6A4F" }}>без ограничений</span>
+            {t.price_h2_1} <br />
+            <span style={{ color: "#2D6A4F" }}>{t.price_h2_accent}</span>
           </h2>
 
           {/* Toggle */}
           <div className="flex items-center justify-center gap-3 mt-6">
             <span style={{ fontSize: "15px", color: yearly ? "#7A7A6A" : "#1B2A1A", fontWeight: 600 }}>
-              Ежемесячно
+              {t.price_monthly}
             </span>
             <button
               onClick={() => setYearly(!yearly)}
@@ -170,7 +166,7 @@ export function Pricing({ currency }: { currency: Currency }) {
               />
             </button>
             <span style={{ fontSize: "15px", color: yearly ? "#1B2A1A" : "#7A7A6A", fontWeight: 600 }}>
-              Ежегодно{" "}
+              {t.price_yearly}{" "}
               <span
                 className="ml-1 px-1.5 py-0.5 rounded"
                 style={{ background: "#D8F3DC", color: "#2D6A4F", fontSize: "12px", fontWeight: 700 }}
@@ -206,7 +202,7 @@ export function Pricing({ currency }: { currency: Currency }) {
                     className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full"
                     style={{ background: "#2D6A4F", color: "white", fontSize: "12px", fontWeight: 700, letterSpacing: "0.05em" }}
                   >
-                    ПОПУЛЯРНЫЙ
+                    {t.price_popular}
                   </div>
                 )}
 
@@ -247,7 +243,7 @@ export function Pricing({ currency }: { currency: Currency }) {
                       </span>
                     )}
                     <span style={{ fontSize: "14px", color: plan.popular ? "rgba(255,255,255,0.55)" : "#7A7A6A", marginBottom: "4px" }}>
-                      {price === 0 ? " ₽ " + plan.period : plan.period}
+                      {plan.period}
                     </span>
                   </div>
                   {yearly && plan.yearNote && (
