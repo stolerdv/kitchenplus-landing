@@ -105,8 +105,8 @@ export function FinalCTA() {
           >
             <AppleLogo />
             <span>
-              <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>{t.cta_download_for}</span>
-              iPhone
+              <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>Скачать в</span>
+              App Store
             </span>
           </button>
           <button
@@ -116,8 +116,8 @@ export function FinalCTA() {
           >
             <GooglePlayLogo />
             <span>
-              <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>{t.cta_download_for}</span>
-              Android
+              <span style={{ fontSize: "11px", display: "block", opacity: 0.6, lineHeight: 1, fontWeight: 500 }}>Скачать в</span>
+              Google Play
             </span>
           </button>
         </div>

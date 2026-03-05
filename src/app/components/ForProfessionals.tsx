@@ -55,6 +55,7 @@ export function ForProfessionals() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text */}
           <div
+            className="order-2 lg:order-1 min-w-0"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateX(0)" : "translateX(-40px)",
@@ -125,7 +126,7 @@ export function ForProfessionals() {
             </div>
 
             {/* Benefits */}
-            <div className="grid grid-cols-2 gap-3">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {benefits.map((b, i) => (
                 <div
                   key={i}
@@ -149,6 +150,7 @@ export function ForProfessionals() {
 
           {/* Right: Image */}
           <div
+            className="order-1 lg:order-2"
             style={{
               opacity: visible ? 1 : 0,
               transform: visible ? "translateX(0)" : "translateX(40px)",
@@ -158,7 +160,7 @@ export function ForProfessionals() {
           >
             <div className="relative">
               {/* Main image */}
-              <div className="rounded-3xl overflow-hidden shadow-2xl" style={{ aspectRatio: "4/5" }}>
+              <div className="rounded-3xl overflow-hidden shadow-2xl max-h-72 sm:max-h-none" style={{ aspectRatio: "4/5" }}>
                 <img
                   src={professionalImg}
                   alt="Нутрициолог"

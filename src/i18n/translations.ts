@@ -158,6 +158,12 @@ export type Translations = {
   price_prem_f4: string;
   price_prem_f5: string;
   price_prem_f6: string;
+  price_pro_f9: string;
+  price_pro_f10: string;
+  price_pro_f11: string;
+  price_pro_f12: string;
+  price_prem_header: string;
+  price_prem_f7: string;
 
   // Testimonials
   test_badge: string;
@@ -229,8 +235,8 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     hero_trust_1: "Встроенный голосовой помощник",
     hero_trust_2: "Поддержка любых диет",
     hero_trust_3: "Работает офлайн",
-    hero_social_thousands: "Тысячи",
-    hero_social_use: "семей уже используют",
+    hero_social_thousands: "Присоединяйтесь к",
+    hero_social_use: "тем, кто уже планирует питание",
     hero_next_meal: "Следующий приём",
     hero_lunch: "Обед в 13:00",
     hero_shopping_list: "Список покупок",
@@ -366,6 +372,12 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     price_prem_f4: "9 иконок для мест хранения",
     price_prem_f5: "Приоритетная поддержка",
     price_prem_f6: "AI-анализ чеков (неограниченно)",
+    price_pro_f9: "AI-ассистент по питанию",
+    price_pro_f10: "AI-сканер чеков",
+    price_pro_f11: "Аналитика питания и КБЖУ",
+    price_pro_f12: "Экспорт данных",
+    price_prem_header: "Все преимущества Pro и:",
+    price_prem_f7: "Расширенная аналитика и отчёты",
 
     test_badge: "ОТЗЫВЫ",
     test_h2_1: "Присоединяйтесь к тем, кто уже",
@@ -432,8 +444,8 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     hero_trust_1: "Built-in voice assistant",
     hero_trust_2: "Supports any diet",
     hero_trust_3: "Works offline",
-    hero_social_thousands: "Thousands of",
-    hero_social_use: "families already use it",
+    hero_social_thousands: "Join those",
+    hero_social_use: "already planning meals",
     hero_next_meal: "Next meal",
     hero_lunch: "Lunch at 1:00 PM",
     hero_shopping_list: "Shopping list",
@@ -569,6 +581,12 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     price_prem_f4: "9 storage location icons",
     price_prem_f5: "Priority support",
     price_prem_f6: "AI receipt scanning (unlimited)",
+    price_pro_f9: "AI nutrition assistant",
+    price_pro_f10: "AI receipt scanner",
+    price_pro_f11: "Nutrition & macros analytics",
+    price_pro_f12: "Data export",
+    price_prem_header: "All Pro advantages and:",
+    price_prem_f7: "Advanced analytics & reports",
 
     test_badge: "REVIEWS",
     test_h2_1: "Join those who already",
@@ -635,8 +653,8 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     hero_trust_1: "Кіріктірілген дауыстық көмекші",
     hero_trust_2: "Кез келген диетаны қолдайды",
     hero_trust_3: "Офлайн жұмыс істейді",
-    hero_social_thousands: "Мыңдаған",
-    hero_social_use: "отбасы пайдаланады",
+    hero_social_thousands: "Қосылыңыз",
+    hero_social_use: "тамақтануын жоспарлайтындарға",
     hero_next_meal: "Келесі тамақ",
     hero_lunch: "Түскі ас 13:00-де",
     hero_shopping_list: "Сатып алу тізімі",
@@ -772,6 +790,12 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     price_prem_f4: "9 сақтау орны белгішесі",
     price_prem_f5: "Басымдықты қолдау",
     price_prem_f6: "AI чек талдауы (шексіз)",
+    price_pro_f9: "AI тамақтану ассистенті",
+    price_pro_f10: "AI чек сканері",
+    price_pro_f11: "Тамақтану аналитикасы",
+    price_pro_f12: "Деректерді экспорттау",
+    price_prem_header: "Pro артықшылықтары және:",
+    price_prem_f7: "Кеңейтілген аналитика мен есептер",
 
     test_badge: "ПІКІРЛЕР",
     test_h2_1: "KitchenPlus-пен тамақтануды",

@@ -11,7 +11,7 @@ const PRICES: Record<Currency, { proMonthly: number; proYearly: number; proYearT
 
 export function Pricing({ currency }: { currency: Currency }) {
   const { t } = useLang();
-  const [yearly, setYearly] = useState(false);
+  const [yearly, setYearly] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
   const p = PRICES[currency];
@@ -82,6 +82,10 @@ export function Pricing({ currency }: { currency: Currency }) {
         t.price_pro_f6,
         t.price_pro_f7,
         t.price_pro_f8,
+        t.price_pro_f9,
+        t.price_pro_f10,
+        t.price_pro_f11,
+        t.price_pro_f12,
       ],
     },
     {
@@ -102,6 +106,7 @@ export function Pricing({ currency }: { currency: Currency }) {
       ctaText: "#ffffff",
       ctaBorder: "transparent",
       yearNote: `${p.premiumYearTotal.toLocaleString("ru-RU")} ${p.symbol}${t.price_year_suffix}`,
+      featuresHeader: t.price_prem_header,
       features: [
         t.price_prem_f1,
         t.price_prem_f2,
@@ -109,6 +114,7 @@ export function Pricing({ currency }: { currency: Currency }) {
         t.price_prem_f4,
         t.price_prem_f5,
         t.price_prem_f6,
+        t.price_prem_f7,
       ],
     },
   ];
@@ -273,6 +279,11 @@ export function Pricing({ currency }: { currency: Currency }) {
 
                 {/* Features */}
                 <div className="space-y-2.5">
+                  {"featuresHeader" in plan && plan.featuresHeader && (
+                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#E07A3D", marginBottom: "4px" }}>
+                      {plan.featuresHeader}
+                    </p>
+                  )}
                   {plan.features.map((f) => (
                     <div key={f} className="flex items-start gap-2.5">
                       <div
