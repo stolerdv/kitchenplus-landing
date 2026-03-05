@@ -24,6 +24,7 @@ export default function App() {
           fontFamily: "Manrope, sans-serif",
           WebkitFontSmoothing: "antialiased",
           MozOsxFontSmoothing: "grayscale",
+          overflowX: "hidden",
         }}
       >
         <Navbar />

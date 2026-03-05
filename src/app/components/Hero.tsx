@@ -154,8 +154,8 @@ export function Hero() {
           <div className="relative flex justify-center lg:justify-end">
             <div
               ref={imgRef}
-              className="relative transition-transform duration-200 ease-out"
-              style={{ maxWidth: "480px", width: "100%" }}
+              className="relative transition-transform duration-200 ease-out w-[78%] sm:w-full"
+              style={{ maxWidth: "480px" }}
             >
               {/* Phone frame */}
               <div
