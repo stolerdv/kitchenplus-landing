@@ -166,14 +166,14 @@ export function PainPoints() {
 
           <div
             ref={scrollRef}
-            className="mobile-snap-scroll px-4"
-            style={{ paddingRight: "16px" }}
+            className="mobile-snap-scroll"
+            style={{ paddingLeft: "10vw", paddingRight: "10vw", scrollPaddingLeft: "10vw" }}
           >
             {pains.map((pain, i) => (
               <div
                 key={i}
                 className="mobile-snap-item"
-                style={{ width: "78vw", maxWidth: "300px" }}
+                style={{ width: "80vw" }}
               >
                 <PainCard
                   title={pain.title}
@@ -190,8 +190,7 @@ export function PainPoints() {
               className="mobile-snap-item rounded-2xl p-5 border-2 border-dashed border-[#B7DEC9] flex flex-col items-center justify-center text-center"
               style={{
                 background: "transparent",
-                width: "78vw",
-                maxWidth: "300px",
+                width: "80vw",
                 minHeight: "180px",
               }}
             >

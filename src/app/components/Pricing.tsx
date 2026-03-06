@@ -51,7 +51,7 @@ export function Pricing({ currency }: { currency: Currency }) {
     const el = scrollRef.current;
     if (!el || window.innerWidth >= 768) return;
     setTimeout(() => {
-      const approxCardWidth = el.offsetWidth * 0.82 + 12;
+      const approxCardWidth = el.offsetWidth * 0.8 + 12;
       el.scrollTo({ left: approxCardWidth, behavior: "smooth" });
     }, 500);
   }, [visible]);
@@ -60,7 +60,7 @@ export function Pricing({ currency }: { currency: Currency }) {
     const el = scrollRef.current;
     if (!el) return;
     const handleScroll = () => {
-      const approxCardWidth = el.offsetWidth * 0.82 + 12;
+      const approxCardWidth = el.offsetWidth * 0.8 + 12;
       const index = Math.round(el.scrollLeft / approxCardWidth);
       setActiveIndex(Math.min(Math.max(index, 0), 2));
     };
@@ -200,7 +200,8 @@ export function Pricing({ currency }: { currency: Currency }) {
         <div className="md:hidden">
           <div
             ref={scrollRef}
-            className="mobile-snap-scroll px-4"
+            className="mobile-snap-scroll"
+            style={{ paddingLeft: "10vw", paddingRight: "10vw", scrollPaddingLeft: "10vw" }}
           >
             {plans.map((plan, i) => {
               const price = yearly ? plan.priceYearly : plan.priceMonthly;
@@ -209,8 +210,7 @@ export function Pricing({ currency }: { currency: Currency }) {
                   key={plan.id}
                   className="mobile-snap-item relative rounded-3xl flex flex-col"
                   style={{
-                    width: "82vw",
-                    maxWidth: "320px",
+                    width: "80vw",
                     background: plan.color,
                     border: `2px solid ${plan.border}`,
                     padding: "24px 20px 20px",
@@ -323,7 +323,6 @@ export function Pricing({ currency }: { currency: Currency }) {
                 </div>
               );
             })}
-            <div style={{ width: "16px", flexShrink: 0 }} />
           </div>
 
           <Dots count={3} active={activeIndex} />

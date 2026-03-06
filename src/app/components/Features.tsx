@@ -153,7 +153,6 @@ function MobileFeatureCard({ feature, index }: { feature: Feature; index: number
       className="mobile-snap-item rounded-3xl overflow-hidden flex flex-col"
       style={{
         width: "80vw",
-        maxWidth: "300px",
         background: "#fff",
         border: `1.5px solid ${feature.accent}`,
         boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
@@ -396,13 +395,12 @@ export function Features() {
 
           <div
             ref={scrollRef}
-            className="mobile-snap-scroll px-4"
+            className="mobile-snap-scroll"
+            style={{ paddingLeft: "10vw", paddingRight: "10vw", scrollPaddingLeft: "10vw" }}
           >
             {features.map((f, i) => (
               <MobileFeatureCard key={i} feature={f} index={i} />
             ))}
-            {/* End spacer */}
-            <div style={{ width: "16px", flexShrink: 0 }} />
           </div>
 
           <Dots count={6} active={activeIndex} />

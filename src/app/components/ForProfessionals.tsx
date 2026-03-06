@@ -64,7 +64,8 @@ export function ForProfessionals() {
           <img
             src={professionalImg}
             alt="Нутрициолог"
-            className="w-full h-full object-cover object-top"
+            className="w-full h-full object-cover"
+            style={{ objectPosition: "center 25%" }}
           />
           {/* Dark gradient overlay */}
           <div
@@ -74,10 +75,10 @@ export function ForProfessionals() {
           {/* Badge over image */}
           <div
             className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5"
-            style={{ background: "rgba(82,183,136,0.2)", border: "1px solid rgba(82,183,136,0.4)", backdropFilter: "blur(8px)" }}
+            style={{ background: "rgba(0,0,0,0.45)", border: "1px solid rgba(255,255,255,0.25)", backdropFilter: "blur(10px)" }}
           >
-            <Sparkles size={11} color="#52B788" />
-            <span style={{ fontSize: "11px", color: "#52B788", fontWeight: 700, letterSpacing: "0.07em" }}>
+            <Sparkles size={11} color="white" />
+            <span style={{ fontSize: "11px", color: "white", fontWeight: 700, letterSpacing: "0.07em" }}>
               {t.prof_badge}
             </span>
           </div>

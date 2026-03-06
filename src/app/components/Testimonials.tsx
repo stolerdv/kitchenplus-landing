@@ -118,15 +118,15 @@ export function Testimonials() {
         <div className="md:hidden">
           <div
             ref={scrollRef}
-            className="mobile-snap-scroll px-4"
+            className="mobile-snap-scroll"
+            style={{ paddingLeft: "10vw", paddingRight: "10vw", scrollPaddingLeft: "10vw" }}
           >
             {testimonials.map((testimonial, i) => (
               <div
                 key={i}
                 className="mobile-snap-item rounded-2xl p-5 border border-[#E8E4DC]"
                 style={{
-                  width: "85vw",
-                  maxWidth: "320px",
+                  width: "80vw",
                   background: "#FAFAFA",
                   opacity: visible ? 1 : 0,
                   transform: visible ? "translateY(0)" : "translateY(24px)",
@@ -165,7 +165,6 @@ export function Testimonials() {
                 </div>
               </div>
             ))}
-            <div style={{ width: "16px", flexShrink: 0 }} />
           </div>
 
           <Dots count={4} active={activeIndex} />
