@@ -204,6 +204,46 @@ export function Hero() {
             </div>
           </div>
 
+          {/* Floating card — left */}
+          <div
+            className="absolute bg-white rounded-2xl shadow-xl p-2.5"
+            style={{
+              left: "8px",
+              top: "22%",
+              minWidth: "110px",
+              animation: "float 4s ease-in-out infinite",
+              zIndex: 10,
+            }}
+          >
+            <div className="flex items-center gap-1.5">
+              <div className="w-6 h-6 bg-[#D8F3DC] rounded-lg flex items-center justify-center text-sm flex-shrink-0">🥗</div>
+              <div>
+                <p style={{ fontSize: "8px", color: "#888" }}>{t.hero_next_meal}</p>
+                <p style={{ fontSize: "10px", fontWeight: 700, color: "#1B2A1A", whiteSpace: "nowrap" }}>{t.hero_lunch}</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Floating card — right */}
+          <div
+            className="absolute bg-white rounded-2xl shadow-xl p-2.5"
+            style={{
+              right: "8px",
+              top: "48%",
+              minWidth: "110px",
+              animation: "float 4s ease-in-out infinite 1.5s",
+              zIndex: 10,
+            }}
+          >
+            <div className="flex items-center gap-1.5">
+              <div className="w-6 h-6 bg-[#FFF3E0] rounded-lg flex items-center justify-center text-sm flex-shrink-0">🛒</div>
+              <div>
+                <p style={{ fontSize: "8px", color: "#888" }}>{t.hero_shopping_list}</p>
+                <p style={{ fontSize: "10px", fontWeight: 700, color: "#1B2A1A", whiteSpace: "nowrap" }}>{t.hero_products}</p>
+              </div>
+            </div>
+          </div>
+
         </div>
 
         {/* CTA Buttons — full width, premium feel */}
