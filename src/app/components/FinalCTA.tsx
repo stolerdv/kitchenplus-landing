@@ -1,5 +1,5 @@
-import { useRef, useEffect, useState } from "react";
-import { CheckCircle2 } from "lucide-react";
+import React, { useRef, useEffect, useState } from "react";
+import { CheckCircle2, Utensils, Leaf, Apple, Carrot } from "lucide-react";
 import { useLang } from "../../contexts/LangContext";
 import { openDownloadModal } from "./DownloadModal";
 
@@ -49,11 +49,11 @@ export function FinalCTA() {
           className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #D8F3DC 0%, transparent 70%)" }}
         />
-        {/* Food emoji decorations — hidden on small mobile to reduce noise */}
-        <div className="hidden sm:block absolute top-8 left-[10%] text-4xl opacity-10 rotate-12">🥗</div>
-        <div className="hidden sm:block absolute top-16 right-[15%] text-3xl opacity-10 -rotate-6">🥦</div>
-        <div className="hidden sm:block absolute bottom-12 left-[20%] text-3xl opacity-10 rotate-6">🍎</div>
-        <div className="hidden sm:block absolute bottom-8 right-[10%] text-4xl opacity-10 -rotate-12">🥕</div>
+        {/* Decorative icons — hidden on mobile */}
+        <div className="hidden sm:block absolute top-8 left-[10%] opacity-10 rotate-12"><Utensils size={44} color="white" strokeWidth={1.2} /></div>
+        <div className="hidden sm:block absolute top-16 right-[15%] opacity-10 -rotate-6"><Leaf size={36} color="white" strokeWidth={1.2} /></div>
+        <div className="hidden sm:block absolute bottom-12 left-[20%] opacity-10 rotate-6"><Apple size={36} color="white" strokeWidth={1.2} /></div>
+        <div className="hidden sm:block absolute bottom-8 right-[10%] opacity-10 -rotate-12"><Carrot size={44} color="white" strokeWidth={1.2} /></div>
       </div>
 
       <div

@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { Leaf, Utensils, Star, Globe } from "lucide-react";
 import { useLang } from "../../contexts/LangContext";
 import React from "react";
 
@@ -57,10 +58,10 @@ export function Stats() {
   }, []);
 
   const stats = [
-    { value: 500, suffix: "+", label: t.stats_ingredients, icon: "🥦", color: "#D8F3DC", iconColor: "#2D6A4F" },
-    { value: 1000, suffix: "+", label: t.stats_recipes, icon: "🍽️", color: "#FFF3E0", iconColor: "#E07A3D" },
-    { value: 5.0, suffix: "★", label: t.stats_rating, icon: "⭐", color: "#FFF9E6", iconColor: "#F4A235" },
-    { value: 3, suffix: "", label: t.stats_languages, icon: "🌍", color: "#E3F2FD", iconColor: "#1976D2" },
+    { value: 500, suffix: "+", label: t.stats_ingredients, icon: <Leaf size={22} color="#2D6A4F" />, color: "#D8F3DC" },
+    { value: 1000, suffix: "+", label: t.stats_recipes, icon: <Utensils size={22} color="#E07A3D" />, color: "#FFF3E0" },
+    { value: 5.0, suffix: "★", label: t.stats_rating, icon: <Star size={22} color="#F4A235" />, color: "#FFF9E6" },
+    { value: 3, suffix: "", label: t.stats_languages, icon: <Globe size={22} color="#1976D2" />, color: "#E3F2FD" },
   ];
 
   return (
@@ -83,7 +84,7 @@ export function Stats() {
               }}
             >
               <div
-                className="w-12 h-12 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
+                className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0"
                 style={{ background: s.color }}
               >
                 {s.icon}
@@ -112,7 +113,7 @@ export function Stats() {
               }}
             >
               <div
-                className="w-10 h-10 rounded-xl flex items-center justify-center text-xl mb-3"
+                className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
                 style={{ background: "rgba(255,255,255,0.7)" }}
               >
                 {s.icon}

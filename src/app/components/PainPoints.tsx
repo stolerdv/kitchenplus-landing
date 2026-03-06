@@ -1,25 +1,28 @@
-import { useRef, useEffect, useState } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { Clock, ShoppingCart, Users, BarChart2, FileText, Sparkles } from "lucide-react";
 import { useLang } from "../../contexts/LangContext";
 
-const PAIN_COLORS = [
-  { color: "#FFF3E0", border: "#FFD9A0", emoji: "😩" },
-  { color: "#FFF0F0", border: "#FFCDD2", emoji: "🛒" },
-  { color: "#F3F0FF", border: "#D1C4E9", emoji: "👨‍👩‍👧" },
-  { color: "#E8F5E9", border: "#C8E6C9", emoji: "📊" },
-  { color: "#E3F2FD", border: "#BBDEFB", emoji: "📄" },
+const PAIN_COLORS: { color: string; border: string; icon: React.ReactNode; iconColor: string }[] = [
+  { color: "#FFF3E0", border: "#FFD9A0", icon: <Clock size={22} color="#C8640A" />, iconColor: "#C8640A" },
+  { color: "#FFF0F0", border: "#FFCDD2", icon: <ShoppingCart size={22} color="#C62828" />, iconColor: "#C62828" },
+  { color: "#F3F0FF", border: "#D1C4E9", icon: <Users size={22} color="#6A3EA1" />, iconColor: "#6A3EA1" },
+  { color: "#E8F5E9", border: "#C8E6C9", icon: <BarChart2 size={22} color="#2E7D32" />, iconColor: "#2E7D32" },
+  { color: "#E3F2FD", border: "#BBDEFB", icon: <FileText size={22} color="#1565C0" />, iconColor: "#1565C0" },
 ];
 
 function PainCard({
   title,
   desc,
-  emoji,
+  icon,
+  iconColor,
   color,
   border,
   index,
 }: {
   title: string;
   desc: string;
-  emoji: string;
+  icon: React.ReactNode;
+  iconColor: string;
   color: string;
   border: string;
   index: number;
@@ -48,7 +51,12 @@ function PainCard({
         transitionDelay: `${index * 80}ms`,
       }}
     >
-      <div className="text-3xl mb-3">{emoji}</div>
+      <div
+        className="w-10 h-10 rounded-xl flex items-center justify-center mb-3"
+        style={{ background: "rgba(0,0,0,0.07)" }}
+      >
+        {icon}
+      </div>
       <h3
         style={{ fontSize: "16px", fontWeight: 700, color: "#1B2A1A", lineHeight: 1.3, marginBottom: "6px" }}
       >
@@ -178,7 +186,8 @@ export function PainPoints() {
                 <PainCard
                   title={pain.title}
                   desc={pain.desc}
-                  emoji={PAIN_COLORS[i].emoji}
+                  icon={PAIN_COLORS[i].icon}
+                  iconColor={PAIN_COLORS[i].iconColor}
                   color={PAIN_COLORS[i].color}
                   border={PAIN_COLORS[i].border}
                   index={i}
@@ -194,7 +203,9 @@ export function PainPoints() {
                 minHeight: "180px",
               }}
             >
-              <div className="text-4xl mb-2">✨</div>
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center mb-2" style={{ background: "rgba(45,106,79,0.12)" }}>
+                <Sparkles size={20} color="#2D6A4F" />
+              </div>
               <p style={{ fontSize: "15px", fontWeight: 700, color: "#2D6A4F" }}>
                 {t.pain_cta}
               </p>
@@ -213,7 +224,8 @@ export function PainPoints() {
               key={i}
               title={pain.title}
               desc={pain.desc}
-              emoji={PAIN_COLORS[i].emoji}
+              icon={PAIN_COLORS[i].icon}
+              iconColor={PAIN_COLORS[i].iconColor}
               color={PAIN_COLORS[i].color}
               border={PAIN_COLORS[i].border}
               index={i}

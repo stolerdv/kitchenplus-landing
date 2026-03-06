@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { CheckCircle2, Star, ChevronDown } from "lucide-react";
+import { CheckCircle2, Star, ChevronDown, Utensils, ShoppingCart, Users } from "lucide-react";
 import { useLang } from "../../contexts/LangContext";
 import { openDownloadModal } from "./DownloadModal";
 
@@ -216,7 +216,7 @@ export function Hero() {
             }}
           >
             <div className="flex items-center gap-1.5">
-              <div className="w-6 h-6 bg-[#D8F3DC] rounded-lg flex items-center justify-center text-sm flex-shrink-0">🥗</div>
+              <div className="w-6 h-6 bg-[#D8F3DC] rounded-lg flex items-center justify-center flex-shrink-0"><Utensils size={13} color="#2D6A4F" strokeWidth={2} /></div>
               <div>
                 <p style={{ fontSize: "8px", color: "#888" }}>{t.hero_next_meal}</p>
                 <p style={{ fontSize: "10px", fontWeight: 700, color: "#1B2A1A", whiteSpace: "nowrap" }}>{t.hero_lunch}</p>
@@ -236,7 +236,7 @@ export function Hero() {
             }}
           >
             <div className="flex items-center gap-1.5">
-              <div className="w-6 h-6 bg-[#FFF3E0] rounded-lg flex items-center justify-center text-sm flex-shrink-0">🛒</div>
+              <div className="w-6 h-6 bg-[#FFF3E0] rounded-lg flex items-center justify-center flex-shrink-0"><ShoppingCart size={13} color="#E07A3D" strokeWidth={2} /></div>
               <div>
                 <p style={{ fontSize: "8px", color: "#888" }}>{t.hero_shopping_list}</p>
                 <p style={{ fontSize: "10px", fontWeight: 700, color: "#1B2A1A", whiteSpace: "nowrap" }}>{t.hero_products}</p>
@@ -465,7 +465,7 @@ export function Hero() {
                 style={{ animation: "float 4s ease-in-out infinite" }}
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 md:w-8 md:h-8 bg-[#D8F3DC] rounded-xl flex items-center justify-center text-base">🥗</div>
+                  <div className="w-7 h-7 md:w-8 md:h-8 bg-[#D8F3DC] rounded-xl flex items-center justify-center"><Utensils size={15} color="#2D6A4F" strokeWidth={2} /></div>
                   <div>
                     <p style={{ fontSize: "9px", color: "#888" }}>{t.hero_next_meal}</p>
                     <p style={{ fontSize: "11px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_lunch}</p>
@@ -478,7 +478,7 @@ export function Hero() {
                 style={{ animation: "float 4s ease-in-out infinite 1.5s" }}
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-7 h-7 md:w-8 md:h-8 bg-[#FFF3E0] rounded-xl flex items-center justify-center text-base">🛒</div>
+                  <div className="w-7 h-7 md:w-8 md:h-8 bg-[#FFF3E0] rounded-xl flex items-center justify-center"><ShoppingCart size={15} color="#E07A3D" strokeWidth={2} /></div>
                   <div>
                     <p style={{ fontSize: "9px", color: "#888" }}>{t.hero_shopping_list}</p>
                     <p style={{ fontSize: "11px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_products}</p>
@@ -492,12 +492,8 @@ export function Hero() {
               >
                 <p style={{ fontSize: "10px", color: "#888" }}>{t.hero_whole_family}</p>
                 <div className="flex items-center gap-1 mt-1">
-                  <div className="flex -space-x-1">
-                    {["👨", "👩", "🧒"].map((e, i) => (
-                      <div key={i} className="w-6 h-6 rounded-full bg-[#D8F3DC] flex items-center justify-center text-xs">
-                        {e}
-                      </div>
-                    ))}
+                  <div className="w-7 h-7 rounded-xl bg-[#D8F3DC] flex items-center justify-center">
+                    <Users size={15} color="#2D6A4F" strokeWidth={2} />
                   </div>
                   <p style={{ fontSize: "11px", fontWeight: 700, color: "#2D6A4F" }}>{t.hero_family_count}</p>
                 </div>

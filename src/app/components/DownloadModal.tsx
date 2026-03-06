@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { X, Heart } from "lucide-react";
+import { X, Heart, Utensils, Mail } from "lucide-react";
 
 const listeners: Array<() => void> = [];
 
@@ -52,9 +52,9 @@ export function DownloadModal() {
           {/* Icon */}
           <div
             className="w-20 h-20 rounded-2xl flex items-center justify-center mb-4 shadow-lg"
-            style={{ background: "rgba(255,255,255,0.15)", fontSize: "40px" }}
+            style={{ background: "rgba(255,255,255,0.15)" }}
           >
-            🥗
+            <Utensils size={42} color="white" strokeWidth={1.5} />
           </div>
 
           <h3 style={{ fontSize: "22px", fontWeight: 800, color: "#fff", lineHeight: 1.2, marginBottom: "6px" }}>
@@ -115,7 +115,9 @@ export function DownloadModal() {
             </>
           ) : (
             <div className="py-2">
-              <div className="text-4xl mb-3">💌</div>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center mb-3 mx-auto" style={{ background: "#D8F3DC" }}>
+            <Mail size={24} color="#2D6A4F" />
+          </div>
               <p style={{ fontSize: "14px", color: "#5A5A4A", lineHeight: 1.65, marginBottom: "20px" }}>
                 Отлично! Как только приложение появится в маркетах — сразу напишем на <strong style={{ color: "#2D6A4F" }}>{email}</strong>
               </p>
