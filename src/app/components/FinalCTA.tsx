@@ -22,9 +22,7 @@ export function FinalCTA() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
       { threshold: 0.2 }
     );
     if (ref.current) observer.observe(ref.current);
@@ -34,10 +32,11 @@ export function FinalCTA() {
   return (
     <section
       id="download"
-      className="py-14 lg:py-28 relative overflow-hidden"
+      className="relative overflow-hidden"
       style={{
         background: "linear-gradient(135deg, #2D6A4F 0%, #1B5E3A 50%, #0F3D26 100%)",
         fontFamily: "Manrope, sans-serif",
+        padding: "64px 0",
       }}
     >
       {/* Decorative elements */}
@@ -50,15 +49,16 @@ export function FinalCTA() {
           className="absolute -bottom-24 -right-24 w-96 h-96 rounded-full opacity-10"
           style={{ background: "radial-gradient(circle, #D8F3DC 0%, transparent 70%)" }}
         />
-        <div className="absolute top-8 left-[10%] text-4xl opacity-10 rotate-12">🥗</div>
-        <div className="absolute top-16 right-[15%] text-3xl opacity-10 -rotate-6">🥦</div>
-        <div className="absolute bottom-12 left-[20%] text-3xl opacity-10 rotate-6">🍎</div>
-        <div className="absolute bottom-8 right-[10%] text-4xl opacity-10 -rotate-12">🥕</div>
+        {/* Food emoji decorations — hidden on small mobile to reduce noise */}
+        <div className="hidden sm:block absolute top-8 left-[10%] text-4xl opacity-10 rotate-12">🥗</div>
+        <div className="hidden sm:block absolute top-16 right-[15%] text-3xl opacity-10 -rotate-6">🥦</div>
+        <div className="hidden sm:block absolute bottom-12 left-[20%] text-3xl opacity-10 rotate-6">🍎</div>
+        <div className="hidden sm:block absolute bottom-8 right-[10%] text-4xl opacity-10 -rotate-12">🥕</div>
       </div>
 
       <div
         ref={ref}
-        className="relative max-w-4xl mx-auto px-4 sm:px-6 text-center"
+        className="relative max-w-4xl mx-auto px-5 sm:px-6 text-center"
         style={{
           opacity: visible ? 1 : 0,
           transform: visible ? "translateY(0)" : "translateY(30px)",
@@ -67,7 +67,7 @@ export function FinalCTA() {
       >
         {/* Eyebrow */}
         <div
-          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6"
+          className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-5"
           style={{ background: "rgba(255,255,255,0.12)", border: "1px solid rgba(255,255,255,0.2)" }}
         >
           <span className="w-2 h-2 bg-[#52B788] rounded-full animate-pulse" />
@@ -78,12 +78,12 @@ export function FinalCTA() {
 
         <h2
           style={{
-            fontSize: "clamp(30px, 5vw, 56px)",
+            fontSize: "clamp(28px, 7vw, 56px)",
             fontWeight: 800,
             color: "#FFFFFF",
             lineHeight: 1.1,
             letterSpacing: "-0.02em",
-            marginBottom: "16px",
+            marginBottom: "14px",
           }}
         >
           {t.cta_h2_1} <br />
@@ -91,17 +91,29 @@ export function FinalCTA() {
         </h2>
 
         <p
-          style={{ fontSize: "18px", color: "rgba(255,255,255,0.65)", lineHeight: 1.6, marginBottom: "36px" }}
+          style={{
+            fontSize: "clamp(15px, 4vw, 18px)",
+            color: "rgba(255,255,255,0.65)",
+            lineHeight: 1.6,
+            marginBottom: "32px",
+            maxWidth: "480px",
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
         >
           {t.cta_sub}
         </p>
 
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+        {/* CTA Buttons — full width on mobile, row on desktop */}
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mb-7 max-w-sm mx-auto sm:max-w-none">
           <button
             onClick={openDownloadModal}
-            className="flex items-center justify-center gap-3 bg-white hover:bg-[#F0F7F4] text-[#1B2A1A] px-7 py-4 rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
-            style={{ fontWeight: 700, fontSize: "16px" }}
+            className="flex items-center justify-center gap-3 bg-white hover:bg-[#F0F7F4] text-[#1B2A1A] rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 w-full sm:w-auto"
+            style={{
+              fontWeight: 700,
+              fontSize: "16px",
+              padding: "14px 28px",
+            }}
           >
             <AppleLogo />
             <span>
@@ -111,8 +123,12 @@ export function FinalCTA() {
           </button>
           <button
             onClick={openDownloadModal}
-            className="flex items-center justify-center gap-3 bg-white hover:bg-[#F0F7F4] text-[#1B2A1A] px-7 py-4 rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5"
-            style={{ fontWeight: 700, fontSize: "16px" }}
+            className="flex items-center justify-center gap-3 bg-white hover:bg-[#F0F7F4] text-[#1B2A1A] rounded-2xl transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5 active:scale-95 w-full sm:w-auto"
+            style={{
+              fontWeight: 700,
+              fontSize: "16px",
+              padding: "14px 28px",
+            }}
           >
             <GooglePlayLogo />
             <span>
@@ -123,11 +139,11 @@ export function FinalCTA() {
         </div>
 
         {/* Trust badges */}
-        <div className="flex flex-wrap items-center gap-4 justify-center">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2.5 justify-center">
           {[t.cta_badge_1, t.cta_badge_2, t.cta_badge_3, t.cta_badge_4].map((badge) => (
             <div key={badge} className="flex items-center gap-1.5">
-              <CheckCircle2 size={14} color="#52B788" />
-              <span style={{ fontSize: "13px", color: "rgba(255,255,255,0.65)" }}>{badge}</span>
+              <CheckCircle2 size={13} color="#52B788" />
+              <span style={{ fontSize: "12px", color: "rgba(255,255,255,0.65)" }}>{badge}</span>
             </div>
           ))}
         </div>

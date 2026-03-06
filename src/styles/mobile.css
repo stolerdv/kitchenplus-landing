@@ -1,0 +1,159 @@
+/* ============================================================
+   PREMIUM MOBILE UTILITIES
+   Applied as @media (max-width: 767px) overrides + utilities
+   ============================================================ */
+
+/* Horizontal scroll snap container */
+.mobile-snap-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  gap: 12px;
+  padding-bottom: 4px;
+}
+
+.mobile-snap-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.mobile-snap-item {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+}
+
+/* Dot pagination */
+.mobile-dots {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.mobile-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 3px;
+  background: #D0CBC0;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: none;
+  padding: 0;
+}
+
+.mobile-dot.active {
+  background: #2D6A4F;
+  width: 20px;
+}
+
+/* Premium entrance animation */
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Swipe hint pulse */
+@keyframes swipeHint {
+  0%, 100% { transform: translateX(0); opacity: 0.5; }
+  50% { transform: translateX(6px); opacity: 1; }
+}
+
+.swipe-hint-arrow {
+  animation: swipeHint 1.5s ease-in-out infinite;
+}
+
+/* Touch ripple for buttons */
+.touch-ripple {
+  position: relative;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Glass card style for mobile */
+.mobile-glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* Premium gradient text */
+.gradient-text-green {
+  background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Smooth section separator */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, #E8E4DC 30%, #E8E4DC 70%, transparent 100%);
+}
+
+/* Mobile section padding optimization */
+@media (max-width: 767px) {
+  /* Better touch targets */
+  button, a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Prevent horizontal overflow */
+  section {
+    overflow-x: hidden;
+  }
+
+  /* Better text rendering on mobile */
+  h1, h2, h3 {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+/* Floating badge animation */
+@keyframes floatBadge {
+  0%, 100% { transform: translateY(0px) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(-1deg); }
+}
+
+/* Stagger animation for list items */
+.stagger-item {
+  animation: slideUpFade 0.5s ease forwards;
+  opacity: 0;
+}
+
+.stagger-item:nth-child(1) { animation-delay: 0.05s; }
+.stagger-item:nth-child(2) { animation-delay: 0.1s; }
+.stagger-item:nth-child(3) { animation-delay: 0.15s; }
+.stagger-item:nth-child(4) { animation-delay: 0.2s; }
+.stagger-item:nth-child(5) { animation-delay: 0.25s; }
+.stagger-item:nth-child(6) { animation-delay: 0.3s; }
+
+/* Progress bar animation */
+@keyframes fillBar {
+  from { width: 0; }
+}

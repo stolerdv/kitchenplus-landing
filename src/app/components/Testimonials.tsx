@@ -16,28 +16,59 @@ const AVATARS: Record<string, string[]> = {
     "https://i.pravatar.cc/80?img=45",
   ],
   kk: [
-    "https://i.pravatar.cc/80?img=36",  // Айгерім — женщина
-    "https://i.pravatar.cc/80?img=26",  // Дана — женщина
-    "https://i.pravatar.cc/80?img=52",  // Арман — мужчина
-    "https://i.pravatar.cc/80?img=49",  // Жанна — женщина
+    "https://i.pravatar.cc/80?img=36",
+    "https://i.pravatar.cc/80?img=26",
+    "https://i.pravatar.cc/80?img=52",
+    "https://i.pravatar.cc/80?img=49",
   ],
 };
+
+function Dots({ count, active }: { count: number; active: number }) {
+  return (
+    <div className="flex items-center gap-1.5 justify-center mt-5">
+      {Array.from({ length: count }).map((_, i) => (
+        <div
+          key={i}
+          style={{
+            width: i === active ? "20px" : "6px",
+            height: "6px",
+            borderRadius: "3px",
+            background: i === active ? "#2D6A4F" : "#D0CBC0",
+            transition: "all 0.3s ease",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
 
 export function Testimonials() {
   const { t, lang } = useLang();
   const ref = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0);
   const avatars = AVATARS[lang] ?? AVATARS.ru;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
       { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const handleScroll = () => {
+      const approxCardWidth = el.offsetWidth * 0.85 + 12;
+      const index = Math.round(el.scrollLeft / approxCardWidth);
+      setActiveIndex(Math.min(Math.max(index, 0), 3));
+    };
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 
   const testimonials = [
@@ -52,11 +83,11 @@ export function Testimonials() {
       className="py-14 lg:py-28 bg-white"
       style={{ fontFamily: "Manrope, sans-serif" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div
           ref={ref}
-          className="text-center mb-14"
+          className="text-center mb-10 px-4 sm:px-6 lg:px-8"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -83,8 +114,65 @@ export function Testimonials() {
           </h2>
         </div>
 
-        {/* Testimonial grid */}
-        <div className="grid md:grid-cols-2 gap-5 lg:gap-6">
+        {/* ==================== MOBILE: Swipe carousel ==================== */}
+        <div className="md:hidden">
+          <div
+            ref={scrollRef}
+            className="mobile-snap-scroll px-4"
+          >
+            {testimonials.map((testimonial, i) => (
+              <div
+                key={i}
+                className="mobile-snap-item rounded-2xl p-5 border border-[#E8E4DC]"
+                style={{
+                  width: "85vw",
+                  maxWidth: "320px",
+                  background: "#FAFAFA",
+                  opacity: visible ? 1 : 0,
+                  transform: visible ? "translateY(0)" : "translateY(24px)",
+                  transition: `all 0.6s cubic-bezier(0.16,1,0.3,1) ${0.1 + i * 0.1}s`,
+                  boxShadow: "0 2px 16px rgba(0,0,0,0.05)",
+                }}
+              >
+                {/* Quote icon top */}
+                <div className="flex justify-between items-start mb-3">
+                  <div className="flex gap-0.5">
+                    {Array(testimonial.rating).fill(0).map((_, j) => (
+                      <Star key={j} size={13} className="fill-[#F4A235] text-[#F4A235]" />
+                    ))}
+                  </div>
+                  <Quote size={20} color="#D8F3DC" />
+                </div>
+
+                {/* Review text */}
+                <p
+                  style={{ fontSize: "14px", color: "#4A4A3A", lineHeight: 1.7, marginBottom: "16px" }}
+                >
+                  {testimonial.text}
+                </p>
+
+                {/* Author */}
+                <div className="flex items-center gap-3 pt-3" style={{ borderTop: "1px solid #F0EDE8" }}>
+                  <img
+                    src={testimonial.avatar}
+                    alt={testimonial.name}
+                    className="w-10 h-10 rounded-full object-cover border-2 border-[#D8F3DC] flex-shrink-0"
+                  />
+                  <div>
+                    <p style={{ fontSize: "14px", fontWeight: 700, color: "#1B2A1A" }}>{testimonial.name}</p>
+                    <p style={{ fontSize: "11px", color: "#7A7A6A" }}>{testimonial.role}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+            <div style={{ width: "16px", flexShrink: 0 }} />
+          </div>
+
+          <Dots count={4} active={activeIndex} />
+        </div>
+
+        {/* ==================== DESKTOP: 2-column grid (unchanged) ==================== */}
+        <div className="hidden md:grid md:grid-cols-2 gap-5 lg:gap-6 px-4 sm:px-6 lg:px-8">
           {testimonials.map((testimonial, i) => (
             <div
               key={i}

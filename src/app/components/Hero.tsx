@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { CheckCircle2, Star } from "lucide-react";
+import { CheckCircle2, Star, ChevronDown } from "lucide-react";
 import { useLang } from "../../contexts/LangContext";
 import { openDownloadModal } from "./DownloadModal";
 
@@ -20,10 +20,15 @@ const heroImage = "/images/hero-family.jpg";
 export function Hero() {
   const { t } = useLang();
   const imgRef = useRef<HTMLDivElement>(null);
+  const heroRef = useRef<HTMLElement>(null);
 
+  // Desktop only: 3D tilt on mouse move
   useEffect(() => {
     const el = imgRef.current;
     if (!el) return;
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     const handler = (e: MouseEvent) => {
       const rect = el.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
@@ -41,8 +46,16 @@ export function Hero() {
     };
   }, []);
 
+  // Mobile entrance animation
+  useEffect(() => {
+    const el = heroRef.current;
+    if (!el) return;
+    el.style.opacity = "1";
+  }, []);
+
   return (
     <section
+      ref={heroRef}
       className="relative min-h-screen flex items-center overflow-hidden"
       style={{ background: "linear-gradient(135deg, #F7F3EE 0%, #EFF7F2 50%, #F7F3EE 100%)", fontFamily: "Manrope, sans-serif" }}
     >
@@ -56,9 +69,252 @@ export function Hero() {
           className="absolute -bottom-32 -left-32 w-[500px] h-[500px] rounded-full opacity-15"
           style={{ background: "radial-gradient(circle, #E07A3D 0%, transparent 70%)" }}
         />
+        {/* Mobile-only ambient blobs */}
+        <div
+          className="md:hidden absolute top-1/3 right-0 w-64 h-64 rounded-full opacity-10"
+          style={{ background: "radial-gradient(circle, #2D6A4F 0%, transparent 70%)" }}
+        />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
+      {/* ==================== MOBILE LAYOUT ==================== */}
+      <div className="md:hidden w-full pt-20 pb-10 px-5 flex flex-col items-center">
+
+        {/* Social proof pill — top */}
+        <div
+          className="flex items-center gap-2 mb-6"
+          style={{
+            background: "rgba(45,106,79,0.08)",
+            border: "1px solid rgba(45,106,79,0.18)",
+            borderRadius: "100px",
+            padding: "6px 14px",
+            animation: "slideUpFade 0.5s ease forwards",
+          }}
+        >
+          <div className="flex -space-x-1.5">
+            {[
+              "https://i.pravatar.cc/40?img=1",
+              "https://i.pravatar.cc/40?img=5",
+              "https://i.pravatar.cc/40?img=9",
+            ].map((src, i) => (
+              <img key={i} src={src} className="w-5 h-5 rounded-full border border-white object-cover" alt="user" />
+            ))}
+          </div>
+          <div className="flex items-center gap-1">
+            {Array(5).fill(0).map((_, i) => (
+              <Star key={i} size={10} className="fill-[#F4A235] text-[#F4A235]" />
+            ))}
+          </div>
+          <span style={{ fontSize: "12px", fontWeight: 600, color: "#2D6A4F" }}>
+            <strong>{t.hero_social_thousands}</strong> {t.hero_social_use}
+          </span>
+        </div>
+
+        {/* Headline */}
+        <h1
+          className="text-center mb-4"
+          style={{
+            fontSize: "clamp(32px, 9vw, 44px)",
+            fontWeight: 800,
+            lineHeight: 1.1,
+            color: "#1B2A1A",
+            letterSpacing: "-0.025em",
+            animation: "slideUpFade 0.55s ease 0.05s forwards",
+            opacity: 0,
+          }}
+        >
+          {t.hero_h1_1} <br />
+          {t.hero_h1_2}{" "}
+          <span
+            style={{
+              color: "#2D6A4F",
+              background: "linear-gradient(135deg, #2D6A4F 0%, #52B788 100%)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              backgroundClip: "text",
+            }}
+          >
+            {t.hero_h1_accent}
+          </span>
+        </h1>
+
+        {/* Subtitle */}
+        <p
+          className="text-center mb-7 max-w-xs"
+          style={{
+            fontSize: "15px",
+            color: "#5A5A4A",
+            lineHeight: 1.65,
+            animation: "slideUpFade 0.55s ease 0.1s forwards",
+            opacity: 0,
+          }}
+        >
+          {t.hero_sub}
+        </p>
+
+        {/* Phone Mockup — centered, hero element on mobile */}
+        <div
+          className="relative mb-7 w-full flex justify-center"
+          style={{
+            animation: "scaleIn 0.65s cubic-bezier(0.16,1,0.3,1) 0.15s forwards",
+            opacity: 0,
+          }}
+        >
+          {/* Phone frame */}
+          <div
+            className="relative rounded-[2.5rem] overflow-hidden shadow-2xl"
+            style={{
+              background: "#1B2A1A",
+              padding: "8px",
+              aspectRatio: "9/17",
+              width: "min(62vw, 240px)",
+              maxWidth: "240px",
+            }}
+          >
+            <div className="rounded-[2rem] overflow-hidden h-full">
+              <div
+                className="w-full h-full"
+                style={{
+                  backgroundImage: `url(${heroImage})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "56% center",
+                  backgroundRepeat: "no-repeat",
+                  backgroundColor: "#e8e0d8",
+                }}
+              />
+              {/* App UI overlay */}
+              <div
+                className="absolute inset-[8px] rounded-[2rem] overflow-hidden"
+                style={{ background: "linear-gradient(to bottom, transparent 40%, rgba(27,42,26,0.75) 100%)" }}
+              >
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <div className="bg-white/95 backdrop-blur-sm rounded-xl p-2.5 shadow-lg">
+                    <p style={{ fontSize: "9px", color: "#2D6A4F", fontWeight: 700 }}>{t.hero_today_menu}</p>
+                    <p style={{ fontSize: "12px", color: "#1B2A1A", fontWeight: 700, marginTop: "1px" }}>{t.hero_meal_name}</p>
+                    <div className="flex items-center gap-2 mt-1">
+                      {[["320", t.hero_kcal], ["28г", t.hero_protein], ["12г", t.hero_fat]].map(([v, u]) => (
+                        <div key={u as string} className="text-center">
+                          <p style={{ fontSize: "10px", fontWeight: 700, color: "#2D6A4F" }}>{v}</p>
+                          <p style={{ fontSize: "8px", color: "#888" }}>{u}</p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile floating badge — left, positioned relative to phone */}
+          <div
+            className="absolute"
+            style={{
+              left: "calc(50% - min(31vw, 120px) - 90px)",
+              top: "20%",
+              animation: "float 4s ease-in-out infinite",
+            }}
+          >
+            <div className="bg-white rounded-2xl shadow-xl p-2.5" style={{ minWidth: "110px" }}>
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 bg-[#D8F3DC] rounded-xl flex items-center justify-center text-sm">🥗</div>
+                <div>
+                  <p style={{ fontSize: "8px", color: "#888" }}>{t.hero_next_meal}</p>
+                  <p style={{ fontSize: "10px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_lunch}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Mobile floating badge — right */}
+          <div
+            className="absolute"
+            style={{
+              right: "calc(50% - min(31vw, 120px) - 90px)",
+              top: "45%",
+              animation: "float 4s ease-in-out infinite 1.5s",
+            }}
+          >
+            <div className="bg-white rounded-2xl shadow-xl p-2.5" style={{ minWidth: "110px" }}>
+              <div className="flex items-center gap-2">
+                <div className="w-7 h-7 bg-[#FFF3E0] rounded-xl flex items-center justify-center text-sm">🛒</div>
+                <div>
+                  <p style={{ fontSize: "8px", color: "#888" }}>{t.hero_shopping_list}</p>
+                  <p style={{ fontSize: "10px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_products}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* CTA Buttons — full width, premium feel */}
+        <div
+          className="w-full flex flex-col gap-3 mb-5"
+          style={{
+            animation: "slideUpFade 0.55s ease 0.25s forwards",
+            opacity: 0,
+            maxWidth: "320px",
+          }}
+        >
+          <button
+            onClick={openDownloadModal}
+            className="flex items-center justify-center gap-3 text-white w-full rounded-2xl transition-all duration-200 active:scale-95"
+            style={{
+              background: "linear-gradient(135deg, #1B2A1A 0%, #2D4A2D 100%)",
+              padding: "14px 20px",
+              fontWeight: 600,
+              fontSize: "15px",
+              boxShadow: "0 8px 24px rgba(27,42,26,0.25), 0 1px 2px rgba(0,0,0,0.1)",
+            }}
+          >
+            <AppleLogo />
+            <span>
+              <span style={{ fontSize: "10px", display: "block", opacity: 0.65, lineHeight: 1 }}>{t.hero_download_in}</span>
+              App Store
+            </span>
+          </button>
+          <button
+            onClick={openDownloadModal}
+            className="flex items-center justify-center gap-3 text-white w-full rounded-2xl transition-all duration-200 active:scale-95"
+            style={{
+              background: "linear-gradient(135deg, #1B2A1A 0%, #2D4A2D 100%)",
+              padding: "14px 20px",
+              fontWeight: 600,
+              fontSize: "15px",
+              boxShadow: "0 8px 24px rgba(27,42,26,0.25), 0 1px 2px rgba(0,0,0,0.1)",
+            }}
+          >
+            <GooglePlayLogo />
+            <span>
+              <span style={{ fontSize: "10px", display: "block", opacity: 0.65, lineHeight: 1 }}>{t.hero_download_in}</span>
+              Google Play
+            </span>
+          </button>
+        </div>
+
+        {/* Trust badges — compact row */}
+        <div
+          className="flex flex-wrap items-center gap-x-4 gap-y-2 justify-center mb-6"
+          style={{ animation: "slideUpFade 0.55s ease 0.3s forwards", opacity: 0 }}
+        >
+          {[t.hero_trust_1, t.hero_trust_2, t.hero_trust_3].map((text) => (
+            <div key={text} className="flex items-center gap-1">
+              <CheckCircle2 size={12} color="#52B788" />
+              <span style={{ fontSize: "12px", color: "#5A5A4A" }}>{text}</span>
+            </div>
+          ))}
+        </div>
+
+        {/* Scroll down hint */}
+        <div
+          className="flex flex-col items-center gap-1.5 mt-2"
+          style={{ animation: "slideUpFade 0.55s ease 0.4s forwards", opacity: 0 }}
+        >
+          <span style={{ fontSize: "11px", color: "#9A9A8A", letterSpacing: "0.05em" }}>SCROLL</span>
+          <ChevronDown size={16} color="#9A9A8A" style={{ animation: "swipeHint 1.5s ease-in-out infinite" }} />
+        </div>
+      </div>
+
+      {/* ==================== DESKTOP LAYOUT (unchanged) ==================== */}
+      <div className="hidden md:block relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left: Text Content */}
           <div className="text-center lg:text-left">
@@ -159,7 +415,7 @@ export function Hero() {
             >
               {/* Phone frame */}
               <div
-                className="relative rounded-[2.5rem] overflow-hidden shadow-2xl max-h-[380px] sm:max-h-[500px] lg:max-h-[580px]"
+                className="relative rounded-[2.5rem] overflow-hidden shadow-2xl max-h-[380px] sm:max-h-[500px] lg:max-h-[580px] mx-auto"
                 style={{
                   background: "#1B2A1A",
                   padding: "10px",
@@ -191,7 +447,7 @@ export function Hero() {
                         <p style={{ fontSize: "14px", color: "#1B2A1A", fontWeight: 700, marginTop: "2px" }}>{t.hero_meal_name}</p>
                         <div className="flex items-center gap-3 mt-1.5">
                           {[["320", t.hero_kcal], ["28г", t.hero_protein], ["12г", t.hero_fat], ["25г", t.hero_carbs]].map(([v, u]) => (
-                            <div key={u} className="text-center">
+                            <div key={u as string} className="text-center">
                               <p style={{ fontSize: "12px", fontWeight: 700, color: "#2D6A4F" }}>{v}</p>
                               <p style={{ fontSize: "9px", color: "#888" }}>{u}</p>
                             </div>
@@ -203,29 +459,29 @@ export function Hero() {
                 </div>
               </div>
 
-              {/* Floating cards */}
+              {/* Floating cards — desktop only */}
               <div
-                className="hidden md:block absolute -left-8 top-16 bg-white rounded-2xl shadow-xl p-3 min-w-[140px]"
+                className="absolute left-0 md:-left-8 top-16 bg-white rounded-2xl shadow-xl p-3 min-w-[130px] md:min-w-[140px]"
                 style={{ animation: "float 4s ease-in-out infinite" }}
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-[#D8F3DC] rounded-xl flex items-center justify-center text-lg">🥗</div>
+                  <div className="w-7 h-7 md:w-8 md:h-8 bg-[#D8F3DC] rounded-xl flex items-center justify-center text-base">🥗</div>
                   <div>
-                    <p style={{ fontSize: "10px", color: "#888" }}>{t.hero_next_meal}</p>
-                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_lunch}</p>
+                    <p style={{ fontSize: "9px", color: "#888" }}>{t.hero_next_meal}</p>
+                    <p style={{ fontSize: "11px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_lunch}</p>
                   </div>
                 </div>
               </div>
 
               <div
-                className="hidden md:block absolute right-4 top-1/3 bg-white rounded-2xl shadow-xl p-3 min-w-[150px]"
+                className="absolute right-0 md:right-4 top-1/3 bg-white rounded-2xl shadow-xl p-3 min-w-[130px] md:min-w-[150px]"
                 style={{ animation: "float 4s ease-in-out infinite 1.5s" }}
               >
                 <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 bg-[#FFF3E0] rounded-xl flex items-center justify-center text-lg">🛒</div>
+                  <div className="w-7 h-7 md:w-8 md:h-8 bg-[#FFF3E0] rounded-xl flex items-center justify-center text-base">🛒</div>
                   <div>
-                    <p style={{ fontSize: "10px", color: "#888" }}>{t.hero_shopping_list}</p>
-                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_products}</p>
+                    <p style={{ fontSize: "9px", color: "#888" }}>{t.hero_shopping_list}</p>
+                    <p style={{ fontSize: "11px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_products}</p>
                   </div>
                 </div>
               </div>

@@ -9,22 +9,63 @@ const PRICES: Record<Currency, { proMonthly: number; proYearly: number; proYearT
   USD: { proMonthly: 4.99,  proYearly: 4.16, proYearTotal: 49.9,  premiumMonthly: 19.99, premiumYearly: 16.66, premiumYearTotal: 199.9, symbol: "$" },
 };
 
+function Dots({ count, active }: { count: number; active: number }) {
+  return (
+    <div className="flex items-center gap-1.5 justify-center mt-5">
+      {Array.from({ length: count }).map((_, i) => (
+        <div
+          key={i}
+          style={{
+            width: i === active ? "20px" : "6px",
+            height: "6px",
+            borderRadius: "3px",
+            background: i === active ? "#2D6A4F" : "#D0CBC0",
+            transition: "all 0.3s ease",
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
 export function Pricing({ currency }: { currency: Currency }) {
   const { t } = useLang();
   const [yearly, setYearly] = useState(true);
   const ref = useRef<HTMLDivElement>(null);
+  const scrollRef = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(1);
   const p = PRICES[currency];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
       { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
+  }, []);
+
+  // Scroll to Pro card on mobile by default
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el || window.innerWidth >= 768) return;
+    setTimeout(() => {
+      const approxCardWidth = el.offsetWidth * 0.82 + 12;
+      el.scrollTo({ left: approxCardWidth, behavior: "smooth" });
+    }, 500);
+  }, [visible]);
+
+  useEffect(() => {
+    const el = scrollRef.current;
+    if (!el) return;
+    const handleScroll = () => {
+      const approxCardWidth = el.offsetWidth * 0.82 + 12;
+      const index = Math.round(el.scrollLeft / approxCardWidth);
+      setActiveIndex(Math.min(Math.max(index, 0), 2));
+    };
+    el.addEventListener("scroll", handleScroll, { passive: true });
+    return () => el.removeEventListener("scroll", handleScroll);
   }, []);
 
   const plans = [
@@ -45,14 +86,7 @@ export function Pricing({ currency }: { currency: Currency }) {
       ctaBg: "#F7F3EE",
       ctaText: "#1B2A1A",
       ctaBorder: "#D0CBC0",
-      features: [
-        t.price_free_f1,
-        t.price_free_f2,
-        t.price_free_f3,
-        t.price_free_f4,
-        t.price_free_f5,
-        t.price_free_f6,
-      ],
+      features: [t.price_free_f1, t.price_free_f2, t.price_free_f3, t.price_free_f4, t.price_free_f5, t.price_free_f6],
     },
     {
       id: "pro",
@@ -73,20 +107,7 @@ export function Pricing({ currency }: { currency: Currency }) {
       ctaText: "#ffffff",
       ctaBorder: "transparent",
       yearNote: `${p.proYearTotal.toLocaleString("ru-RU")} ${p.symbol}${t.price_year_suffix}`,
-      features: [
-        t.price_pro_f1,
-        t.price_pro_f2,
-        t.price_pro_f3,
-        t.price_pro_f4,
-        t.price_pro_f5,
-        t.price_pro_f6,
-        t.price_pro_f7,
-        t.price_pro_f8,
-        t.price_pro_f9,
-        t.price_pro_f10,
-        t.price_pro_f11,
-        t.price_pro_f12,
-      ],
+      features: [t.price_pro_f1, t.price_pro_f2, t.price_pro_f3, t.price_pro_f4, t.price_pro_f5, t.price_pro_f6, t.price_pro_f7, t.price_pro_f8, t.price_pro_f9, t.price_pro_f10, t.price_pro_f11, t.price_pro_f12],
     },
     {
       id: "premium",
@@ -107,15 +128,7 @@ export function Pricing({ currency }: { currency: Currency }) {
       ctaBorder: "transparent",
       yearNote: `${p.premiumYearTotal.toLocaleString("ru-RU")} ${p.symbol}${t.price_year_suffix}`,
       featuresHeader: t.price_prem_header,
-      features: [
-        t.price_prem_f1,
-        t.price_prem_f2,
-        t.price_prem_f3,
-        t.price_prem_f4,
-        t.price_prem_f5,
-        t.price_prem_f6,
-        t.price_prem_f7,
-      ],
+      features: [t.price_prem_f1, t.price_prem_f2, t.price_prem_f3, t.price_prem_f4, t.price_prem_f5, t.price_prem_f6, t.price_prem_f7],
     },
   ];
 
@@ -125,11 +138,11 @@ export function Pricing({ currency }: { currency: Currency }) {
       className="py-14 lg:py-28"
       style={{ background: "#F7F3EE", fontFamily: "Manrope, sans-serif" }}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto">
         {/* Header */}
         <div
           ref={ref}
-          className="text-center mb-12"
+          className="text-center mb-10 px-4 sm:px-6 lg:px-8"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(20px)",
@@ -183,8 +196,141 @@ export function Pricing({ currency }: { currency: Currency }) {
           </div>
         </div>
 
-        {/* Plans */}
-        <div className="grid md:grid-cols-3 gap-5 lg:gap-6">
+        {/* ==================== MOBILE: Horizontal snap scroll ==================== */}
+        <div className="md:hidden">
+          <div
+            ref={scrollRef}
+            className="mobile-snap-scroll px-4"
+          >
+            {plans.map((plan, i) => {
+              const price = yearly ? plan.priceYearly : plan.priceMonthly;
+              return (
+                <div
+                  key={plan.id}
+                  className="mobile-snap-item relative rounded-3xl flex flex-col"
+                  style={{
+                    width: "82vw",
+                    maxWidth: "320px",
+                    background: plan.color,
+                    border: `2px solid ${plan.border}`,
+                    padding: "24px 20px 20px",
+                    opacity: visible ? 1 : 0,
+                    transform: visible ? "translateY(0)" : "translateY(24px)",
+                    transition: `all 0.6s cubic-bezier(0.16,1,0.3,1) ${i * 0.1}s`,
+                    boxShadow: plan.popular
+                      ? "0 20px 60px rgba(27,42,26,0.3)"
+                      : "0 4px 20px rgba(0,0,0,0.06)",
+                  }}
+                >
+                  {/* Popular badge */}
+                  {plan.popular && (
+                    <div
+                      className="absolute -top-4 left-1/2 -translate-x-1/2 px-4 py-1.5 rounded-full"
+                      style={{
+                        background: "#2D6A4F",
+                        color: "white",
+                        fontSize: "11px",
+                        fontWeight: 700,
+                        letterSpacing: "0.05em",
+                        whiteSpace: "nowrap",
+                      }}
+                    >
+                      {t.price_popular}
+                    </div>
+                  )}
+
+                  {/* Icon & name */}
+                  <div className="flex items-center gap-3 mb-4">
+                    <div
+                      className="w-10 h-10 rounded-xl flex items-center justify-center"
+                      style={{ background: plan.iconBg, color: plan.iconColor }}
+                    >
+                      {plan.icon}
+                    </div>
+                    <div>
+                      <p style={{ fontSize: "18px", fontWeight: 800, color: plan.popular ? "#ffffff" : "#1B2A1A" }}>
+                        {plan.name}
+                      </p>
+                      <p style={{ fontSize: "12px", color: plan.popular ? "rgba(255,255,255,0.55)" : "#7A7A6A" }}>
+                        {plan.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Price */}
+                  <div className="mb-4">
+                    <div className="flex items-end gap-1">
+                      <span style={{ fontSize: "44px", fontWeight: 800, color: plan.popular ? "#ffffff" : "#1B2A1A", lineHeight: 1, letterSpacing: "-0.02em" }}>
+                        {price === 0 ? "0" : price.toLocaleString("ru-RU")}
+                      </span>
+                      {price > 0 && (
+                        <span style={{ fontSize: "18px", fontWeight: 600, color: plan.popular ? "rgba(255,255,255,0.7)" : "#7A7A6A", marginBottom: "4px" }}>
+                          {plan.currency}
+                        </span>
+                      )}
+                      <span style={{ fontSize: "14px", color: plan.popular ? "rgba(255,255,255,0.55)" : "#7A7A6A", marginBottom: "4px" }}>
+                        {plan.period}
+                      </span>
+                    </div>
+                    {yearly && plan.yearNote && (
+                      <p style={{ fontSize: "12px", color: plan.popular ? "rgba(255,255,255,0.5)" : "#7A7A6A", marginTop: "3px" }}>
+                        {plan.yearNote}
+                      </p>
+                    )}
+                  </div>
+
+                  {/* CTA */}
+                  <button
+                    className="w-full py-3.5 rounded-xl mb-4 transition-all duration-200 active:scale-95"
+                    style={{
+                      background: plan.ctaBg,
+                      color: plan.ctaText,
+                      border: `1.5px solid ${plan.ctaBorder}`,
+                      fontSize: "15px",
+                      fontWeight: 700,
+                    }}
+                  >
+                    {plan.cta}
+                  </button>
+
+                  {/* Divider */}
+                  <div className="mb-3" style={{ borderTop: `1px solid ${plan.popular ? "rgba(255,255,255,0.1)" : "#E8E4DC"}` }} />
+
+                  {/* Features */}
+                  <div className="space-y-2">
+                    {"featuresHeader" in plan && plan.featuresHeader && (
+                      <p style={{ fontSize: "12px", fontWeight: 700, color: "#E07A3D", marginBottom: "4px" }}>
+                        {plan.featuresHeader}
+                      </p>
+                    )}
+                    {plan.features.map((f) => (
+                      <div key={f} className="flex items-start gap-2">
+                        <div
+                          className="rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                          style={{
+                            background: plan.popular ? "rgba(82,183,136,0.2)" : "#D8F3DC",
+                            minWidth: "16px", minHeight: "16px", width: "16px", height: "16px",
+                          }}
+                        >
+                          <Check size={9} color={plan.popular ? "#52B788" : "#2D6A4F"} strokeWidth={3} />
+                        </div>
+                        <span style={{ fontSize: "12px", color: plan.popular ? "rgba(255,255,255,0.75)" : "#3A3A2A", lineHeight: 1.5 }}>
+                          {f}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+            <div style={{ width: "16px", flexShrink: 0 }} />
+          </div>
+
+          <Dots count={3} active={activeIndex} />
+        </div>
+
+        {/* ==================== DESKTOP: Grid (unchanged) ==================== */}
+        <div className="hidden md:grid md:grid-cols-3 gap-5 lg:gap-6 px-4 sm:px-6 lg:px-8">
           {plans.map((plan, i) => {
             const price = yearly ? plan.priceYearly : plan.priceMonthly;
             return (
@@ -200,7 +346,6 @@ export function Pricing({ currency }: { currency: Currency }) {
                   transitionDelay: `${i * 0.1}s`,
                 }}
               >
-                {/* Popular badge */}
                 {plan.popular && (
                   <div
                     className="absolute -top-4 left-1/2 -translate-x-1/2 px-5 py-1.5 rounded-full"
@@ -210,35 +355,19 @@ export function Pricing({ currency }: { currency: Currency }) {
                   </div>
                 )}
 
-                {/* Icon & name */}
                 <div className="flex items-center gap-3 mb-5">
-                  <div
-                    className="w-10 h-10 rounded-xl flex items-center justify-center"
-                    style={{ background: plan.iconBg, color: plan.iconColor }}
-                  >
+                  <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: plan.iconBg, color: plan.iconColor }}>
                     {plan.icon}
                   </div>
                   <div>
-                    <p style={{ fontSize: "18px", fontWeight: 800, color: plan.popular ? "#ffffff" : "#1B2A1A" }}>
-                      {plan.name}
-                    </p>
-                    <p style={{ fontSize: "12px", color: plan.popular ? "rgba(255,255,255,0.55)" : "#7A7A6A" }}>
-                      {plan.desc}
-                    </p>
+                    <p style={{ fontSize: "18px", fontWeight: 800, color: plan.popular ? "#ffffff" : "#1B2A1A" }}>{plan.name}</p>
+                    <p style={{ fontSize: "12px", color: plan.popular ? "rgba(255,255,255,0.55)" : "#7A7A6A" }}>{plan.desc}</p>
                   </div>
                 </div>
 
-                {/* Price */}
                 <div className="mb-5">
                   <div className="flex items-end gap-1">
-                    <span
-                      style={{
-                        fontSize: "42px",
-                        fontWeight: 800,
-                        color: plan.popular ? "#ffffff" : "#1B2A1A",
-                        lineHeight: 1,
-                      }}
-                    >
+                    <span style={{ fontSize: "42px", fontWeight: 800, color: plan.popular ? "#ffffff" : "#1B2A1A", lineHeight: 1 }}>
                       {price === 0 ? "0" : price.toLocaleString("ru-RU")}
                     </span>
                     {price > 0 && (
@@ -246,61 +375,35 @@ export function Pricing({ currency }: { currency: Currency }) {
                         {plan.currency}
                       </span>
                     )}
-                    <span style={{ fontSize: "14px", color: plan.popular ? "rgba(255,255,255,0.55)" : "#7A7A6A", marginBottom: "4px" }}>
-                      {plan.period}
-                    </span>
+                    <span style={{ fontSize: "14px", color: plan.popular ? "rgba(255,255,255,0.55)" : "#7A7A6A", marginBottom: "4px" }}>{plan.period}</span>
                   </div>
                   {yearly && plan.yearNote && (
-                    <p style={{ fontSize: "12px", color: plan.popular ? "rgba(255,255,255,0.5)" : "#7A7A6A", marginTop: "3px" }}>
-                      {plan.yearNote}
-                    </p>
+                    <p style={{ fontSize: "12px", color: plan.popular ? "rgba(255,255,255,0.5)" : "#7A7A6A", marginTop: "3px" }}>{plan.yearNote}</p>
                   )}
                 </div>
 
-                {/* CTA */}
                 <button
                   className="w-full py-3 rounded-xl mb-6 transition-all duration-200 hover:opacity-90"
-                  style={{
-                    background: plan.ctaBg,
-                    color: plan.ctaText,
-                    border: `1.5px solid ${plan.ctaBorder}`,
-                    fontSize: "15px",
-                    fontWeight: 700,
-                  }}
+                  style={{ background: plan.ctaBg, color: plan.ctaText, border: `1.5px solid ${plan.ctaBorder}`, fontSize: "15px", fontWeight: 700 }}
                 >
                   {plan.cta}
                 </button>
 
-                {/* Divider */}
-                <div
-                  className="mb-4"
-                  style={{ borderTop: `1px solid ${plan.popular ? "rgba(255,255,255,0.1)" : "#E8E4DC"}` }}
-                />
+                <div className="mb-4" style={{ borderTop: `1px solid ${plan.popular ? "rgba(255,255,255,0.1)" : "#E8E4DC"}` }} />
 
-                {/* Features */}
                 <div className="space-y-2.5">
                   {"featuresHeader" in plan && plan.featuresHeader && (
-                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#E07A3D", marginBottom: "4px" }}>
-                      {plan.featuresHeader}
-                    </p>
+                    <p style={{ fontSize: "12px", fontWeight: 700, color: "#E07A3D", marginBottom: "4px" }}>{plan.featuresHeader}</p>
                   )}
                   {plan.features.map((f) => (
                     <div key={f} className="flex items-start gap-2.5">
                       <div
                         className="rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
-                        style={{
-                          background: plan.popular ? "rgba(82,183,136,0.2)" : "#D8F3DC",
-                          minWidth: "18px",
-                          minHeight: "18px",
-                          width: "18px",
-                          height: "18px",
-                        }}
+                        style={{ background: plan.popular ? "rgba(82,183,136,0.2)" : "#D8F3DC", minWidth: "18px", minHeight: "18px", width: "18px", height: "18px" }}
                       >
                         <Check size={10} color={plan.popular ? "#52B788" : "#2D6A4F"} strokeWidth={3} />
                       </div>
-                      <span style={{ fontSize: "13px", color: plan.popular ? "rgba(255,255,255,0.75)" : "#3A3A2A", lineHeight: 1.5 }}>
-                        {f}
-                      </span>
+                      <span style={{ fontSize: "13px", color: plan.popular ? "rgba(255,255,255,0.75)" : "#3A3A2A", lineHeight: 1.5 }}>{f}</span>
                     </div>
                   ))}
                 </div>

@@ -9,9 +9,7 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
       { threshold: 0.1 }
     );
     if (ref.current) observer.observe(ref.current);
@@ -31,8 +29,12 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
       }}
     >
       <button
-        className="w-full flex items-center justify-between px-5 py-4 text-left"
-        style={{ background: open ? "#F0F7F4" : "white" }}
+        className="w-full flex items-center justify-between text-left"
+        style={{
+          background: open ? "#F0F7F4" : "white",
+          padding: "18px 20px",
+          minHeight: "60px",
+        }}
         onClick={() => setOpen(!open)}
       >
         <span
@@ -41,24 +43,30 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
             fontWeight: 600,
             color: open ? "#2D6A4F" : "#1B2A1A",
             lineHeight: 1.4,
+            paddingRight: "12px",
           }}
         >
           {q}
         </span>
-        <ChevronDown
-          size={18}
-          color={open ? "#2D6A4F" : "#7A7A6A"}
-          className="flex-shrink-0 ml-3 transition-transform duration-300"
-          style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
-        />
+        <div
+          className="flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300"
+          style={{ background: open ? "#D8F3DC" : "#F0EDE8" }}
+        >
+          <ChevronDown
+            size={16}
+            color={open ? "#2D6A4F" : "#7A7A6A"}
+            className="transition-transform duration-300"
+            style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+          />
+        </div>
       </button>
 
       <div
         className="overflow-hidden transition-all duration-300"
-        style={{ maxHeight: open ? "300px" : "0", opacity: open ? 1 : 0 }}
+        style={{ maxHeight: open ? "400px" : "0", opacity: open ? 1 : 0 }}
       >
-        <div className="px-5 pb-4 pt-0">
-          <p style={{ fontSize: "14px", color: "#5A5A4A", lineHeight: 1.7 }}>{a}</p>
+        <div className="px-5 pb-5 pt-1">
+          <p style={{ fontSize: "14px", color: "#5A5A4A", lineHeight: 1.75 }}>{a}</p>
         </div>
       </div>
     </div>
@@ -72,9 +80,7 @@ export function FAQ() {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) setVisible(true);
-      },
+      ([entry]) => { if (entry.isIntersecting) setVisible(true); },
       { threshold: 0.2 }
     );
     if (ref.current) observer.observe(ref.current);
@@ -130,7 +136,7 @@ export function FAQ() {
         </div>
 
         {/* FAQ items */}
-        <div className="space-y-3">
+        <div className="space-y-2.5">
           {faqs.map((faq, i) => (
             <FAQItem key={i} q={faq.q} a={faq.a} index={i} />
           ))}
