@@ -204,45 +204,6 @@ export function Hero() {
             </div>
           </div>
 
-          {/* Mobile floating badge — left, positioned relative to phone */}
-          <div
-            className="absolute"
-            style={{
-              left: "calc(50% - min(31vw, 120px) - 90px)",
-              top: "20%",
-              animation: "float 4s ease-in-out infinite",
-            }}
-          >
-            <div className="bg-white rounded-2xl shadow-xl p-2.5" style={{ minWidth: "110px" }}>
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 bg-[#D8F3DC] rounded-xl flex items-center justify-center text-sm">🥗</div>
-                <div>
-                  <p style={{ fontSize: "8px", color: "#888" }}>{t.hero_next_meal}</p>
-                  <p style={{ fontSize: "10px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_lunch}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile floating badge — right */}
-          <div
-            className="absolute"
-            style={{
-              right: "calc(50% - min(31vw, 120px) - 90px)",
-              top: "45%",
-              animation: "float 4s ease-in-out infinite 1.5s",
-            }}
-          >
-            <div className="bg-white rounded-2xl shadow-xl p-2.5" style={{ minWidth: "110px" }}>
-              <div className="flex items-center gap-2">
-                <div className="w-7 h-7 bg-[#FFF3E0] rounded-xl flex items-center justify-center text-sm">🛒</div>
-                <div>
-                  <p style={{ fontSize: "8px", color: "#888" }}>{t.hero_shopping_list}</p>
-                  <p style={{ fontSize: "10px", fontWeight: 700, color: "#1B2A1A" }}>{t.hero_products}</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
 
         {/* CTA Buttons — full width, premium feel */}
@@ -303,13 +264,12 @@ export function Hero() {
           ))}
         </div>
 
-        {/* Scroll down hint */}
+        {/* Scroll down hint — large bouncing arrow */}
         <div
-          className="flex flex-col items-center gap-1.5 mt-2"
+          className="flex items-center justify-center mt-3"
           style={{ animation: "slideUpFade 0.55s ease 0.4s forwards", opacity: 0 }}
         >
-          <span style={{ fontSize: "11px", color: "#9A9A8A", letterSpacing: "0.05em" }}>SCROLL</span>
-          <ChevronDown size={16} color="#9A9A8A" style={{ animation: "swipeHint 1.5s ease-in-out infinite" }} />
+          <ChevronDown size={32} color="#B0ADA5" style={{ animation: "bounceDown 1.8s ease-in-out infinite" }} />
         </div>
       </div>
 
@@ -511,6 +471,10 @@ export function Hero() {
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
           50% { transform: translateY(-8px); }
+        }
+        @keyframes bounceDown {
+          0%, 100% { transform: translateY(0px); opacity: 0.5; }
+          50% { transform: translateY(8px); opacity: 1; }
         }
       `}</style>
     </section>

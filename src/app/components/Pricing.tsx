@@ -201,7 +201,7 @@ export function Pricing({ currency }: { currency: Currency }) {
           <div
             ref={scrollRef}
             className="mobile-snap-scroll"
-            style={{ paddingLeft: "10vw", paddingRight: "10vw", scrollPaddingLeft: "10vw" }}
+            style={{ paddingLeft: "10vw", paddingRight: "10vw", scrollPaddingLeft: "10vw", paddingTop: "24px", paddingBottom: "4px" }}
           >
             {plans.map((plan, i) => {
               const price = yearly ? plan.priceYearly : plan.priceMonthly;

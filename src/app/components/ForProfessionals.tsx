@@ -70,18 +70,8 @@ export function ForProfessionals() {
           {/* Dark gradient overlay */}
           <div
             className="absolute inset-0"
-            style={{ background: "linear-gradient(to bottom, rgba(15,26,15,0.2) 0%, rgba(15,26,15,0.9) 100%)" }}
+            style={{ background: "linear-gradient(to bottom, rgba(15,26,15,0.05) 0%, rgba(15,26,15,0.85) 100%)" }}
           />
-          {/* Badge over image */}
-          <div
-            className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full px-3 py-1.5"
-            style={{ background: "rgba(0,0,0,0.45)", border: "1px solid rgba(255,255,255,0.25)", backdropFilter: "blur(10px)" }}
-          >
-            <Sparkles size={11} color="white" />
-            <span style={{ fontSize: "11px", color: "white", fontWeight: 700, letterSpacing: "0.07em" }}>
-              {t.prof_badge}
-            </span>
-          </div>
           {/* Title over image bottom */}
           <div className="absolute bottom-0 left-0 right-0 p-5">
             <h2
@@ -101,13 +91,24 @@ export function ForProfessionals() {
 
         {/* Content below image */}
         <div
-          className="px-5 py-7"
+          className="px-5 pt-5 pb-7"
           style={{
             opacity: visible ? 1 : 0,
             transform: visible ? "translateY(0)" : "translateY(24px)",
             transition: "all 0.8s cubic-bezier(0.16,1,0.3,1) 0.15s",
           }}
         >
+          {/* Badge — moved out of image so it doesn't cover faces */}
+          <div
+            className="inline-flex items-center gap-2 rounded-full px-3 py-1.5 mb-4"
+            style={{ background: "rgba(82,183,136,0.15)", border: "1px solid rgba(82,183,136,0.35)" }}
+          >
+            <Sparkles size={11} color="#52B788" />
+            <span style={{ fontSize: "11px", color: "#52B788", fontWeight: 700, letterSpacing: "0.07em" }}>
+              {t.prof_badge}
+            </span>
+          </div>
+
           <p style={{ fontSize: "15px", color: "rgba(255,255,255,0.6)", lineHeight: 1.65, marginBottom: "20px" }}>
             {t.prof_desc}
           </p>
