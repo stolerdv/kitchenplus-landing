@@ -1,11 +1,180 @@
 
   <!DOCTYPE html>
-  <html lang="en">
+  <html lang="ru">
     <head>
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/png" href="/favicon.png" />
-    <title>KitchenPlus</title>
+
+      <!-- Primary Meta Tags -->
+      <title>KitchenPlus — Планировщик питания для семьи | Меню, покупки, КБЖУ</title>
+      <meta name="title" content="KitchenPlus — Планировщик питания для семьи | Меню, покупки, КБЖУ" />
+      <meta name="description" content="Планируйте меню на неделю, считайте КБЖУ и генерируйте список покупок автоматически. 1000+ рецептов. AI-сканер чеков. Работает офлайн. Бесплатно в App Store и Google Play." />
+      <meta name="keywords" content="планирование питания, список покупок, КБЖУ, рецепты, меню на неделю, семейное питание, нутрициолог, KitchenPlus, планировщик еды, подсчёт калорий" />
+      <meta name="robots" content="index, follow" />
+      <meta name="theme-color" content="#2D6A4F" />
+      <meta name="author" content="KitchenPlus" />
+
+      <!-- Canonical & hreflang -->
+      <link rel="canonical" href="https://kitchenplus.kz/" />
+      <link rel="alternate" hreflang="ru" href="https://kitchenplus.kz/" />
+      <link rel="alternate" hreflang="kk" href="https://kitchenplus.kz/" />
+      <link rel="alternate" hreflang="en" href="https://kitchenplus.kz/" />
+      <link rel="alternate" hreflang="x-default" href="https://kitchenplus.kz/" />
+
+      <!-- Favicon & App Icons -->
+      <link rel="icon" type="image/png" sizes="32x32" href="/app-icon.png" />
+      <link rel="icon" type="image/png" sizes="16x16" href="/app-icon.png" />
+      <link rel="icon" type="image/png" sizes="192x192" href="/app-icon.png" />
+      <link rel="icon" type="image/png" sizes="512x512" href="/app-icon.png" />
+      <link rel="apple-touch-icon" sizes="180x180" href="/app-icon.png" />
+      <link rel="shortcut icon" href="/app-icon.png" />
+
+      <!-- Open Graph / Facebook / Telegram / WhatsApp -->
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://kitchenplus.kz/" />
+      <meta property="og:site_name" content="KitchenPlus" />
+      <meta property="og:title" content="KitchenPlus — Планировщик питания для всей семьи" />
+      <meta property="og:description" content="Меню на неделю, автоматический список покупок и КБЖУ — всё в одном приложении. 1000+ рецептов. AI-сканер чеков. Бесплатно." />
+      <meta property="og:image" content="https://kitchenplus.kz/images/og-cover.jpg" />
+      <meta property="og:image:width" content="1200" />
+      <meta property="og:image:height" content="630" />
+      <meta property="og:image:alt" content="KitchenPlus — планировщик питания для семьи" />
+      <meta property="og:locale" content="ru_RU" />
+      <meta property="og:locale:alternate" content="kk_KZ" />
+      <meta property="og:locale:alternate" content="en_US" />
+
+      <!-- Twitter Card -->
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content="https://kitchenplus.kz/" />
+      <meta name="twitter:title" content="KitchenPlus — Планировщик питания для всей семьи" />
+      <meta name="twitter:description" content="Меню на неделю, автоматический список покупок и КБЖУ — всё в одном приложении. 1000+ рецептов. Бесплатно." />
+      <meta name="twitter:image" content="https://kitchenplus.kz/images/og-cover.jpg" />
+
+      <!-- JSON-LD: Mobile App -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MobileApplication",
+        "name": "KitchenPlus",
+        "description": "Приложение для планирования семейного питания. Составляйте меню на неделю за 5 минут, автоматически формируйте список покупок и следите за КБЖУ для каждого члена семьи.",
+        "url": "https://kitchenplus.kz/",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS, Android",
+        "inLanguage": ["ru", "kk", "en"],
+        "offers": [
+          {
+            "@type": "Offer",
+            "name": "Бесплатно",
+            "price": "0",
+            "priceCurrency": "KZT"
+          }
+        ],
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "ratingCount": "100",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "KitchenPlus",
+          "url": "https://kitchenplus.kz/"
+        },
+        "featureList": [
+          "Планирование меню на неделю",
+          "Автоматический список покупок",
+          "Расчёт КБЖУ для каждого члена семьи",
+          "1000+ рецептов с фото",
+          "AI-сканер кассовых чеков",
+          "Виртуальный холодильник и кладовая",
+          "Экспорт плана питания для клиентов",
+          "Работа офлайн",
+          "Голосовой помощник"
+        ]
+      }
+      </script>
+
+      <!-- JSON-LD: FAQ -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Приложение работает без интернета?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, базовые функции — просмотр меню, список покупок, рецепты — работают офлайн. Синхронизация происходит при подключении к интернету."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли использовать без подписки?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да, бесплатный тариф бессрочный и включает все основные функции для одной семьи: список покупок, каталог рецептов, базовый КБЖУ. Без кредитной карты."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как работает AI-анализ чеков?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Сфотографируй чек в приложении. Наш AI распознаёт купленные продукты и автоматически добавляет их в кладовую. Работает с кассовыми чеками большинства магазинов России и Казахстана."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Можно ли поделиться планом питания без приложения?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Да. Функция «Экспорт» генерирует ссылку на мобильную веб-страницу — открывается в любом браузере без установки приложения. Идеально для специалистов, которые работают с клиентами."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "На каком языке работает приложение?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Русский, казахский и английский. Переключение доступно в настройках. Рецепты из каталога также переведены на все три языка."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Как считается КБЖУ?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "На основе базы 500+ ингредиентов с данными пищевой ценности. При добавлении рецепта в меню КБЖУ рассчитывается автоматически с учётом коэффициента порции каждого члена семьи."
+            }
+          }
+        ]
+      }
+      </script>
+
+      <!-- JSON-LD: WebSite -->
+      <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "KitchenPlus",
+        "url": "https://kitchenplus.kz/",
+        "description": "Планировщик питания для семьи — меню, список покупок, КБЖУ",
+        "inLanguage": ["ru", "kk", "en"],
+        "publisher": {
+          "@type": "Organization",
+          "name": "KitchenPlus",
+          "url": "https://kitchenplus.kz/",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://kitchenplus.kz/app-icon.png",
+            "width": 1024,
+            "height": 1024
+          }
+        }
+      }
+      </script>
     </head>
 
     <body>
@@ -13,4 +182,3 @@
       <script type="module" src="/src/main.tsx"></script>
     </body>
   </html>
-  

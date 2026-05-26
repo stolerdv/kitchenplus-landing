@@ -95,6 +95,12 @@ export type Translations = {
   feat_6_b2: string;
   feat_6_b3: string;
   feat_6_alt: string;
+  feat_7_title: string;
+  feat_7_desc: string;
+  feat_7_b1: string;
+  feat_7_b2: string;
+  feat_7_b3: string;
+  feat_7_alt: string;
 
   // ForProfessionals
   prof_badge: string;
@@ -311,6 +317,12 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     feat_6_b2: "Автоматическое пополнение кладовой и холодильника",
     feat_6_b3: "Синхронизация со списком покупок",
     feat_6_alt: "AI анализ чеков",
+    feat_7_title: "Моя кухня — знай что есть дома",
+    feat_7_desc: "Настрой места хранения: холодильник, морозилка, кладовая, шкаф с крупами. Следи за запасами в реальном времени — запасы обновляются сами, когда ты сканируешь чек.",
+    feat_7_b1: "Настраиваемые места хранения: холодильник, морозилка, шкаф",
+    feat_7_b2: "Запасы пополняются автоматически через AI-сканер чеков",
+    feat_7_b3: "Планируй меню из того, что уже есть дома",
+    feat_7_alt: "Виртуальный холодильник и кладовая",
 
     prof_badge: "ДЛЯ ПРОФЕССИОНАЛОВ",
     prof_h2_1: "Для фитнес-тренеров",
@@ -520,6 +532,12 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     feat_6_b2: "Automatic pantry and fridge update",
     feat_6_b3: "Syncs with the shopping list",
     feat_6_alt: "AI receipt scanning",
+    feat_7_title: "My Kitchen — know what's at home",
+    feat_7_desc: "Set up your storage spots: fridge, freezer, pantry, dry goods shelf. Track your stock in real time — it updates automatically every time you scan a receipt.",
+    feat_7_b1: "Custom storage spots: fridge, freezer, cupboard",
+    feat_7_b2: "Stock updates automatically on receipt scan",
+    feat_7_b3: "Plan meals based on what you already have at home",
+    feat_7_alt: "Virtual fridge and pantry",
 
     prof_badge: "FOR PROFESSIONALS",
     prof_h2_1: "For fitness trainers",
@@ -729,6 +747,12 @@ export const translations: Record<"ru" | "en" | "kk", Translations> = {
     feat_6_b2: "Қоймасы мен тоңазытқышты автоматты толтыру",
     feat_6_b3: "Сатып алу тізімімен синхрондау",
     feat_6_alt: "AI чек талдауы",
+    feat_7_title: "Менің асүйім — үйдегі запасты біл",
+    feat_7_desc: "Сақтау орындарын реттеңіз: тоңазытқыш, мұздатқыш, қойма, дәнді заттар шкафы. Қорыңызды нақты уақытта бақылаңыз — чекті сканерлеген сайын автоматты жаңарады.",
+    feat_7_b1: "Реттелетін орындар: тоңазытқыш, мұздатқыш, шкаф",
+    feat_7_b2: "AI чек сканері арқылы қорлар автоматты толтырылады",
+    feat_7_b3: "Үйде барлардан мәзір жоспарлаңыз",
+    feat_7_alt: "Виртуалды тоңазытқыш және қойма",
 
     prof_badge: "МАМАНДАРҒА",
     prof_h2_1: "Фитнес жаттықтырушылар",

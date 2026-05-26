@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import { Calendar, ShoppingCart, BarChart2, Users, BookOpen, Camera, Check } from "lucide-react";
+import { Calendar, ShoppingCart, BarChart2, Users, BookOpen, Camera, Check, Refrigerator } from "lucide-react";
 import { useLang } from "../../contexts/LangContext";
 
 const groceryImg = "/images/happy-family-shopping.jpg";
@@ -8,6 +8,7 @@ const foodFlatImg = "/images/flatlay-groceries-scale.jpg";
 const familyImg = "/images/family-kitchen.jpg";
 const recipeImg = "https://images.unsplash.com/photo-1466637574441-749b8f19452f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080";
 const receiptImg = "/images/woman-phone.jpg";
+const kitchenImg = "/images/cooking-tablet.jpg";
 
 type Feature = {
   num: string;
@@ -266,9 +267,9 @@ export function Features() {
     const el = scrollRef.current;
     if (!el) return;
     const handleScroll = () => {
-      const cardWidth = el.scrollWidth / 6.3;
+      const cardWidth = el.scrollWidth / 7.3;
       const index = Math.round(el.scrollLeft / (cardWidth * 0.82));
-      setActiveIndex(Math.min(Math.max(index, 0), 5));
+      setActiveIndex(Math.min(Math.max(index, 0), 6));
     };
     el.addEventListener("scroll", handleScroll, { passive: true });
     return () => el.removeEventListener("scroll", handleScroll);
@@ -347,6 +348,18 @@ export function Features() {
       accent: "#E3F2FD",
       iconBg: "#1976D2",
     },
+    {
+      num: "07",
+      icon: <Refrigerator size={18} />,
+      title: t.feat_7_title,
+      desc: t.feat_7_desc,
+      bullets: [t.feat_7_b1, t.feat_7_b2, t.feat_7_b3],
+      img: kitchenImg,
+      imgAlt: t.feat_7_alt,
+      reverse: false,
+      accent: "#F0FDF4",
+      iconBg: "#16A34A",
+    },
   ];
 
   return (
@@ -403,7 +416,7 @@ export function Features() {
             ))}
           </div>
 
-          <Dots count={6} active={activeIndex} />
+          <Dots count={7} active={activeIndex} />
         </div>
 
         {/* ==================== DESKTOP: Alternating blocks (unchanged) ==================== */}

@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /google928354771329c3b2.html
+
+Sitemap: https://kitchenplus.kz/sitemap.xml
