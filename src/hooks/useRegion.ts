@@ -39,7 +39,18 @@ function detectRegion(): Region {
   if (RU_TIMEZONES.has(tz)) {
     return { locale: 'ru', currency: 'RUB' };
   }
-  return { locale: 'en', currency: 'USD' };
+
+  // Fallback: check browser language before defaulting
+  const lang = (navigator.language || '').toLowerCase();
+  if (lang.startsWith('kk')) {
+    return { locale: 'kk', currency: 'KZT' };
+  }
+  if (lang.startsWith('ru')) {
+    return { locale: 'ru', currency: 'RUB' };
+  }
+
+  // Default to Russian — primary audience for kitchenplus.kz
+  return { locale: 'ru', currency: 'KZT' };
 }
 
 export function useRegion(): Region {
