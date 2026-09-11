@@ -425,14 +425,14 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #1A1
 
 /* S10 pricing */
 .ptools{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-top:28px}
-.seg{display:inline-flex;border:1px solid var(--line-strong);border-radius:999px;padding:3px;background:rgba(24,20,17,.7)}
+.seg{display:inline-flex;border:1px solid rgba(212,175,55,.75);border-radius:999px;padding:3px;background:rgba(24,20,17,.7);box-shadow:0 0 0 4px rgba(212,175,55,.08)}
 .seg button{font-family:var(--mono);font-size:11px;letter-spacing:.08em;padding:8px 13px;min-height:34px;border-radius:999px;color:var(--text-2);transition:background .3s,color .3s;white-space:nowrap}
-.seg button[aria-pressed="true"]{background:var(--panel-2);color:var(--text)}
+.seg button[aria-pressed="true"]{background:var(--accent);color:var(--canvas)}
 .ynote{flex-basis:100%;font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--accent)}
 .ynote.storenote{color:var(--text-2)}
 .plans{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:40px;align-items:stretch}
 .plan{position:relative;background:var(--panel);border:1px solid var(--line);border-radius:22px;padding:26px 22px 24px;display:flex;flex-direction:column;gap:14px;overflow:visible;transition:transform .5s var(--ease-out),border-color .4s}
-@supports (grid-template-rows:subgrid){.plan{display:grid;grid-template-rows:subgrid;grid-row:span 7;row-gap:14px;align-content:start}.plan .btn{align-self:end}}
+@supports (grid-template-rows:subgrid){.plan{display:grid;grid-template-rows:subgrid;grid-row:span 8;row-gap:14px;align-content:start}.plan .btn{align-self:end}}
 .plan .more{display:flex;align-items:center;justify-content:space-between;gap:12px;width:100%;padding:10px 0;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2);border-top:1px dashed var(--line);transition:color .3s;text-align:left}
 .plan .more:hover{color:var(--text)}
 .plan .more .pm{flex:0 0 auto;width:18px;height:18px;position:relative}
@@ -453,6 +453,8 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #1A1
 .plan .name{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-2)}
 .plan .who{font-family:var(--display);font-weight:600;font-size:clamp(22px,1.6vw,26px);line-height:1.15}
 .plan .price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:6px;border-top:1px dashed var(--line)}
+.plan .ysave{font-size:13px;line-height:1.45;color:var(--text-2);margin-top:-6px;min-height:1em}
+.plan .ysave b{color:var(--accent);font-weight:600}
 .plan .price b{font-family:var(--mono);font-weight:500;font-size:clamp(28px,2.3vw,34px);letter-spacing:-.02em;line-height:1.1}
 .plan .price span{color:var(--text-2);font-size:14px}
 .plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;color:var(--text-2);font-size:14px}
@@ -933,6 +935,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <div class="who" data-i18n="s10.free.who">Попробовать</div>
         <p class="desc" data-i18n="s10.free.desc">Основное для одного: план, список, полки. Без групп и общего доступа.</p>
         <div class="price"><b data-price="free">0 ₸</b><span data-i18n="s10.free.per">навсегда</span></div>
+        <p class="ysave" data-save="free"></p>
         <button type="button" class="more" aria-expanded="false" aria-controls="feat-free"><span data-i18n="s10.more">Что входит</span><span class="pm" aria-hidden="true"></span></button>
         <div class="feats" id="feat-free">
           <ul>
@@ -947,6 +950,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <div class="who" data-i18n="s10.pro.who">Для одного</div>
         <p class="desc" data-i18n="s10.pro.desc">Полная база приложения для одного человека. С Pro можно войти в группу, куда тебя пригласили.</p>
         <div class="price"><b data-price="pro">1 290 ₸</b><span class="per" data-i18n="s10.perMonth">в месяц</span></div>
+        <p class="ysave" data-save="pro"></p>
         <button type="button" class="more" aria-expanded="false" aria-controls="feat-pro"><span data-i18n="s10.more">Что входит</span><span class="pm" aria-hidden="true"></span></button>
         <div class="feats" id="feat-pro">
           <ul>
@@ -961,6 +965,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <div class="who" data-i18n="s10.fam.who">Для семьи</div>
         <p class="desc" data-i18n="s10.fam.desc">Одна подписка на всю семью: ты открываешь доступ до пяти человек, и у каждого всё из Pro.</p>
         <div class="price"><b data-price="fam">2 490 ₸</b><span class="per" data-i18n="s10.perMonth">в месяц</span></div>
+        <p class="ysave" data-save="fam"></p>
         <button type="button" class="more" aria-expanded="false" aria-controls="feat-fam"><span data-i18n="s10.more">Что входит</span><span class="pm" aria-hidden="true"></span></button>
         <div class="feats" id="feat-fam">
           <ul>
@@ -975,6 +980,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <div class="who" data-i18n="s10.prem.who">Для специалистов</div>
         <p class="desc" data-i18n="s10.prem.desc">Нутрициологам, тренерам и блогерам: календари клиентов, публичный профиль и повышенные лимиты.</p>
         <div class="price"><b data-price="prem">4 990 ₸</b><span class="per" data-i18n="s10.perMonth">в месяц</span></div>
+        <p class="ysave" data-save="prem"></p>
         <button type="button" class="more" aria-expanded="false" aria-controls="feat-prem"><span data-i18n="s10.more">Что входит</span><span class="pm" aria-hidden="true"></span></button>
         <div class="feats" id="feat-prem">
           <ul>
@@ -1307,10 +1313,15 @@ const YEAR_OFF=.2;
 /* Currency follows the site language: Russian and Kazakh show tenge, English shows dollars. No currency switch on purpose. */
 const CUR_BY_LANG={ru:'KZT',kk:'KZT',en:'USD'};
 let CUR='KZT',PERIOD='month';
-function fmtPrice(v,cur){if(cur==='USD')return '$'+v.toFixed(2);return new Intl.NumberFormat('ru-RU').format(Math.round(v))+' ₸'}
+function fmtPrice(v,cur){if(cur==='USD')return '$'+v.toFixed(2);return new Intl.NumberFormat('ru-RU').format(Math.round(v))+'\u00a0₸'}
 function priceFor(tier){const m=PRICING[tier][CUR];if(PERIOD==='month')return m;const y=m*12*(1-YEAR_OFF);return CUR==='USD'?Math.round(y*100)/100:Math.round(y/10)*10}
 function renderPrices(){
   $$('[data-price]').forEach(el=>{const tier=el.dataset.price;const txt=tier==='free'?(CUR==='USD'?'$0':fmtPrice(0,CUR)):fmtPrice(priceFor(tier),CUR);if(el.textContent!==txt)el.textContent=txt});
+  $$('[data-save]').forEach(el=>{const tier=el.dataset.save;if(!PRICING[tier]){el.innerHTML='';return}
+    const m=PRICING[tier][CUR],full=m*12,y=CUR==='USD'?Math.round(full*.8*100)/100:Math.round(full*.8/10)*10,d=full-y,pm=y/12;
+    const f=v=>fmtPrice(v,CUR),esc=v=>String(v).replace(/</g,'&lt;');
+    const tpl=PERIOD==='year'?t('s10.saveYear'):t('s10.saveMonth');
+    el.innerHTML=esc(tpl).replace('{m}',f(CUR==='USD'?Math.round(pm*100)/100:Math.round(pm))).replace('{full}',f(m)).replace('{y}',f(y)).replace('{d}','<b>'+f(CUR==='USD'?Math.round(d*100)/100:Math.round(d))+'</b>')});
   const key=PERIOD==='year'?'s10.perYear':'s10.perMonth';
   $$('.plan .per').forEach(el=>{el.dataset.i18n=key;const v=t(key);if(el.textContent!==v)el.textContent=v});
   $$('#period button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.period===PERIOD)));
