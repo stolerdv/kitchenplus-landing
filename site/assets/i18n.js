@@ -228,6 +228,12 @@ window.KP_I18N = {
     "s12.small": "Бесплатно навсегда. 14 дней Pro в подарок. Русский, казахский, английский.",
 
     "footer.tag": "Твой главный помощник на кухне.",
+    "footer.diary": "Дневник",
+    "footer.chef": "AI-повар",
+    "footer.remind": "Напоминания",
+    "footer.catalog": "Каталог",
+    "footer.target": "Норма",
+    "footer.family": "Семья",
     "footer.privacy": "Политика конфиденциальности",
     "footer.terms": "Условия",
     "ph.label": "Экран приложения"
@@ -461,6 +467,12 @@ window.KP_I18N = {
     "s12.small": "Мәңгі тегін. 14 күн Pro сыйлыққа. Орыс, қазақ, ағылшын.",
 
     "footer.tag": "Ас үйдегі басты көмекшің.",
+    "footer.diary": "Күнделік",
+    "footer.chef": "AI-аспаз",
+    "footer.remind": "Еске салулар",
+    "footer.catalog": "Каталог",
+    "footer.target": "Норма",
+    "footer.family": "Отбасы",
     "footer.privacy": "Құпиялылық саясаты",
     "footer.terms": "Шарттар",
     "ph.label": "Қосымша экраны"
@@ -694,6 +706,12 @@ window.KP_I18N = {
     "s12.small": "Free forever. 14 days of Pro as a gift. Russian, Kazakh, English.",
 
     "footer.tag": "Your kitchen's best helper.",
+    "footer.diary": "Diary",
+    "footer.chef": "AI chef",
+    "footer.remind": "Reminders",
+    "footer.catalog": "Catalog",
+    "footer.target": "Target",
+    "footer.family": "Family",
     "footer.privacy": "Privacy policy",
     "footer.terms": "Terms",
     "ph.label": "App screen"

@@ -451,7 +451,15 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #1A1
 
 /* Footer */
 footer{border-top:1px solid var(--line);padding:26px 0 30px;color:var(--text-2);font-size:14px}
-footer .wrap{display:flex;flex-wrap:nowrap;gap:14px 26px;align-items:center;white-space:nowrap}
+footer .wrap{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;white-space:nowrap}
+footer .shelf{flex:0 0 100%;display:flex;justify-content:center;align-items:flex-end;gap:clamp(4px,1.3vw,16px);padding:38px 0 16px;margin-bottom:10px;border-bottom:1px solid rgba(212,175,55,.28);position:relative;white-space:normal}
+footer .shelf::after{content:"";position:absolute;left:8%;right:8%;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,rgba(212,175,55,.85),transparent)}
+.sh{margin:0;position:relative;flex:0 0 auto;width:52px;display:flex;flex-direction:column;align-items:center;transform-origin:50% 100%;will-change:transform}
+.sh.near{z-index:2}
+.sh img{width:52px;height:52px;object-fit:contain;filter:drop-shadow(0 6px 10px rgba(0,0,0,.6));transition:filter .35s}
+.sh.near img{filter:drop-shadow(0 0 16px rgba(212,175,55,.5)) drop-shadow(0 12px 18px rgba(0,0,0,.6))}
+.sh figcaption{position:absolute;bottom:calc(100% + 6px);left:50%;transform:translate(-50%,6px);font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);white-space:nowrap;opacity:0;transition:opacity .25s,transform .25s;pointer-events:none}
+.sh.near figcaption{opacity:1;transform:translate(-50%,0)}
 footer .copy{opacity:.8}
 @media (max-width:900px){
   footer{padding:22px 0 26px}
@@ -467,6 +475,7 @@ footer nav{display:flex;gap:18px;flex-wrap:wrap}
 footer nav a{text-decoration:none;transition:color .3s}
 footer nav a:hover{color:var(--text)}
 footer .lang{margin-left:auto}
+@media (max-width:720px),(pointer:coarse){footer .shelf{display:none}}
 
 /* Paused tab and reduced motion */
 body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
@@ -932,6 +941,22 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
 
 <footer>
   <div class="wrap">
+    <div class="shelf" id="shelf" aria-hidden="true">
+      <figure class="sh"><img src="assets/ic/plan.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="s1.n1">План</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/list.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="s1.n2">Список</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/receipt.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="s1.n3">Чек</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/shelves.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="s1.n4">Полки</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/cook.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="s1.n5">Готовка</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/diary.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="footer.diary">Дневник</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/chef.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="footer.chef">AI-повар</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/bulb.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="footer.remind">Напоминания</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/catalog.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="footer.catalog">Каталог</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/formula.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="footer.target">Норма</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/home.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="footer.family">Семья</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/child.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="s2.child">Ребёнок</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/woman.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="s2.mom">Мама</figcaption></figure>
+      <figure class="sh"><img src="assets/ic/man.png" alt="" width="52" height="52" loading="lazy"><figcaption data-i18n="s2.dad">Папа</figcaption></figure>
+    </div>
     <div class="brand"><img src="assets/icon.png" alt="" width="26" height="26"><span>KitchenPlus</span></div>
     <span class="copy">© 2026</span>
     <nav aria-label="Документы"><a href="https://kitchenplus.kz/legal/privacy-policy-ru.html" data-i18n="footer.privacy">Политика конфиденциальности</a><a href="https://kitchenplus.kz/legal/terms-of-service-ru.html" data-i18n="footer.terms">Условия</a><a href="mailto:admin@kitchenplus.kz">admin@kitchenplus.kz</a></nav>
@@ -1206,6 +1231,36 @@ const moreBtns=$$('.plan .more');
 function setFeats(btn,open){btn.setAttribute('aria-expanded',String(open));$('#'+btn.getAttribute('aria-controls')).classList.toggle('open',open);const l=btn.querySelector('[data-i18n]');l.dataset.i18n=open?'s10.less':'s10.more';l.textContent=t(l.dataset.i18n)}
 moreBtns.forEach(b=>b.addEventListener('click',()=>{const open=b.getAttribute('aria-expanded')!=='true';(innerWidth>600?moreBtns:[b]).forEach(x=>setFeats(x,open))}));
 
+
+/* ---------- Footer shelf: the objects lean toward the cursor (pointer only, still under reduced motion) ---------- */
+const shelf=$('#shelf'), shItems=$$('#shelf .sh').map(el=>({el,s:1,y:0,x:0,ts:1,ty:0,tx:0,near:false}));
+let shRaf=null, shLast=0;
+function shelfTargets(px){
+  let best=null,bk=0;
+  for(const it of shItems){
+    if(px===null){it.ts=1;it.ty=0;it.tx=0;it.nt=false;continue}
+    const c=it.el.offsetLeft+it.el.offsetWidth/2, d=px-c, k=Math.exp(-(d*d)/(2*105*105));
+    it.ts=1+.8*k; it.ty=-28*k; it.tx=(d<0?1:-1)*18*k*(1-k)*2; it.nt=false;
+    if(k>bk){bk=k;best=it}
+  }
+  if(best&&bk>.35)best.nt=true;
+}
+function shelfTick(now){
+  const dt=Math.min(64,now-(shLast||now)); shLast=now; const a=1-Math.pow(1-.22,dt/16.667); let busy=false;
+  for(const it of shItems){
+    it.s+=(it.ts-it.s)*a; it.y+=(it.ty-it.y)*a; it.x+=(it.tx-it.x)*a;
+    if(Math.abs(it.ts-it.s)>.002||Math.abs(it.ty-it.y)>.15||Math.abs(it.tx-it.x)>.15)busy=true; else {it.s=it.ts;it.y=it.ty;it.x=it.tx}
+    const tr=`translate3d(${it.x.toFixed(1)}px,${it.y.toFixed(1)}px,0) scale(${it.s.toFixed(3)})`;
+    if(it.el.style.transform!==tr)it.el.style.transform=tr;
+    const near=!!it.nt; if(near!==it.near){it.near=near;it.el.classList.toggle('near',near)}
+  }
+  if(busy)shRaf=requestAnimationFrame(shelfTick); else {shRaf=null;shLast=0}
+}
+function shelfKick(){if(shRaf===null)shRaf=requestAnimationFrame(shelfTick)}
+if(shelf&&FINE.matches){
+  shelf.addEventListener('pointermove',e=>{if(RM.matches)return;shelfTargets(e.clientX-shelf.getBoundingClientRect().left);shelfKick()},{passive:true});
+  shelf.addEventListener('pointerleave',()=>{shelfTargets(null);shelfKick()});
+}
 
 /* ---------- FAQ ---------- */
 $$('#faqlist .qa button').forEach(btn=>{btn.addEventListener('click',()=>{const open=btn.getAttribute('aria-expanded')!=='true';btn.setAttribute('aria-expanded',String(open));$('#'+btn.getAttribute('aria-controls')).classList.toggle('open',open)})});
