@@ -453,8 +453,9 @@ input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #1A1
 .plan .name{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-2)}
 .plan .who{font-family:var(--display);font-weight:600;font-size:clamp(22px,1.6vw,26px);line-height:1.15}
 .plan .price{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding-top:6px;border-top:1px dashed var(--line)}
-.plan .ysave{font-size:13px;line-height:1.45;color:var(--text-2);margin-top:-6px;min-height:1em}
-.plan .ysave b{color:var(--accent);font-weight:600}
+.plan .ysave{font-size:14px;line-height:1.45;color:var(--text-2);margin-top:-6px;min-height:1em}
+.plan .ysave s{opacity:.7;margin-right:6px}
+.plan .ysave b{color:var(--accent);font-weight:600;font-size:16px}
 .plan .price b{font-family:var(--mono);font-weight:500;font-size:clamp(28px,2.3vw,34px);letter-spacing:-.02em;line-height:1.1}
 .plan .price span{color:var(--text-2);font-size:14px}
 .plan ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;color:var(--text-2);font-size:14px}
@@ -1317,11 +1318,10 @@ function fmtPrice(v,cur){if(cur==='USD')return '$'+v.toFixed(2);return new Intl.
 function priceFor(tier){const m=PRICING[tier][CUR];if(PERIOD==='month')return m;const y=m*12*(1-YEAR_OFF);return CUR==='USD'?Math.round(y*100)/100:Math.round(y/10)*10}
 function renderPrices(){
   $$('[data-price]').forEach(el=>{const tier=el.dataset.price;const txt=tier==='free'?(CUR==='USD'?'$0':fmtPrice(0,CUR)):fmtPrice(priceFor(tier),CUR);if(el.textContent!==txt)el.textContent=txt});
-  $$('[data-save]').forEach(el=>{const tier=el.dataset.save;if(!PRICING[tier]){el.innerHTML='';return}
-    const m=PRICING[tier][CUR],full=m*12,y=CUR==='USD'?Math.round(full*.8*100)/100:Math.round(full*.8/10)*10,d=full-y,pm=y/12;
-    const f=v=>fmtPrice(v,CUR),esc=v=>String(v).replace(/</g,'&lt;');
-    const tpl=PERIOD==='year'?t('s10.saveYear'):t('s10.saveMonth');
-    el.innerHTML=esc(tpl).replace('{m}',f(CUR==='USD'?Math.round(pm*100)/100:Math.round(pm))).replace('{full}',f(m)).replace('{y}',f(y)).replace('{d}','<b>'+f(CUR==='USD'?Math.round(d*100)/100:Math.round(d))+'</b>')});
+  $$('[data-save]').forEach(el=>{const tier=el.dataset.save;if(!PRICING[tier]||PERIOD!=='year'){el.innerHTML='';return}
+    const m=PRICING[tier][CUR],full=m*12,y=CUR==='USD'?Math.round(full*.8*100)/100:Math.round(full*.8/10)*10,pm=y/12;
+    const f=v=>fmtPrice(v,CUR);
+    el.innerHTML=String(t('s10.saveYear')).replace(/</g,'&lt;').replace('{full}','<s>'+f(m)+'</s>').replace('{m}','<b>'+f(CUR==='USD'?Math.round(pm*100)/100:Math.round(pm))+'</b>')});
   const key=PERIOD==='year'?'s10.perYear':'s10.perMonth';
   $$('.plan .per').forEach(el=>{el.dataset.i18n=key;const v=t(key);if(el.textContent!==v)el.textContent=v});
   $$('#period button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.period===PERIOD)));
