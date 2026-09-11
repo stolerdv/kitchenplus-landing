@@ -1383,7 +1383,8 @@ function showToast(){$('#toast-h').textContent=t('s12.toastH');$('#toast-t').tex
 toast.addEventListener('click',hideToast);
 if(mail){mail.addEventListener('submit',async e=>{
   e.preventDefault();const v=mailIn.value.trim();
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){mailNote.textContent=t('s12.mailErr');mailNote.className='mailnote err';mailIn.focus();return}
+  if(!v){mailNote.textContent=t('s12.mailEmpty');mailNote.className='mailnote err';mailIn.focus();return}
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){mailNote.textContent=t('s12.mailBad');mailNote.className='mailnote err';mailIn.focus();return}
   const btn=mail.querySelector('button');btn.disabled=true;
   try{const r=await fetch('/api/waitlist',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:v,lang:LANG})});if(!r.ok)throw new Error(String(r.status));
     mailNote.textContent=t('s12.mailOk');mailNote.className='mailnote ok';mailNote.dataset.i18n='s12.mailOk';mailIn.value='';showToast();track('waitlist_submit',{lang:LANG})}
