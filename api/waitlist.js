@@ -16,11 +16,17 @@ export default async function handler(req, res) {
     if (!r.ok) throw new Error('db ' + r.status + ' ' + (await r.text()).slice(0, 200));
     return r.json();
   };
+  const insert = () => run('INSERT INTO waitlist_emails (email, lang, source) VALUES ($1, $2, $3) ON CONFLICT (email) DO NOTHING', [email, lang, 'site']);
   try {
-    await run('CREATE TABLE IF NOT EXISTS waitlist_emails (email text PRIMARY KEY, lang text, source text, created_at timestamptz DEFAULT now())', []);
-    await run('ALTER TABLE waitlist_emails ADD COLUMN IF NOT EXISTS lang text', []);
-    await run('ALTER TABLE waitlist_emails ADD COLUMN IF NOT EXISTS source text', []);
-    await run('INSERT INTO waitlist_emails (email, lang, source) VALUES ($1, $2, $3) ON CONFLICT (email) DO NOTHING', [email, lang, 'site']);
+    try { await insert(); }
+    catch (e) {
+      // first ever call: create the table (and the two columns the old landing did not have), then retry once
+      if (!/does not exist|42P01|42703/.test(String(e))) throw e;
+      await run('CREATE TABLE IF NOT EXISTS waitlist_emails (email text PRIMARY KEY, lang text, source text, created_at timestamptz DEFAULT now())', []);
+      await run('ALTER TABLE waitlist_emails ADD COLUMN IF NOT EXISTS lang text', []);
+      await run('ALTER TABLE waitlist_emails ADD COLUMN IF NOT EXISTS source text', []);
+      await insert();
+    }
     return res.status(200).json({ ok: true });
   } catch (e) {
     console.error(e);

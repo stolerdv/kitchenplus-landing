@@ -236,6 +236,7 @@ window.KP_I18N = {
     "s12.small": "Бесплатно навсегда. 14 дней Pro в подарок. Русский, казахский, английский.",
 
     "footer.tag": "Твой главный помощник на кухне.",
+    "s12.toastH": "Спасибо!",
     "s12.mailLabel": "Почта",
     "s12.mailPh": "you@mail.kz",
     "s12.mailBtn": "Получить ссылку",
@@ -489,6 +490,7 @@ window.KP_I18N = {
     "s12.small": "Мәңгі тегін. 14 күн Pro сыйлыққа. Орыс, қазақ, ағылшын.",
 
     "footer.tag": "Ас үйдегі басты көмекшің.",
+    "s12.toastH": "Рақмет!",
     "s12.mailLabel": "Пошта",
     "s12.mailPh": "you@mail.kz",
     "s12.mailBtn": "Сілтеме алу",
@@ -742,6 +744,7 @@ window.KP_I18N = {
     "s12.small": "Free forever. 14 days of Pro as a gift. Russian, Kazakh, English.",
 
     "footer.tag": "Your kitchen's best helper.",
+    "s12.toastH": "Thank you!",
     "s12.mailLabel": "Email",
     "s12.mailPh": "you@mail.com",
     "s12.mailBtn": "Get the link",
