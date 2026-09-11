@@ -167,12 +167,13 @@ main,footer{position:relative;z-index:2}
 }
 
 /* Hero */
-.hero{position:relative;height:560vh}
+.hero{position:relative;height:520vh}
 .stage{position:sticky;top:0;height:100vh;overflow:hidden;background:var(--canvas)}
 .stage video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s var(--ease-out);transform:translateZ(0)}
 .stage.video-ready video{opacity:1}
 .stage.video-failed video{display:none}
 .poster{position:absolute;inset:0;background-size:cover;background-position:center;background-color:var(--canvas)}
+.stage::after{content:"";position:absolute;inset:0;z-index:3;pointer-events:none;background:var(--canvas);opacity:var(--dark,0)}
 .scrim{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(8,6,5,.6) 0%,rgba(8,6,5,.32) 34%,rgba(8,6,5,0) 60%),radial-gradient(ellipse 120% 90% at 50% 45%,rgba(8,6,5,0) 35%,rgba(8,6,5,.66) 100%)}
 .band{position:absolute;opacity:0;--k:0;text-shadow:var(--tshadow);pointer-events:none;will-change:opacity}
 .band::before{content:"";position:absolute;inset:-60% -40%;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 56% 52% at 50% 50%,rgba(6,4,3,var(--sa,.8)) 0%,rgba(6,4,3,var(--sa,.8)) 48%,rgba(6,4,3,calc(var(--sa,.8)*.55)) 68%,rgba(6,4,3,0) 88%);z-index:-1}
@@ -188,7 +189,7 @@ main,footer{position:relative;z-index:2}
 .b2{left:6%;top:36%;width:min(40vw,520px)}
 .b3{right:6%;top:36%;width:min(40vw,520px)}
 .b2 .h,.b3 .h{font-size:clamp(32px,4vw,54px)}
-.b4{left:50%;top:20%;transform:translateX(-50%);text-align:center;width:min(92vw,880px)}
+.b4{left:50%;top:20%;transform:translate(-50%,calc(var(--x,0)*-72px)) scale(calc(1 - var(--x,0)*.05));text-align:center;width:min(92vw,880px)}
 .b4 .h{font-size:clamp(34px,4.9vw,66px)}
 .b4 .s{margin-left:auto;margin-right:auto}
 .b4 .ctas{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:26px;opacity:var(--kb,0);transform:translateY(calc((1 - var(--kb,0))*14px))}
@@ -207,7 +208,7 @@ main,footer{position:relative;z-index:2}
 .hero-static{display:none}
 @media (max-height:560px){.cue,.ring{display:none}}
 @media (max-width:720px){
-  .hero{height:500vh}
+  .hero{height:460vh}
   .b1{top:16%;width:92vw}
   .b1 h1{font-size:clamp(34px,10.5vw,46px)}
   .b2,.b3{left:50%;right:auto;transform:translateX(-50%);top:13%;width:90vw;text-align:center}
@@ -1135,7 +1136,8 @@ const MOBILE=matchMedia('(max-width: 720px)').matches;
 const VIDEO_URL=MOBILE?'/assets/hero-scrub-m.mp4':'/assets/hero-scrub.mp4';
 const VIDEO_BYTES=MOBILE?3171788:7092954; /* real byte sizes of the two encodes */
 const POSTER_URL=MOBILE?'/assets/hero-poster-m.jpg':'/assets/hero-poster.jpg';
-const VIDEO_END=.9; /* the video reaches its last frame at 90 percent of the hero scroll; the rest is a calm dwell on the set table */
+const VIDEO_END=.88; /* video done at 88 percent; then the last caption dwells, flies up (EXIT) and the frame darkens (DARK) into the next section */
+const EXIT=[.9,.975],DARK=[.92,1];let darkV=-1; /* the video reaches its last frame at 90 percent of the hero scroll; the rest is a calm dwell on the set table */
 const vt=p=>Math.min(1,p/VIDEO_END)*(video.duration||0);
 const bands=$$('.band').map(el=>({el,a:+el.dataset.a,b:+el.dataset.b,ramp:el.dataset.ramp?+el.dataset.ramp:null,first:!!el.dataset.first,last:!!el.dataset.last,op:-1,k:-1,kb:-1,ks:-1}));
 let scrubOn=false, inited=false, heroOnScreen=true, target=0, shown=0, rafId=null, lastTick=0, loadK=0, loadStart=0;
@@ -1150,6 +1152,8 @@ function updateCaptions(p){
     const len=b.b-b.a, f=Math.min(.02,len/3);
     let op=(b.first?1:smoothstep(p,b.a,b.a+f))*(b.last?1:(1-smoothstep(p,b.b-f,b.b)));
     if(b.first&&p>=b.b)op=0; if(b.last&&p<=b.a)op=0;
+    if(b.last){const x=smoothstep(p,EXIT[0],EXIT[1]);op*=1-x;if(Math.abs(x-(b.x||0))>.005){b.x=x;b.el.style.setProperty('--x',x.toFixed(3))}}
+    const vis=op>.001?'':'hidden';if(b.el.style.visibility!==vis)b.el.style.visibility=vis;
     let k=clamp((p-b.a)/(b.ramp||Math.min(.025,len*.35)),0,1);
     if(b.first)k=Math.max(k,loadK);
     if(Math.abs(op-b.op)>.005){b.op=op;b.el.style.opacity=op.toFixed(3)}
@@ -1158,6 +1162,7 @@ function updateCaptions(p){
       if(Math.abs(ks-b.ks)>.008){b.ks=ks;b.el.style.setProperty('--ks',ks.toFixed(3))}
       if(Math.abs(kb-b.kb)>.008){b.kb=kb;b.el.style.setProperty('--kb',kb.toFixed(3))}}
   }
+  const dk=smoothstep(p,DARK[0],DARK[1]);if(Math.abs(dk-darkV)>.005){darkV=dk;stage.style.setProperty('--dark',dk.toFixed(3))}
 }
 function tick(now){
   const dt=Math.min(100,now-(lastTick||now));lastTick=now;
@@ -1323,7 +1328,7 @@ function renderPrices(){
     const f=v=>fmtPrice(v,CUR);
     el.innerHTML=String(t('s10.saveYear')).replace(/</g,'&lt;').replace('{full}','<s>'+f(m)+'</s>').replace('{m}','<b>'+f(CUR==='USD'?Math.round(pm*100)/100:Math.round(pm))+'</b>')});
   const key=PERIOD==='year'?'s10.perYear':'s10.perMonth';
-  $$('.plan .per').forEach(el=>{el.dataset.i18n=key;const v=t(key);if(el.textContent!==v)el.textContent=v});
+  $$('.plan .per').forEach(el=>{el.dataset.i18n=key;const v=PERIOD==='year'?'':t(key);if(el.textContent!==v)el.textContent=v});
   $$('#period button').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.period===PERIOD)));
 }
 $$('#period button').forEach(b=>b.addEventListener('click',()=>{PERIOD=b.dataset.period;renderPrices()}));
