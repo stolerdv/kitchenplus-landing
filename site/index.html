@@ -1134,7 +1134,7 @@ $$('.reveal').forEach(el=>revealIO.observe(el));
 const hero=$('#hero'), stage=$('#stage'), video=$('#hero-video'), poster=$('#poster'), ring=$('#ring'), cue=$('#cue');
 const MOBILE=matchMedia('(max-width: 720px)').matches;
 const VIDEO_URL=MOBILE?'/assets/hero-scrub-m.mp4':'/assets/hero-scrub.mp4';
-const VIDEO_BYTES=MOBILE?3171788:7092954; /* real byte sizes of the two encodes */
+const VIDEO_BYTES=MOBILE?4788538:10344688; /* real byte sizes of the two encodes */
 const POSTER_URL=MOBILE?'/assets/hero-poster-m.jpg':'/assets/hero-poster.jpg';
 const VIDEO_END=.88; /* video done at 88 percent; then the last caption dwells, flies up (EXIT) and the frame darkens (DARK) into the next section */
 const EXIT=[.9,.975],DARK=[.92,1];let darkV=-1; /* the video reaches its last frame at 90 percent of the hero scroll; the rest is a calm dwell on the set table */
