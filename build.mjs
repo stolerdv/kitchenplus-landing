@@ -46,6 +46,8 @@ for (const [lang, cfg] of Object.entries(LANGS)) {
   h = h.replace(/<meta property="og:locale:alternate" content="[^"]*">\n?/g, '');
   h = h.replace('<meta property="og:site_name" content="KitchenPlus">', '<meta property="og:site_name" content="KitchenPlus">\n' + Object.entries(LANGS).filter(([l]) => l !== lang).map(([, c]) => `<meta property="og:locale:alternate" content="${c.locale}">`).join('\n'));
   if (lang !== 'ru') h = h.replace('<meta name="viewport"', `<meta name="kp-lang" content="${lang}">\n<meta name="viewport"`);
+  // app screenshots per language
+  h = h.replace(/(\/assets\/screens\/(list|kitchen))-ru\.jpg/g, `$1-${lang}.jpg`);
   // language buttons pressed state
   h = h.replace(/data-lang="(\w+)" aria-pressed="(true|false)"/g, (m, l) => `data-lang="${l}" aria-pressed="${l === lang}"`);
   // structured data
