@@ -1164,12 +1164,33 @@ function updateCaptions(p){
   }
   const dk=smoothstep(p,DARK[0],DARK[1]);if(Math.abs(dk-darkV)>.005){darkV=dk;stage.style.setProperty('--dark',dk.toFixed(3))}
 }
+/* Scroll sets how far the table should be set; the video plays forward on its own toward that point at natural speed (a little faster when it is far behind), so every dish glides in as filmed instead of stepping frame by frame. Scrolling back seeks. Captions follow the video, so the words arrive with the dishes. */
+let playBlocked=false; /* if the browser refuses play() (Low Power Mode on iPhone), fall back to frame seeking */
+function driveVideo(p){
+  if(!video.duration||!isFinite(video.duration))return;
+  const tt=vt(p), ct=video.currentTime, gap=tt-ct;
+  if(playBlocked){requestSeek(tt);return}
+  if(gap>.05||(!video.paused&&gap>.015)){
+    /* far behind: hurry (up to 2.6x); almost there: slow down instead of stopping, so slow scrolling never stutters */
+    const rate=clamp(gap/.28,.35,2.6);if(Math.abs(video.playbackRate-rate)>.05)video.playbackRate=rate;
+    if(video.paused){const pr=video.play();if(pr&&pr.catch)pr.catch(()=>{playBlocked=true;requestSeek(tt)})}
+  }
+  else if(gap<-.35){if(!video.paused)video.pause();requestSeek(tt)}
+  else if(!video.paused)video.pause();
+}
+function captionProgress(){
+  if(playBlocked||!video.duration||!isFinite(video.duration))return shown;
+  const done=video.currentTime>=video.duration-.06;
+  if(done)return shown;
+  return Math.min(shown,(video.currentTime/video.duration)*VIDEO_END);
+}
 function tick(now){
   const dt=Math.min(100,now-(lastTick||now));lastTick=now;
-  const k=.12;shown+=(target-shown)*(1-Math.pow(1-k,dt/16.667));
-  if(Math.abs(target-shown)<.0005){shown=target;rafId=null;lastTick=0}else rafId=requestAnimationFrame(tick);
-  requestSeek(vt(shown));
-  updateCaptions(shown);
+  const k=.16;shown+=(target-shown)*(1-Math.pow(1-k,dt/16.667));
+  const settled=Math.abs(target-shown)<.0005;if(settled)shown=target;
+  driveVideo(shown);
+  updateCaptions(captionProgress());
+  if(settled&&video.paused){rafId=null;lastTick=0}else rafId=requestAnimationFrame(tick);
 }
 function onScroll(){target=heroProgress();if(rafId===null&&heroOnScreen)rafId=requestAnimationFrame(tick)}
 function loadRamp(now){if(!loadStart)loadStart=now;const x=clamp((now-loadStart)/1300,0,1);loadK=x*x*(3-2*x);updateCaptions(shown);if(x<1)requestAnimationFrame(loadRamp)}
@@ -1195,12 +1216,13 @@ async function loadHeroBlob(){
     if(now-last>100||frac===1){last=now;ring.style.setProperty('--ld',Math.round(126*(1-frac)))}}
   clearTimeout(wd);ring.style.setProperty('--ld',0);
   video.src=URL.createObjectURL(new Blob(chunks,{type:'video/mp4'}));video.load();
-  video.addEventListener('canplay',()=>{requestSeek(vt(heroProgress()));stage.classList.add('video-ready')},{once:true});
+  video.addEventListener('canplay',()=>{video.playbackRate=1;stage.classList.add('video-ready');onScroll()},{once:true});
+  video.addEventListener('ended',()=>{onScroll()});
 }
 function failVideo(){stage.classList.add('video-failed');ring.style.display='none'}
 const GATES=['(orientation: landscape) and (pointer: coarse) and (max-height: 560px)','(prefers-reduced-motion: reduce)'];
 function enableScrub(){if(scrubOn)return;scrubOn=true;initHeroOnce();addEventListener('scroll',onScroll,{passive:true});bands.forEach(b=>{b.op=-1;b.k=-1;b.ks=-1;b.kb=-1});unpinFinalStates();updateCaptions(heroProgress());onScroll()}
-function disableScrub(){if(!scrubOn)return;scrubOn=false;removeEventListener('scroll',onScroll);if(rafId!==null){cancelAnimationFrame(rafId);rafId=null}}
+function disableScrub(){if(!scrubOn)return;scrubOn=false;removeEventListener('scroll',onScroll);if(rafId!==null){cancelAnimationFrame(rafId);rafId=null}if(!video.paused)video.pause()}
 function applyHeroMode(){if(GATES.some(q=>matchMedia(q).matches))disableScrub();else enableScrub()}
 const MQLS=GATES.map(q=>matchMedia(q));MQLS.forEach(m=>m.addEventListener('change',applyHeroMode));
 
