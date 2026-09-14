@@ -148,9 +148,10 @@ window.KP_I18N = {
     "s7.t3": "Создал группу, отправил код, и календарь общий. Один спланировал, увидели все. Групп может быть несколько: «Дом», «Дача», «Родители», у каждой свой состав и свои порции.",
 
     "s8.kicker": "Нутрициологам, тренерам, блогерам",
-    "s8.h2": "План клиенту одной ссылкой.",
-    "s8.t1": "Отдельный календарь под каждого клиента. Собрал план, отправил ссылкой в мессенджер: клиент открывает страницу с меню и списком покупок, ничего не устанавливая.",
-    "s8.t2": "Свои рецепты с фото и видео, коллекции как плейлисты, публичный профиль с @username. Подписчики видят твои рецепты, оценивают и обсуждают. До 250 своих рецептов.",
+    "s8.h2": "Клиент получает приложение бесплатно.",
+    "s8.t1": "Приглашаешь ссылкой в том же мессенджере, где вы и так переписываетесь. Клиент сам решает, что тебе показывать, и ты видишь его дневник питания с фотографиями, вес и замеры.",
+    "s8.t2": "Выдаёшь план прямо в его календаре, список покупок к плану собирается сам. В тариф входит 15 клиентов, и платишь только ты.",
+    "s8.more": "Подробнее для специалистов",
 
     "s9.kicker": "Всё связано",
     "s9.h2": "Ты просто готовишь. Учёт ведётся сам.",
@@ -407,9 +408,10 @@ window.KP_I18N = {
     "s7.t3": "Топ құрдың, код жібердің, күнтізбе ортақ болды. Біреуі жоспарлады, бәрі көрді. Топ бірнеше болуы мүмкін: «Үй», «Саяжай», «Ата-ана», әрқайсысының өз құрамы мен үлестері бар.",
 
     "s8.kicker": "Нутрициологтарға, жаттықтырушыларға, блогерлерге",
-    "s8.h2": "Клиентке жоспар бір сілтемемен.",
-    "s8.t1": "Әр клиентке жеке күнтізбе. Жоспар жинадың, мессенджерге сілтемемен жібердің: клиент ештеңе орнатпай, мәзір мен сатып алу тізімі бар бетті ашады.",
-    "s8.t2": "Фото мен видеосы бар өз рецептерің, плейлист сияқты жинақтар, @username бар жария профиль. Жазылушылар рецептеріңді көреді, бағалайды және талқылайды. 250 өз рецептіңе дейін.",
+    "s8.h2": "Клиент қолданбаны тегін алады.",
+    "s8.t1": "Сіз онымен әдетте жазысатын мессенджерде сілтеме жібересіз. Клиент не көрсетуді өзі шешеді, ал сіз оның фотосы бар тамақтану күнделігін, салмағы мен өлшемдерін көресіз.",
+    "s8.t2": "Жоспарды оның күнтізбесіне бересіз, оған сатып алу тізімі өзі жиналады. Тарифке 15 клиент кіреді, төлейтін тек сіз.",
+    "s8.more": "Мамандарға толығырақ",
 
     "s9.kicker": "Бәрі байланысқан",
     "s9.h2": "Сен жай ғана тамақ пісіресің. Есеп өзі жүреді.",
@@ -666,9 +668,10 @@ window.KP_I18N = {
     "s7.t3": "Create a group, send the code, and the calendar is shared. One plans, everyone sees it. Several groups are fine: “Home”, “Dacha”, “Parents”, each with its own people and portions.",
 
     "s8.kicker": "For nutritionists, coaches, bloggers",
-    "s8.h2": "A plan for the client in one link.",
-    "s8.t1": "A separate calendar for each client. Build the plan, send it as a link in a messenger: the client opens a page with the menu and the shopping list, installing nothing.",
-    "s8.t2": "Your own recipes with photo and video, collections like playlists, a public profile with an @username. Followers see your recipes, rate and discuss them. Up to 250 recipes of your own.",
+    "s8.h2": "Your client gets the app for free.",
+    "s8.t1": "You invite them by a link in the same messenger you already use. The client decides what to share, and you see their food diary with photos, their weight and measurements.",
+    "s8.t2": "You hand them a plan right in their calendar, and the shopping list for it builds itself. The tier includes 15 clients, and only you pay.",
+    "s8.more": "More for specialists",
 
     "s9.kicker": "All connected",
     "s9.h2": "You just cook. The records keep themselves.",
