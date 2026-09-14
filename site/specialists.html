@@ -1,0 +1,709 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>KitchenPlus для специалистов — тренерам, нутрициологам, блогерам</title>
+<meta name="description" content="Приглашаешь клиента ссылкой — приложение достаётся ему бесплатно. Ты видишь его дневник питания с фото, вес и замеры, выдаёшь план и список покупок.">
+<link rel="canonical" href="https://kitchenplus.kz/specialists.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="KitchenPlus">
+<meta property="og:title" content="KitchenPlus для специалистов">
+<meta property="og:description" content="Твои клиенты получают приложение бесплатно. Ты видишь, что они едят.">
+<meta property="og:url" content="https://kitchenplus.kz/specialists.html">
+<meta property="og:image" content="https://kitchenplus.kz/assets/hero-ending-1280.jpg">
+<meta name="theme-color" content="#0C0A09">
+<link rel="icon" href="/favicon.png" sizes="any">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<style>
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/manrope-500-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/manrope-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'Manrope';font-style:normal;font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/jetbrains-mono-500-cyrillic.woff2) format('woff2');unicode-range:U+0301, U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116}
+@font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:500;font-display:swap;src:url(/assets/fonts/jetbrains-mono-500-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --canvas:#0C0A09;--canvas-2:#11100E;--panel:rgba(24,20,17,.88);--panel-2:#231E1A;
+  --line:rgba(255,255,255,.09);--line-strong:rgba(255,255,255,.4);
+  --accent:#D4AF37;--accent-hover:#E2C25A;--accent-muted:rgba(212,175,55,.16);
+  --text:#F6F1E8;--text-2:#B9AEA2;--amber:#FF8C42;
+  --display:'Cormorant Garamond',Georgia,'Times New Roman',serif;
+  --body:'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+  --ease-out:cubic-bezier(.22,.61,.36,1);
+  --nav-h:72px;--maxw:1100px;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--canvas);color:var(--text);font:400 17px/1.62 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--display);font-weight:600;letter-spacing:-.01em;line-height:1.08}
+h1{font-size:clamp(38px,6.4vw,72px)}
+h2{font-size:clamp(28px,4vw,44px)}
+h3{font-size:clamp(19px,2vw,23px);line-height:1.24}
+p{margin:0}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+.sec{padding:96px 0;position:relative;z-index:2}
+.kicker{font:500 11px/1 var(--mono);letter-spacing:.22em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.kicker::before{content:"";width:34px;height:1px;background:var(--accent);opacity:.6;flex:0 0 auto}
+.lead{font-size:clamp(17px,1.9vw,20px);color:var(--text-2);max-width:62ch;margin-top:18px}
+.text{color:var(--text-2);max-width:64ch;margin-top:16px}
+.grain{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .6 0'/></filter><rect width='160' height='160' filter='url(%23n)'/></svg>");background-size:160px 160px}
+
+/* Nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;height:var(--nav-h);display:flex;align-items:center;background:rgba(12,10,9,.86);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;width:100%}
+.logo{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:var(--display);font-size:23px;font-weight:600}
+.logo img{width:30px;height:30px;border-radius:8px}
+.logo b{color:var(--accent);font-weight:600}
+.nav-right{display:flex;align-items:center;gap:18px}
+.back{font-size:14px;color:var(--text-2);text-decoration:none;transition:color .25s}
+.back:hover{color:var(--text)}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:14px 26px;border-radius:999px;font:600 15px/1 var(--body);text-decoration:none;cursor:pointer;border:1px solid transparent;transition:transform .3s var(--ease-out),background .3s,border-color .3s,color .3s}
+.btn-gold{background:var(--accent);color:#17120C}
+.btn-gold:hover{background:var(--accent-hover);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.22);color:var(--text)}
+.btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
+
+/* Hero */
+.top{position:relative;padding:calc(var(--nav-h) + 80px) 0 64px;overflow:hidden}
+.top::after{content:"";position:absolute;left:50%;top:-10%;width:min(980px,120vw);height:520px;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(212,175,55,.15),transparent 68%);filter:blur(30px)}
+.top .wrap{position:relative;z-index:2}
+.top h1{max-width:17ch}
+.top h1 em{font-style:normal;color:var(--accent)}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;align-items:center}
+.small{font:500 12px/1.5 var(--mono);color:var(--text-2);letter-spacing:.04em}
+
+/* Link diagram */
+.linkfig{margin-top:62px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(24,20,17,.75),rgba(12,10,9,.4));padding:34px 28px 26px;overflow:hidden}
+.linkfig svg{width:100%;height:auto;display:block;max-width:900px;margin:0 auto}
+.linkfig .cap{margin-top:18px;text-align:center;font:500 12px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--text-2)}
+.thread-draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 2.2s var(--ease-out) .25s forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.node-in{opacity:0;animation:nodein .7s var(--ease-out) forwards}
+@keyframes nodein{to{opacity:1}}
+
+/* Steps */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.step{border:1px solid var(--line);border-radius:18px;padding:28px 24px;background:var(--panel);position:relative}
+.step .n{font:500 11px/1 var(--mono);color:var(--accent);letter-spacing:.18em;margin-bottom:16px;display:block}
+.step h3{margin-bottom:10px}
+.step p{color:var(--text-2);font-size:15.5px}
+
+/* Feature rows */
+.rows{margin-top:44px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.rw{background:var(--canvas-2);padding:26px 28px;display:grid;grid-template-columns:220px 1fr;gap:24px;align-items:start}
+.rw dt{font-weight:600;font-size:16px}
+.rw dd{margin:0;color:var(--text-2);font-size:15.5px}
+.soon{display:inline-block;margin-left:9px;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-muted);background:rgba(212,175,55,.08);border-radius:999px;padding:5px 9px;vertical-align:2px}
+
+/* Seats */
+.seats{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;margin-top:40px}
+.seatgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.seat{aspect-ratio:1;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.02);display:flex;align-items:center;justify-content:center}
+.seat.on{border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.1)}
+.seat svg{width:20px;height:20px;opacity:.85}
+.seatnote{margin-top:20px;font:500 12px/1.6 var(--mono);color:var(--text-2);letter-spacing:.04em}
+
+/* Who */
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px}
+.wcard{border:1px solid var(--line);border-radius:18px;padding:30px 26px;background:var(--panel);display:flex;flex-direction:column;gap:14px}
+.wcard h3{font-family:var(--body);font-weight:600;font-size:18px;letter-spacing:0}
+.wcard ul{margin:0;padding-left:18px;color:var(--text-2);font-size:15px;line-height:1.7}
+.wcard li::marker{color:var(--accent)}
+
+/* Consent */
+.consent{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(24,20,17,.8),rgba(12,10,9,.35));padding:36px 32px;margin-top:40px}
+.scopes{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.scope{border:1px solid var(--line);border-radius:999px;padding:9px 16px;font-size:14px;color:var(--text-2);display:flex;align-items:center;gap:9px}
+.scope i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;flex:0 0 auto}
+
+/* Price */
+.pricebox{border:1px solid rgba(212,175,55,.34);border-radius:22px;background:linear-gradient(180deg,rgba(212,175,55,.07),rgba(12,10,9,.2));padding:40px 34px;margin-top:40px;text-align:center}
+.pricebox .amount{font-family:var(--display);font-size:clamp(40px,6vw,62px);line-height:1;margin:10px 0 6px}
+.pricebox .per{color:var(--text-2);font-size:15px}
+.pricebox ul{list-style:none;margin:26px auto 0;padding:0;max-width:520px;display:grid;gap:11px;text-align:left}
+.pricebox li{display:flex;gap:12px;align-items:flex-start;color:var(--text-2);font-size:15.5px}
+.pricebox li::before{content:"";width:7px;height:7px;margin-top:9px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+
+/* FAQ */
+.faq{margin-top:40px;border-top:1px solid var(--line)}
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{list-style:none;cursor:pointer;padding:22px 46px 22px 0;position:relative;font-weight:600;font-size:16.5px}
+.qa summary::-webkit-details-marker{display:none}
+.qa summary::after{content:"";position:absolute;right:8px;top:50%;width:11px;height:11px;border-right:1.5px solid var(--accent);border-bottom:1.5px solid var(--accent);transform:translateY(-70%) rotate(45deg);transition:transform .3s var(--ease-out)}
+.qa[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+.qa p{padding:0 0 24px;color:var(--text-2);max-width:70ch}
+
+/* Footer */
+.foot{border-top:1px solid var(--line);padding:44px 0;color:var(--text-2);font-size:14px}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.foot a{color:var(--text-2);text-decoration:none;transition:color .25s}
+.foot a:hover{color:var(--accent)}
+
+/* Reveal */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out)}
+.reveal.in{opacity:1;transform:none}
+
+
+/* --- Фотографии --- */
+.wcard{padding:0;overflow:hidden}
+.wcard .ph{aspect-ratio:4/3;overflow:hidden;border-bottom:1px solid var(--line);position:relative}
+.wcard .ph img{width:100%;height:100%;object-fit:cover;transform:scale(1.02);transition:transform 1.1s var(--ease-out),filter .6s}
+.wcard .ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(12,10,9,.72))}
+.wcard:hover .ph img{transform:scale(1.07)}
+.wcard .body{padding:24px 26px 28px;display:flex;flex-direction:column;gap:14px}
+.bleed{position:relative;margin-top:54px;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.bleed img{width:100%;height:clamp(240px,34vw,420px);object-fit:cover}
+.bleed figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 32px;background:linear-gradient(180deg,transparent,rgba(12,10,9,.88));
+  font-family:var(--display);font-size:clamp(20px,2.6vw,30px);line-height:1.2;max-width:22ch}
+
+/* --- Живая схема: огонёк бежит по нити --- */
+.spark{fill:#F6F1E8}
+.spark-run{offset-path:path('M 150 115 C 300 40, 600 40, 750 115');offset-rotate:0deg;animation:run 3.4s cubic-bezier(.5,0,.5,1) 2.2s infinite}
+@keyframes run{0%{offset-distance:0%;opacity:0}8%{opacity:1}86%{opacity:1}100%{offset-distance:100%;opacity:0}}
+
+/* --- Интерактив: согласия --- */
+.demo{display:grid;grid-template-columns:.92fr 1.08fr;gap:34px;margin-top:40px;align-items:start}
+.switches{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:10px 8px}
+.sw{display:flex;align-items:center;gap:14px;width:100%;background:none;border:0;color:inherit;font:inherit;text-align:left;padding:15px 16px;border-radius:13px;cursor:pointer;transition:background .25s}
+.sw:hover{background:rgba(255,255,255,.035)}
+.sw .knob{width:44px;height:26px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.05);position:relative;flex:0 0 auto;transition:background .3s var(--ease-out),border-color .3s}
+.sw .knob::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#6E675E;transition:transform .3s var(--ease-out),background .3s}
+.sw[aria-pressed="true"] .knob{background:rgba(212,175,55,.22);border-color:rgba(212,175,55,.55)}
+.sw[aria-pressed="true"] .knob::after{transform:translateX(18px);background:var(--accent)}
+.sw .t{display:flex;flex-direction:column;gap:2px}
+.sw .t b{font-weight:600;font-size:15.5px}
+.sw .t span{font-size:13px;color:var(--text-2)}
+.swnote{margin:14px 4px 0;font:500 12px/1.6 var(--mono);color:var(--text-2);letter-spacing:.03em}
+
+.cli{border:1px solid var(--line);border-radius:20px;background:linear-gradient(180deg,rgba(24,20,17,.92),rgba(12,10,9,.5));padding:22px;min-height:396px}
+.cli .head{display:flex;align-items:center;gap:13px;padding-bottom:16px;border-bottom:1px solid var(--line)}
+.cli .ava{width:42px;height:42px;border-radius:50%;background:rgba(212,175,55,.16);border:1px solid rgba(212,175,55,.4);display:grid;place-items:center;font-family:var(--display);font-size:19px;color:var(--accent)}
+.cli .head b{display:block;font-size:15.5px}
+.cli .head span{font-size:12.5px;color:var(--text-2)}
+.blk{overflow:hidden;max-height:0;opacity:0;transition:max-height .45s var(--ease-out),opacity .35s,margin .45s var(--ease-out);margin-top:0}
+.blk.on{max-height:280px;opacity:1;margin-top:18px}
+.blk h4{margin:0 0 10px;font:500 10px/1 var(--mono);letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.meal{display:flex;align-items:center;gap:11px;padding:9px 0;border-bottom:1px solid rgba(255,255,255,.05);font-size:14.5px}
+.meal:last-child{border-bottom:0}
+.meal .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:0 0 auto;opacity:.75}
+.meal .kc{margin-left:auto;font:500 13px var(--mono);color:var(--text-2)}
+.shots{display:flex;gap:8px}
+.shots i{flex:1;aspect-ratio:1;border-radius:9px;background-size:cover;background-position:center;border:1px solid var(--line)}
+.empty{color:var(--text-2);font-size:14.5px;padding:34px 4px;text-align:center}
+.empty.off{display:none}
+
+/* --- Неделя --- */
+.week{margin-top:34px;border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:26px 24px}
+.week .bars{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;align-items:end;height:160px;margin-top:20px;position:relative}
+.week .norm{position:absolute;left:0;right:0;bottom:52%;border-top:1px dashed rgba(212,175,55,.55)}
+.week .norm span{position:absolute;right:0;top:-20px;font:500 10px var(--mono);letter-spacing:.12em;color:var(--accent)}
+.bar{position:relative;border-radius:7px 7px 3px 3px;height:0;transition:height 1s var(--ease-out);background:rgba(212,175,55,.45)}
+.bar.over{background:rgba(255,140,66,.5)}
+.bar.under{background:rgba(255,255,255,.13)}
+.week .days{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:10px;font:500 11px var(--mono);color:var(--text-2);text-align:center;letter-spacing:.06em}
+.wlegend{display:flex;flex-wrap:wrap;gap:18px;margin-top:18px;font-size:13px;color:var(--text-2)}
+.wlegend i{width:9px;height:9px;border-radius:3px;display:inline-block;margin-right:7px;vertical-align:0}
+
+/* --- Калькулятор мест --- */
+.calc{border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:28px 26px;margin-top:26px}
+.calc label{display:block;font-size:14.5px;color:var(--text-2);margin-bottom:16px}
+.calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:28px;background:transparent;margin:0;--v:33%}
+.calc input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:4px;background:linear-gradient(90deg,var(--accent) var(--v),rgba(255,255,255,.16) var(--v))}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);border:3px solid #1A1512;margin-top:-9px;box-shadow:0 0 0 3px rgba(212,175,55,.3)}
+.calc input[type=range]::-moz-range-track{height:4px;border-radius:4px;background:rgba(255,255,255,.16)}
+.calc input[type=range]::-moz-range-thumb{width:22px;height:22px;border:3px solid #1A1512;border-radius:50%;background:var(--accent)}
+.calcout{display:flex;flex-wrap:wrap;gap:26px;margin-top:18px}
+.calcout div span{display:block;font:500 11px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--text-2);margin-bottom:6px}
+.calcout div b{font-family:var(--display);font-size:30px;font-weight:600;line-height:1}
+@media (max-width:900px){.demo{grid-template-columns:1fr}}
+
+@media (max-width:900px){
+  .steps,.who{grid-template-columns:1fr}
+  .seats{grid-template-columns:1fr;gap:30px}
+  .rw{grid-template-columns:1fr;gap:8px}
+}
+@media (max-width:620px){
+  .linkfig{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .linkfig svg{min-width:470px}
+  .linkfig .cap{min-width:470px}
+}
+@media (max-width:560px){
+  .back{display:none}
+  .logo{font-size:20px}
+  .btn{padding:12px 20px;font-size:14px}
+}
+@media (max-width:720px){
+  .wrap{padding:0 22px}
+  body{font-size:16px}
+  .sec{padding:68px 0}
+  .top{padding:calc(var(--nav-h) + 54px) 0 46px}
+  .ctas .btn{width:100%}
+  .linkfig{padding:22px 14px 18px}
+}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  .thread-draw{animation:none;stroke-dashoffset:0}
+  .node-in{animation:none;opacity:1}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="/"><img src="/assets/icon.png" alt="" width="30" height="30">Kitchen<b>Plus</b></a>
+    <div class="nav-right">
+      <a class="back" href="/#pricing">Тарифы</a>
+      <a class="btn btn-gold" href="#start">Попробовать</a>
+    </div>
+  </div>
+</header>
+
+<main>
+
+<!-- Hero -->
+<section class="top">
+  <div class="wrap">
+    <div class="kicker">Для специалистов</div>
+    <h1>Твои клиенты получают приложение <em>бесплатно</em>. Ты видишь, что они едят.</h1>
+    <p class="lead">Тренерам, нутрициологам и тем, кто ведёт людей по питанию. Приглашаешь клиента ссылкой, он сам решает, что тебе показывать, а дальше ты просто работаешь: смотришь дневник, выдаёшь план, следишь за весом.</p>
+    <div class="ctas">
+      <a class="btn btn-gold" href="#start">14 дней бесплатно</a>
+      <a class="btn btn-ghost" href="#how">Как это работает</a>
+    </div>
+    <p class="small" style="margin-top:18px">Платишь только ты. Клиенту приложение ничего не стоит.</p>
+
+    <figure class="linkfig">
+      <svg viewBox="0 0 900 230" role="img" aria-label="Схема связи: специалист приглашает клиента ссылкой, клиент открывает доступ к дневнику, плану и замерам">
+        <defs>
+          <radialGradient id="glow" cx="50%" cy="50%">
+            <stop offset="0%" stop-color="#D4AF37" stop-opacity=".5"/>
+            <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- thread -->
+        <path id="thr" class="thread-draw" style="--len:760"
+              d="M 150 115 C 300 40, 600 40, 750 115" fill="none"
+              stroke="#D4AF37" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
+        <path class="thread-draw" style="--len:760;animation-delay:.5s"
+              d="M 750 115 C 600 190, 300 190, 150 115" fill="none"
+              stroke="#D4AF37" stroke-opacity=".28" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4 7"/>
+
+        <!-- specialist node -->
+        <g class="node-in" style="animation-delay:.15s">
+          <circle cx="150" cy="115" r="54" fill="url(#glow)"/>
+          <circle cx="150" cy="115" r="38" fill="#11100E" stroke="#D4AF37" stroke-opacity=".6" stroke-width="1.3"/>
+          <path d="M150 104a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0 6c-11 0-22 6-22 16v6h44v-6c0-10-11-16-22-16Z"
+                fill="#D4AF37" fill-opacity=".9" transform="translate(0,8) scale(1)"/>
+          <text x="150" y="186" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="15" font-weight="600">Ты</text>
+        </g>
+
+        <!-- client node -->
+        <g class="node-in" style="animation-delay:.85s">
+          <circle cx="750" cy="115" r="54" fill="url(#glow)"/>
+          <circle cx="750" cy="115" r="38" fill="#11100E" stroke="#D4AF37" stroke-opacity=".45" stroke-width="1.3"/>
+          <rect x="737" y="96" width="26" height="42" rx="5" fill="none" stroke="#D4AF37" stroke-opacity=".9" stroke-width="1.4"/>
+          <line x1="745" y1="104" x2="755" y2="104" stroke="#D4AF37" stroke-opacity=".9" stroke-width="1.4" stroke-linecap="round"/>
+          <text x="750" y="186" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="15" font-weight="600">Клиент</text>
+        </g>
+
+        <circle class="spark spark-run" r="3.2" cx="0" cy="0"/>
+
+        <!-- labels on the thread -->
+        <g class="node-in" style="animation-delay:1.5s">
+          <text x="450" y="52" text-anchor="middle" fill="#D4AF37" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2">ПРИГЛАШЕНИЕ</text>
+          <text x="450" y="182" text-anchor="middle" fill="#B9AEA2" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2">ДНЕВНИК · ПЛАН · ЗАМЕРЫ</text>
+        </g>
+      </svg>
+      <figcaption class="cap">Связь работает, пока её не закрыл клиент или ты</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- How -->
+<section class="sec reveal" id="how">
+  <div class="wrap">
+    <div class="kicker">Как это работает</div>
+    <h2>Три шага, дальше только работа</h2>
+    <div class="steps">
+      <article class="step">
+        <span class="n">01</span>
+        <h3>Отправляешь ссылку</h3>
+        <p>В том же мессенджере, где вы и так переписываетесь. Клиент ставит приложение и открывает ссылку — регистрация занимает минуту.</p>
+      </article>
+      <article class="step">
+        <span class="n">02</span>
+        <h3>Клиент даёт доступ</h3>
+        <p>На экране согласия он отмечает, что тебе видно: дневник, план, вес, фотографии. По умолчанию не открыто ничего.</p>
+      </article>
+      <article class="step">
+        <span class="n">03</span>
+        <h3>Ведёшь</h3>
+        <p>Он записывает, что съел, ты смотришь неделю целиком и выдаёшь план. Списки покупок к плану собираются сами.</p>
+      </article>
+    </div>
+
+    <figure class="bleed">
+      <img src="/assets/sp-band.jpg" alt="Вечерняя кухня: телефон рядом с готовым ужином" loading="lazy" width="1600" height="686">
+      <figcaption>Человек готовит ужин, а ты утром видишь, что он съел</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- What you see -->
+<section class="sec reveal">
+  <div class="wrap">
+    <div class="kicker">Карточка клиента</div>
+    <h2>Видно, что человек ел на самом деле</h2>
+    <p class="text">Не «я нормально питался», а лента приёмов пищи с фотографиями и цифрами. Всё, что ниже, открыто только для чтения: чужой дневник ты не редактируешь, иначе теряется смысл наблюдения.</p>
+
+    <dl class="rows">
+      <div class="rw"><dt>Неделя против нормы</dt><dd>Сколько дней дневник заполнен, средние калории и белки, жиры, углеводы, отклонение в процентах.</dd></div>
+      <div class="rw"><dt>Лента с фотографиями</dt><dd>Каждый приём пищи со снимком. Снимки живут 90 дней, цифры остаются навсегда.</dd></div>
+      <div class="rw"><dt>Вес и замеры</dt><dd>История, а не одно текущее число: график веса, процент жира, талия, грудь, бёдра.</dd></div>
+      <div class="rw"><dt>План и список покупок</dt><dd>Собираешь меню в календаре клиента, список продуктов к нему считается сам.</dd></div>
+      <div class="rw"><dt>Свои заметки</dt><dd>Видны только тебе. Клиент их не читает.</dd></div>
+      <div class="rw"><dt>Шаблоны планов<span class="soon">Скоро</span></dt><dd>Собрал «неделя, 1600 ккал, без лактозы» один раз — выдаёшь за минуту следующему.</dd></div>
+      <div class="rw"><dt>Публичная страница<span class="soon">Скоро</span></dt><dd>Твоё имя, описание, ссылки и твои рецепты по адресу вида kitchenplus.kz/@name.</dd></div>
+    </dl>
+
+    <div class="week" id="week">
+      <div class="kicker" style="margin-bottom:0">Неделя Айгерим</div>
+      <p class="text" style="margin-top:10px">Столбик выше пунктира — перебор, ниже — недобор. Вся неделя видна одним взглядом, разбираться в цифрах не нужно.</p>
+      <div class="bars" aria-hidden="true">
+        <div class="norm"><span>НОРМА</span></div>
+        <div class="bar" data-h="52"></div>
+        <div class="bar under" data-h="31"></div>
+        <div class="bar" data-h="49"></div>
+        <div class="bar over" data-h="74"></div>
+        <div class="bar" data-h="54"></div>
+        <div class="bar over" data-h="88"></div>
+        <div class="bar under" data-h="26"></div>
+      </div>
+      <div class="days"><span>ПН</span><span>ВТ</span><span>СР</span><span>ЧТ</span><span>ПТ</span><span>СБ</span><span>ВС</span></div>
+      <div class="wlegend">
+        <span><i style="background:rgba(212,175,55,.45)"></i>В норме</span>
+        <span><i style="background:rgba(255,140,66,.5)"></i>Перебор</span>
+        <span><i style="background:rgba(255,255,255,.13)"></i>Недобор</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Seats -->
+<section class="sec reveal">
+  <div class="wrap">
+    <div class="kicker">Места</div>
+    <h2>Не нужно уговаривать клиента платить</h2>
+    <div class="seats">
+      <div>
+        <p class="text" style="margin-top:0">Тренер, который просит клиента купить ещё и приложение, выглядит так, будто что-то впаривает. Половина откажется, и ты останешься без дневника ровно тех, за кем хотел следить.</p>
+        <p class="text">Поэтому в тариф входят места. Пока связь активна, клиент пользуется приложением бесплатно. Разговор звучит иначе: «я работаю через приложение, вот ссылка, для тебя бесплатно». Это не продажа, а условие работы.</p>
+        <p class="text"><strong style="color:var(--text)">Купил свою подписку — место освободилось,</strong> а связь осталась. Ты по-прежнему видишь дневник и выдаёшь планы, а место уходит следующему человеку.</p>
+      </div>
+      <div>
+        <div class="seatgrid" aria-hidden="true">
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+          <div class="seat on"><svg viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5"><circle cx="12" cy="8" r="3.4"/><path d="M5.5 19c0-3.6 2.9-5.6 6.5-5.6s6.5 2 6.5 5.6"/></svg></div>
+        </div>
+        <p class="seatnote" id="seatnote">15 мест в тарифе · +10 мест за 4 990 ₸ · до 45</p>
+        <div class="calc">
+          <label for="cl">Сколько клиентов ты ведёшь: <b id="clv" style="color:var(--text)">12</b></label>
+          <input type="range" id="cl" min="1" max="45" step="1" value="12">
+          <div class="calcout">
+            <div><span>Мест занято</span><b id="used">12 / 15</b></div>
+            <div><span>Докупок</span><b id="packs">не нужно</b></div>
+            <div><span>В месяц</span><b id="total" style="color:var(--accent)">9 990 ₸</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Who -->
+<section class="sec reveal">
+  <div class="wrap">
+    <div class="kicker">Кому</div>
+    <h2>Три разные работы</h2>
+    <div class="who">
+      <article class="wcard">
+        <div class="ph"><img src="/assets/sp-trainer.jpg" alt="Телефон, шейкер и полотенце на скамье в зале" loading="lazy" width="800" height="603"></div>
+        <div class="body">
+          <h3>Фитнес-тренер</h3>
+          <ul><li>Норму КБЖУ задаёшь ты, а не клиент</li><li>Видно по дням, где недобор и перебор</li><li>Замеры и график веса за месяц</li><li>Фотографии еды вместо слов «ел правильно»</li></ul>
+        </div>
+      </article>
+      <article class="wcard">
+        <div class="ph"><img src="/assets/sp-nutri.jpg" alt="Раскрытый блокнот, телефон и овощи на тёмном столе" loading="lazy" width="800" height="603"></div>
+        <div class="body">
+          <h3>Нутрициолог</h3>
+          <ul><li>План на неделю прямо в календаре клиента</li><li>Список покупок к плану собирается сам</li><li>Аллергии и непереносимости учитываются</li><li>Страница плана уходит клиенту по ссылке</li></ul>
+        </div>
+      </article>
+      <article class="wcard">
+        <div class="ph"><img src="/assets/sp-blogger.jpg" alt="Тарелка на тёмном камне и объектив камеры в кадре" loading="lazy" width="800" height="603"></div>
+        <div class="body">
+          <h3>Фуд-блогер</h3>
+          <ul><li>Свои рецепты с фото и видео</li><li>Комментарии и оценки под ними</li><li>До 250 своих рецептов</li><li>Публичная страница автора — скоро</li></ul>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Consent -->
+<section class="sec reveal">
+  <div class="wrap">
+    <div class="kicker">Согласие</div>
+    <h2>Клиент решает, что тебе видно</h2>
+    <p class="text">По умолчанию не открыто ничего. Понажимай переключатели — справа ровно то, что увидишь ты.</p>
+
+    <div class="demo">
+      <div>
+        <div class="switches" id="scopes">
+          <button type="button" class="sw" aria-pressed="true" data-blk="diary">
+            <span class="knob" aria-hidden="true"></span>
+            <span class="t"><b>Дневник питания</b><span>Что ел, калории и Б/Ж/У</span></span>
+          </button>
+          <button type="button" class="sw" aria-pressed="true" data-blk="plan">
+            <span class="knob" aria-hidden="true"></span>
+            <span class="t"><b>План меню</b><span>То, что ты ему выдал</span></span>
+          </button>
+          <button type="button" class="sw" aria-pressed="false" data-blk="weight">
+            <span class="knob" aria-hidden="true"></span>
+            <span class="t"><b>Вес и замеры</b><span>История, а не одно число</span></span>
+          </button>
+          <button type="button" class="sw" aria-pressed="false" data-blk="photo">
+            <span class="knob" aria-hidden="true"></span>
+            <span class="t"><b>Фотографии блюд</b><span>Снимки живут 90 дней</span></span>
+          </button>
+        </div>
+        <p class="swnote">Отзыв мгновенный. Спрашивать тебя приложение не будет.</p>
+      </div>
+
+      <div class="cli" aria-live="polite">
+        <div class="head">
+          <div class="ava">А</div>
+          <div><b>Айгерим</b><span>клиент · связь активна</span></div>
+        </div>
+
+        <p class="empty" id="empty">Клиент пока ничего не открыл</p>
+
+        <div class="blk on" data-blk="diary">
+          <h4>Дневник · вторник</h4>
+          <div class="meal"><i class="dot"></i>Овсянка с бананом<span class="kc">310 ккал</span></div>
+          <div class="meal"><i class="dot"></i>Куриная грудка с брокколи<span class="kc">420 ккал</span></div>
+          <div class="meal"><i class="dot"></i>Творожная запеканка<span class="kc">260 ккал</span></div>
+        </div>
+
+        <div class="blk on" data-blk="plan">
+          <h4>План на завтра</h4>
+          <div class="meal"><i class="dot"></i>Завтрак · Сырники<span class="kc">260 ккал</span></div>
+          <div class="meal"><i class="dot"></i>Обед · Харчо<span class="kc">220 ккал</span></div>
+          <div class="meal"><i class="dot"></i>Ужин · Треска в духовке<span class="kc">290 ккал</span></div>
+        </div>
+
+        <div class="blk" data-blk="weight">
+          <h4>Вес за месяц</h4>
+          <svg viewBox="0 0 300 70" style="width:100%;height:70px" aria-hidden="true">
+            <polyline points="6,18 54,24 102,20 150,34 198,40 246,36 294,50" fill="none" stroke="#D4AF37" stroke-opacity=".85" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="294" cy="50" r="3.6" fill="#F6F1E8"/>
+          </svg>
+          <div class="meal" style="border:0;padding-top:4px"><i class="dot"></i>68,4 кг<span class="kc">−2,1 кг за месяц</span></div>
+        </div>
+
+        <div class="blk" data-blk="photo">
+          <h4>Снимки за неделю</h4>
+          <div class="shots">
+            <i style="background-image:url('/assets/sp-dish-1.jpg')" title="Овсянка с бананом и мёдом"></i>
+            <i style="background-image:url('/assets/sp-dish-2.jpg')" title="Куриная грудка с брокколи"></i>
+            <i style="background-image:url('/assets/sp-dish-3.jpg')" title="Творожная запеканка"></i>
+            <i style="background-image:url('/assets/sp-dish-4.jpg')" title="Греческий салат"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="text">Связь закончилась — данные остаются у клиента целиком: дневник, история веса, планы. Ничего не стирается.</p>
+  </div>
+</section>
+
+<!-- Price -->
+<section class="sec reveal" id="start">
+  <div class="wrap">
+    <div class="kicker">Цена</div>
+    <h2>Дешевле одного занятия</h2>
+    <div class="pricebox">
+      <div class="small">Для специалистов</div>
+      <div class="amount">9 990 ₸</div>
+      <div class="per">в месяц · первые 14 дней бесплатно</div>
+      <ul>
+        <li>15 клиентов, приложение им достаётся бесплатно</li>
+        <li>Их дневник питания с фотографиями</li>
+        <li>Планы питания и списки покупок</li>
+        <li>Вес и замеры с графиками</li>
+        <li>До 250 своих рецептов</li>
+        <li>Нужно больше — плюс десять мест за 4 990 ₸</li>
+      </ul>
+      <div class="ctas" style="justify-content:center;margin-top:32px">
+        <a class="btn btn-gold" href="/#download">Скачать приложение</a>
+        <a class="btn btn-ghost" href="/#pricing">Все тарифы</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec reveal">
+  <div class="wrap">
+    <div class="kicker">Вопросы</div>
+    <h2>То, что спрашивают первым</h2>
+    <div class="faq">
+      <details class="qa">
+        <summary>Вы заберёте у меня клиентов?</summary>
+        <p>Нет. Если клиент купит свою подписку, связь с тобой остаётся: ты по-прежнему видишь дневник и выдаёшь планы. Меняется только то, откуда у него доступ к приложению, а у тебя при этом освобождается место под нового человека.</p>
+      </details>
+      <details class="qa">
+        <summary>Клиенту придётся платить?</summary>
+        <p>Нет, пока он занимает место в твоём тарифе. Место даёт ему дневник, твой план, список покупок к нему, вес и замеры и весь каталог рецептов. Своя семья и свои группы в место не входят — это то, за что платит обычный пользователь.</p>
+      </details>
+      <details class="qa">
+        <summary>А если клиентов больше пятнадцати?</summary>
+        <p>Места докупаются пачками по десять, каждая 4 990 ₸ в месяц, до сорока пяти мест. При этом пятнадцать мест — это не пятнадцать клиентов, а пятнадцать бесплатных одновременно: те, кто купил свою подписку, места не занимают.</p>
+      </details>
+      <details class="qa">
+        <summary>Я увижу, что у клиента в холодильнике?</summary>
+        <p>Нет. Продукты дома — личное, и в доступы они не входят. Ты видишь то, что клиент открыл сам: дневник, план, замеры, фотографии.</p>
+      </details>
+      <details class="qa">
+        <summary>Что будет со снимками еды?</summary>
+        <p>Фотографии блюд хранятся 90 дней, потом удаляются. Калории и БЖУ остаются навсегда — пропадает только картинка. Ценность снимка почти вся в первые недели, а хранить десятки тысяч файлов вечно мы не готовы и не хотим брать за это с тебя денег.</p>
+      </details>
+      <details class="qa">
+        <summary>Клиент может отключить доступ?</summary>
+        <p>Да, в любой момент и по каждому пункту отдельно. Это не жест вежливости: речь о данных про питание и вес, и человек должен управлять ими сам.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <span>© KitchenPlus, 2026</span>
+    <span><a href="/">На главную</a> · <a href="/legal/privacy.html">Конфиденциальность</a> · <a href="/legal/terms.html">Условия</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {rootMargin:'0px 0px -12% 0px', threshold:.08});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // длина нити считается по факту, чтобы рисовалась ровно
+  document.querySelectorAll('.thread-draw').forEach(function(p){
+    try{ p.style.setProperty('--len', Math.ceil(p.getTotalLength())); }catch(e){}
+  });
+
+  // Переключатели доступа: клиент решает, что видно специалисту
+  var scopes = document.getElementById('scopes');
+  var empty  = document.getElementById('empty');
+  if (scopes) {
+    var blocks = {};
+    document.querySelectorAll('.cli .blk').forEach(function(b){ blocks[b.dataset.blk] = b; });
+    var sync = function(){
+      var any = false;
+      scopes.querySelectorAll('.sw').forEach(function(sw){
+        var on = sw.getAttribute('aria-pressed') === 'true';
+        if (on) any = true;
+        var b = blocks[sw.dataset.blk];
+        if (b) b.classList.toggle('on', on);
+      });
+      empty.classList.toggle('off', any);
+    };
+    scopes.addEventListener('click', function(e){
+      var sw = e.target.closest('.sw');
+      if (!sw) return;
+      sw.setAttribute('aria-pressed', sw.getAttribute('aria-pressed') === 'true' ? 'false' : 'true');
+      sync();
+    });
+    sync();
+  }
+
+  // Неделя: столбики растут, когда доходишь до блока
+  var week = document.getElementById('week');
+  if (week) {
+    var wio = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (!e.isIntersecting) return;
+        week.querySelectorAll('.bar').forEach(function(b, i){
+          setTimeout(function(){ b.style.height = b.dataset.h + '%'; }, 90 * i);
+        });
+        wio.unobserve(e.target);
+      });
+    }, {threshold:.35});
+    wio.observe(week);
+  }
+
+  // Места: сколько клиентов — столько занято, дальше докупка
+  var cl = document.getElementById('cl');
+  if (cl) {
+    var clv = document.getElementById('clv'), used = document.getElementById('used'),
+        packs = document.getElementById('packs'), seats = document.querySelectorAll('.seat');
+    var word = function(n){ var d = n % 10, h = n % 100;
+      if (d === 1 && h !== 11) return 'клиента'; return 'клиентов'; };
+    var draw = function(){
+      var n = +cl.value;
+      var packsNeeded = Math.max(0, Math.ceil((n - 15) / 10));
+      var capacity = 15 + packsNeeded * 10;
+      var sum = 9990 + packsNeeded * 4990;
+      clv.textContent = n;
+      used.textContent = n + ' / ' + capacity;
+      packs.textContent = packsNeeded ? '+' + (packsNeeded * 10) + ' мест' : 'не нужно';
+      document.getElementById('total').textContent =
+        sum.toLocaleString('ru-RU').replace(/\u00A0/g, ' ') + ' ₸';
+      cl.style.setProperty('--v', ((n - 1) / 44 * 100).toFixed(1) + '%');
+      seats.forEach(function(s, i){ s.classList.toggle('on', i < Math.min(n, 15)); });
+      document.getElementById('seatnote').textContent =
+        n <= 15 ? 'Хватает тарифа: ' + n + ' ' + word(n) + ' из 15 мест'
+                : 'Нужна докупка: ' + packsNeeded + ' × 10 мест по 4 990 ₸';
+    };
+    cl.addEventListener('input', draw);
+    draw();
+  }
+})();
+</script>
+</body>
+</html>
