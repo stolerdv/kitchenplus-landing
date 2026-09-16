@@ -39,9 +39,9 @@ a.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;bord
     en: {title:'Page not found. KitchenPlus', h:'There is no such shelf in this kitchen.', t:'The page has moved or never existed.', b:'Back to home', home:'/en/'}
   };
 
-  // Язык: адрес (/kk/…, /en/…) → выбор на сайте → язык браузера → русский
+  // Язык: адрес (/ru/…, /kk/…, /en/…) → выбор на сайте → язык браузера → русский
   function pick(path, stored, langs){
-    var m = /^\/(kk|en)(\/|$)/.exec(path || '');
+    var m = /^\/(ru|kk|en)(\/|$)/.exec(path || '');
     if (m) return m[1];
     if (stored && COPY[stored]) return stored;
     for (var i = 0; i < (langs || []).length; i++){
