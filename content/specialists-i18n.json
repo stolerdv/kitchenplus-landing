@@ -1,0 +1,1067 @@
+{
+ "note": "Переводы страницы специалистов. Русский текст — ключ: если он поменялся в site/specialists.html, сборка сообщит, что перевод не нашёлся.",
+ "entries": [
+  {
+   "kind": "text",
+   "ru": "KitchenPlus для специалистов — тренерам, нутрициологам, блогерам",
+   "kk": "KitchenPlus мамандарға — жаттықтырушыларға, нутрициологтарға, блогерлерге",
+   "en": "KitchenPlus for specialists — coaches, nutritionists, bloggers"
+  },
+  {
+   "kind": "attr",
+   "ru": "Приглашаешь клиента ссылкой, и приложение достаётся ему бесплатно. Ты видишь его прогресс: дневник питания, вес и замеры, выдаёшь план и список покупок.",
+   "kk": "Клиентті сілтемемен шақырасың, ал қолданба оған тегін беріледі. Сен оның прогресін көресің: тамақтану күнделігі, салмақ пен өлшемдер, жоспар мен сатып алу тізімін бересің.",
+   "en": "Invite a client by link and they get the app for free. You see their progress: food diary, weight and measurements, and you hand out a plan and a shopping list."
+  },
+  {
+   "kind": "attr",
+   "ru": "KitchenPlus для специалистов",
+   "kk": "KitchenPlus мамандарға",
+   "en": "KitchenPlus for specialists"
+  },
+  {
+   "kind": "attr",
+   "ru": "Твои клиенты получают приложение бесплатно. Ты видишь их прогресс.",
+   "kk": "Клиенттерің қолданбаны тегін алады. Сен олардың прогресін көресің.",
+   "en": "Your clients get the app for free. You see their progress."
+  },
+  {
+   "kind": "attr",
+   "ru": "Язык",
+   "kk": "Тіл",
+   "en": "Language"
+  },
+  {
+   "kind": "text",
+   "ru": "Тарифы",
+   "kk": "Тарифтер",
+   "en": "Pricing"
+  },
+  {
+   "kind": "text",
+   "ru": "Попробовать",
+   "kk": "Байқап көру",
+   "en": "Try it"
+  },
+  {
+   "kind": "text",
+   "ru": "Для специалистов",
+   "kk": "Мамандарға",
+   "en": "For specialists"
+  },
+  {
+   "kind": "text",
+   "ru": "Твои клиенты получают приложение",
+   "kk": "Клиенттерің қолданбаны",
+   "en": "Your clients get the app"
+  },
+  {
+   "kind": "text",
+   "ru": "бесплатно",
+   "kk": "тегін",
+   "en": "for free"
+  },
+  {
+   "kind": "text",
+   "ru": ". Ты видишь их прогресс.",
+   "kk": " алады. Сен олардың прогресін көресің.",
+   "en": ". You see their progress."
+  },
+  {
+   "kind": "text",
+   "ru": "Тренерам, нутрициологам, блогерам и тем, кто ведёт людей по питанию. Приглашаешь клиента ссылкой, он становится твоим клиентом, а дальше ты просто работаешь: смотришь дневник, выдаёшь план, следишь за весом.",
+   "kk": "Жаттықтырушыларға, нутрициологтарға, блогерлерге және адамдарды тамақтану бойынша жүргізетіндерге. Клиентті сілтемемен шақырасың, ол сенің клиентің болады, ал әрі қарай жай ғана жұмыс істейсің: күнделікті қарайсың, жоспар бересің, салмағын бақылайсың.",
+   "en": "For coaches, nutritionists, bloggers and anyone who guides people on nutrition. You invite a client by link, they become your client, and then you just work: review the diary, hand out a plan, track their weight."
+  },
+  {
+   "kind": "text",
+   "ru": "14 дней бесплатно",
+   "kk": "14 күн тегін",
+   "en": "14 days free"
+  },
+  {
+   "kind": "text",
+   "ru": "Как это работает",
+   "kk": "Бұл қалай жұмыс істейді",
+   "en": "How it works"
+  },
+  {
+   "kind": "text",
+   "ru": "Платишь только ты. Клиенту приложение ничего не стоит.",
+   "kk": "Тек сен төлейсің. Клиентке қолданба ештеңе тұрмайды.",
+   "en": "Only you pay. The app costs your client nothing."
+  },
+  {
+   "kind": "attr",
+   "ru": "Схема связи: ты отправляешь клиенту приглашение, а от клиента к тебе сами приходят дневник, замеры и план",
+   "kk": "Байланыс сызбасы: сен клиентке шақыру жібересің, ал клиенттен саған күнделік, өлшемдер мен жоспар өзі келеді",
+   "en": "Link diagram: you send the client an invite, and their diary, measurements and plan come back to you on their own"
+  },
+  {
+   "kind": "text",
+   "ru": "Ты",
+   "kk": "Сен",
+   "en": "You"
+  },
+  {
+   "kind": "text",
+   "ru": "Клиент",
+   "kk": null,
+   "en": "Client"
+  },
+  {
+   "kind": "text",
+   "ru": "СВЯЗЬ АКТИВНА",
+   "kk": "БАЙЛАНЫС БЕЛСЕНДІ",
+   "en": "LINK ACTIVE"
+  },
+  {
+   "kind": "text",
+   "ru": "Приглашение",
+   "kk": "Шақыру",
+   "en": "Invite"
+  },
+  {
+   "kind": "text",
+   "ru": "Дневник",
+   "kk": "Күнделік",
+   "en": "Diary"
+  },
+  {
+   "kind": "text",
+   "ru": "Замеры",
+   "kk": "Өлшемдер",
+   "en": "Measurements"
+  },
+  {
+   "kind": "text",
+   "ru": "План",
+   "kk": "Жоспар",
+   "en": "Plan"
+  },
+  {
+   "kind": "text",
+   "ru": "Ты отправляешь приглашение, а дневник, замеры и план приходят к тебе сами",
+   "kk": "Сен шақыру жібересің, ал күнделік, өлшемдер мен жоспар саған өзі келеді",
+   "en": "You send an invite, and the diary, measurements and plan come back to you on their own"
+  },
+  {
+   "kind": "text",
+   "ru": "Три шага, дальше только работа",
+   "kk": "Үш қадам, әрі қарай тек жұмыс",
+   "en": "Three steps, then just the work"
+  },
+  {
+   "kind": "text",
+   "ru": "Отправляешь ссылку",
+   "kk": "Сілтеме жібересің",
+   "en": "Send a link"
+  },
+  {
+   "kind": "text",
+   "ru": "В том же мессенджере, где вы и так переписываетесь. Клиент ставит приложение и открывает ссылку — регистрация занимает минуту.",
+   "kk": "Онсыз да жазысып жүрген мессенджерде. Клиент қолданбаны орнатып, сілтемені ашады — тіркелу бір минут алады.",
+   "en": "In the same messenger you already use to talk. The client installs the app and opens the link — signing up takes a minute."
+  },
+  {
+   "kind": "text",
+   "ru": "Клиент даёт доступ",
+   "kk": "Клиент рұқсат береді",
+   "en": "The client grants access"
+  },
+  {
+   "kind": "text",
+   "ru": "На экране согласия он отмечает, что тебе видно: дневник, план, вес, фотографии.",
+   "kk": "Келісім экранында ол саған не көрінетінін белгілейді: күнделік, жоспар, салмақ, фотосуреттер.",
+   "en": "On the consent screen they choose what you can see: diary, plan, weight, photos."
+  },
+  {
+   "kind": "text",
+   "ru": "Ведёшь",
+   "kk": "Жүргізесің",
+   "en": "Guide them"
+  },
+  {
+   "kind": "text",
+   "ru": "Он записывает, что съел, ты смотришь неделю целиком и выдаёшь план. Список покупок собирается сам.",
+   "kk": "Ол не жегенін жазады, сен аптаны толық көріп, жоспар бересің. Сатып алу тізімі өзі жиналады.",
+   "en": "They log what they eat, you review the whole week and hand out a plan. The shopping list builds itself."
+  },
+  {
+   "kind": "attr",
+   "ru": "Вечерняя кухня: телефон рядом с готовым ужином",
+   "kk": "Кешкі ас үй: дайын кешкі тамақтың қасындағы телефон",
+   "en": "Evening kitchen: a phone next to a finished dinner"
+  },
+  {
+   "kind": "text",
+   "ru": "Человек готовит ужин, а ты утром видишь, что он съел, с распределением калорий, белков, жиров и углеводов",
+   "kk": "Адам кешкі ас әзірлейді, ал сен таңертең оның не жегенін калория, ақуыз, май және көмірсу бөлінісімен көресің",
+   "en": "They cook dinner, and in the morning you see what they ate, broken down into calories, protein, fat and carbs"
+  },
+  {
+   "kind": "text",
+   "ru": "Карточка клиента",
+   "kk": "Клиент карточкасы",
+   "en": "Client card"
+  },
+  {
+   "kind": "text",
+   "ru": "Прогресс клиента виден целиком",
+   "kk": "Клиенттің прогресі толық көрінеді",
+   "en": "The client's progress at a glance"
+  },
+  {
+   "kind": "text",
+   "ru": "Не «я нормально питался», а лента приёмов пищи с фотографиями и цифрами. Всё, что ниже, открыто только для чтения: чужой дневник ты не редактируешь, иначе теряется смысл наблюдения.",
+   "kk": "«Дұрыс тамақтандым» деген сөз емес, фотосуреттері мен сандары бар тамақтану лентасы. Төмендегінің бәрі тек оқуға ашық: бөтеннің күнделігін өзгертпейсің, әйтпесе бақылаудың мәні жоғалады.",
+   "en": "Not “I ate fine”, but a feed of meals with photos and numbers. Everything below is read-only: you don't edit someone else's diary, or tracking loses its point."
+  },
+  {
+   "kind": "text",
+   "ru": "Неделя против нормы",
+   "kk": "Апта нормамен салыстырғанда",
+   "en": "The week against the target"
+  },
+  {
+   "kind": "text",
+   "ru": "Сколько дней дневник заполнен, средние калории и белки, жиры, углеводы, отклонение в процентах.",
+   "kk": "Күнделік қанша күн толтырылған, орташа калория мен ақуыз, май, көмірсу, пайызбен ауытқу.",
+   "en": "How many days the diary is filled in, average calories, protein, fat and carbs, and the deviation in percent."
+  },
+  {
+   "kind": "text",
+   "ru": "Лента с фотографиями",
+   "kk": "Фотосуреттері бар лента",
+   "en": "Photo feed"
+  },
+  {
+   "kind": "text",
+   "ru": "Каждый приём пищи со снимком. Снимки живут 90 дней, цифры остаются навсегда.",
+   "kk": "Әр тамақ суретімен. Суреттер 90 күн сақталады, сандар мәңгі қалады.",
+   "en": "Every meal with a photo. Photos are kept for 90 days, the numbers stay forever."
+  },
+  {
+   "kind": "text",
+   "ru": "Вес и замеры",
+   "kk": "Салмақ пен өлшемдер",
+   "en": "Weight and measurements"
+  },
+  {
+   "kind": "text",
+   "ru": "История, а не одно текущее число: график веса, процент жира, талия, грудь, бёдра.",
+   "kk": "Бір ғана ағымдағы сан емес, тарих: салмақ графигі, май пайызы, бел, кеуде, жамбас.",
+   "en": "A history, not a single current number: weight chart, body fat, waist, chest, hips."
+  },
+  {
+   "kind": "text",
+   "ru": "План и список покупок",
+   "kk": "Жоспар және сатып алу тізімі",
+   "en": "Plan and shopping list"
+  },
+  {
+   "kind": "text",
+   "ru": "Собираешь меню в календаре клиента, список продуктов к нему считается сам.",
+   "kk": "Мәзірді клиенттің күнтізбесінде жинайсың, оған өнімдер тізімі өзі есептеледі.",
+   "en": "You build the menu in the client's calendar, and the grocery list for it is worked out automatically."
+  },
+  {
+   "kind": "text",
+   "ru": "Свои заметки",
+   "kk": "Өз жазбаларың",
+   "en": "Your notes"
+  },
+  {
+   "kind": "text",
+   "ru": "Видны только тебе. Клиент их не читает.",
+   "kk": "Тек саған көрінеді. Клиент оларды оқымайды.",
+   "en": "Visible only to you. The client doesn't read them."
+  },
+  {
+   "kind": "text",
+   "ru": "Шаблоны планов",
+   "kk": "Жоспар үлгілері",
+   "en": "Plan templates"
+  },
+  {
+   "kind": "text",
+   "ru": "Собрал «неделя, 1600 ккал, без лактозы» один раз — выдаёшь за минуту следующему.",
+   "kk": "«Апта, 1600 ккал, лактозасыз» дегенді бір рет жинадың — келесі клиентке бір минутта бересің.",
+   "en": "Build “a week, 1,600 kcal, lactose-free” once — hand it to the next client in a minute."
+  },
+  {
+   "kind": "text",
+   "ru": "Публичная страница",
+   "kk": "Жария бет",
+   "en": "Public page"
+  },
+  {
+   "kind": "text",
+   "ru": "Твоё имя, описание, ссылки и твои рецепты по адресу вида kitchenplus.kz/@name.",
+   "kk": "Атың, сипаттамаң, сілтемелерің және рецептерің kitchenplus.kz/@name түріндегі мекенжайда.",
+   "en": "Your name, bio, links and your recipes at an address like kitchenplus.kz/@name."
+  },
+  {
+   "kind": "text",
+   "ru": "Калории за неделю · Айгерим",
+   "kk": "Аптадағы калория · Айгерім",
+   "en": "Calories this week · Sarah"
+  },
+  {
+   "kind": "text",
+   "ru": "Сколько клиент съел за каждый день против его нормы. Столбик выше пунктира — перебор, ниже — недобор.",
+   "kk": "Клиент әр күні нормасына қарағанда қанша жегені. Пунктирден жоғары баған — артық, төмен — жетіспеушілік.",
+   "en": "How much the client ate each day against their target. A bar above the dashed line is over, below is under."
+  },
+  {
+   "kind": "text",
+   "ru": "НОРМА · 1 800 ККАЛ",
+   "kk": null,
+   "en": "TARGET · 1,800 KCAL"
+  },
+  {
+   "kind": "text",
+   "ru": "1 730",
+   "kk": null,
+   "en": "1,730"
+  },
+  {
+   "kind": "text",
+   "ru": "1 250",
+   "kk": null,
+   "en": "1,250"
+  },
+  {
+   "kind": "text",
+   "ru": "1 700",
+   "kk": null,
+   "en": "1,700"
+  },
+  {
+   "kind": "text",
+   "ru": "2 280",
+   "kk": null,
+   "en": "2,280"
+  },
+  {
+   "kind": "text",
+   "ru": "1 830",
+   "kk": null,
+   "en": "1,830"
+  },
+  {
+   "kind": "text",
+   "ru": "2 700",
+   "kk": null,
+   "en": "2,700"
+  },
+  {
+   "kind": "text",
+   "ru": "1 320",
+   "kk": null,
+   "en": "1,320"
+  },
+  {
+   "kind": "text",
+   "ru": "ПН",
+   "kk": "ДС",
+   "en": "MON"
+  },
+  {
+   "kind": "text",
+   "ru": "ВТ",
+   "kk": "СС",
+   "en": "TUE"
+  },
+  {
+   "kind": "text",
+   "ru": "СР",
+   "kk": null,
+   "en": "WED"
+  },
+  {
+   "kind": "text",
+   "ru": "ЧТ",
+   "kk": "БС",
+   "en": "THU"
+  },
+  {
+   "kind": "text",
+   "ru": "ПТ",
+   "kk": "ЖМ",
+   "en": "FRI"
+  },
+  {
+   "kind": "text",
+   "ru": "СБ",
+   "kk": "СН",
+   "en": "SAT"
+  },
+  {
+   "kind": "text",
+   "ru": "ВС",
+   "kk": "ЖС",
+   "en": "SUN"
+  },
+  {
+   "kind": "text",
+   "ru": "В норме",
+   "kk": "Нормада",
+   "en": "On target"
+  },
+  {
+   "kind": "text",
+   "ru": "Перебор",
+   "kk": "Артық",
+   "en": "Over"
+  },
+  {
+   "kind": "text",
+   "ru": "Недобор",
+   "kk": "Жетіспеушілік",
+   "en": "Under"
+  },
+  {
+   "kind": "text",
+   "ru": "Места",
+   "kk": "Орындар",
+   "en": "Seats"
+  },
+  {
+   "kind": "text",
+   "ru": "Не нужно уговаривать клиента платить",
+   "kk": "Клиентті төлеуге көндірудің қажеті жоқ",
+   "en": "No need to talk clients into paying"
+  },
+  {
+   "kind": "text",
+   "ru": "Тренер, который просит клиента купить ещё и приложение, выглядит так, будто что-то впаривает.",
+   "kk": "Клиенттен қосымша қолданба сатып алуды сұраған жаттықтырушы бірдеңе сатып жатқандай көрінеді.",
+   "en": "A coach who asks a client to buy an app on top looks like they're pushing a sale."
+  },
+  {
+   "kind": "text",
+   "ru": "Поэтому в тариф входят места. Пока связь активна, клиент пользуется приложением бесплатно. Разговор звучит иначе: «я работаю через приложение, вот ссылка, для тебя бесплатно». Это не продажа, а условие работы.",
+   "kk": "Сондықтан тарифке орындар кіреді. Байланыс белсенді болғанша клиент қолданбаны тегін пайдаланады. Әңгіме басқаша естіледі: «мен қолданба арқылы жұмыс істеймін, міне сілтеме, сен үшін тегін». Бұл сату емес, жұмыс шарты.",
+   "en": "That's why the plan includes seats. While the link is active, the client uses the app for free. The conversation sounds different: “I work through the app, here's the link, it's free for you.” It's not a sale, it's how you work."
+  },
+  {
+   "kind": "text",
+   "ru": "Купил свою подписку — место освободилось,",
+   "kk": "Өз жазылымын сатып алды — орын босады,",
+   "en": "They bought their own subscription — the seat is freed,"
+  },
+  {
+   "kind": "text",
+   "ru": "а связь осталась. Ты по-прежнему видишь дневник и выдаёшь планы, а место уходит следующему человеку.",
+   "kk": "ал байланыс сақталды. Сен бұрынғыдай күнделікті көріп, жоспар бересің, ал орын келесі адамға кетеді.",
+   "en": "and the link stays. You still see the diary and hand out plans, and the seat goes to the next person."
+  },
+  {
+   "kind": "text",
+   "ru": "15 мест в тарифе · +10 мест за 4 990 ₸ · до 45",
+   "kk": "Тарифте 15 орын · +10 орын 4 990 ₸ · 45-ке дейін",
+   "en": "15 seats in the plan · +10 seats for 4,990 ₸ · up to 45"
+  },
+  {
+   "kind": "text",
+   "ru": "Сколько клиентов ты ведёшь:",
+   "kk": "Қанша клиент жүргізесің:",
+   "en": "How many clients you guide:"
+  },
+  {
+   "kind": "text",
+   "ru": "Мест занято",
+   "kk": "Толған орын",
+   "en": "Seats used"
+  },
+  {
+   "kind": "text",
+   "ru": "Докупок",
+   "kk": "Қосымша",
+   "en": "Add-ons"
+  },
+  {
+   "kind": "text",
+   "ru": "не нужно",
+   "kk": "керек емес",
+   "en": "not needed"
+  },
+  {
+   "kind": "text",
+   "ru": "В месяц",
+   "kk": "Айына",
+   "en": "Per month"
+  },
+  {
+   "kind": "text",
+   "ru": "9 990 ₸",
+   "kk": null,
+   "en": "9,990 ₸"
+  },
+  {
+   "kind": "text",
+   "ru": "Кому",
+   "kk": "Кімге",
+   "en": "Who it's for"
+  },
+  {
+   "kind": "text",
+   "ru": "Три разные работы",
+   "kk": "Үш түрлі жұмыс",
+   "en": "Three different jobs"
+  },
+  {
+   "kind": "attr",
+   "ru": "Телефон, шейкер и полотенце на скамье в зале",
+   "kk": "Залдағы орындықтағы телефон, шейкер және сүлгі",
+   "en": "A phone, a shaker and a towel on a gym bench"
+  },
+  {
+   "kind": "attr",
+   "ru": "Раскрытый блокнот, телефон и овощи на тёмном столе",
+   "kk": "Қараңғы үстелдегі ашық блокнот, телефон және көкөністер",
+   "en": "An open notebook, a phone and vegetables on a dark desk"
+  },
+  {
+   "kind": "attr",
+   "ru": "Тарелка на тёмном камне и объектив камеры в кадре",
+   "kk": "Қараңғы тастағы тәрелке және кадрдағы камера объективі",
+   "en": "A plate on dark stone with a camera lens in frame"
+  },
+  {
+   "kind": "text",
+   "ru": "Фитнес-тренер",
+   "kk": "Фитнес-жаттықтырушы",
+   "en": "Fitness coach"
+  },
+  {
+   "kind": "text",
+   "ru": "Норму КБЖУ задаёшь ты, а не клиент",
+   "kk": "КБМК нормасын клиент емес, сен белгілейсің",
+   "en": "You set the calorie and macro target, not the client"
+  },
+  {
+   "kind": "text",
+   "ru": "Видно по дням, где недобор и перебор",
+   "kk": "Күндер бойынша жетіспеушілік пен артықтық көрінеді",
+   "en": "See by day where they're under and over"
+  },
+  {
+   "kind": "text",
+   "ru": "Замеры и график веса за месяц",
+   "kk": "Бір айдағы өлшемдер мен салмақ графигі",
+   "en": "Measurements and a monthly weight chart"
+  },
+  {
+   "kind": "text",
+   "ru": "Фотографии еды вместо слов «ел правильно»",
+   "kk": "«Дұрыс жедім» деген сөздің орнына тамақ суреттері",
+   "en": "Food photos instead of “I ate right”"
+  },
+  {
+   "kind": "text",
+   "ru": "Нутрициолог",
+   "kk": null,
+   "en": "Nutritionist"
+  },
+  {
+   "kind": "text",
+   "ru": "План на неделю прямо в календаре клиента",
+   "kk": "Апталық жоспар тікелей клиенттің күнтізбесінде",
+   "en": "A weekly plan right in the client's calendar"
+  },
+  {
+   "kind": "text",
+   "ru": "Список покупок к плану собирается сам",
+   "kk": "Жоспарға сатып алу тізімі өзі жиналады",
+   "en": "The shopping list for the plan builds itself"
+  },
+  {
+   "kind": "text",
+   "ru": "Аллергии и непереносимости учитываются",
+   "kk": "Аллергия мен көтере алмаушылық ескеріледі",
+   "en": "Allergies and intolerances are taken into account"
+  },
+  {
+   "kind": "text",
+   "ru": "Страница плана уходит клиенту по ссылке",
+   "kk": "Жоспар беті клиентке сілтемемен барады",
+   "en": "The plan page goes to the client as a link"
+  },
+  {
+   "kind": "text",
+   "ru": "Фуд-блогер",
+   "kk": null,
+   "en": "Food blogger"
+  },
+  {
+   "kind": "text",
+   "ru": "Свои рецепты с фото и видео",
+   "kk": "Фото мен видеосы бар өз рецептерің",
+   "en": "Your recipes with photos and video"
+  },
+  {
+   "kind": "text",
+   "ru": "Комментарии и оценки под ними",
+   "kk": "Олардың астындағы пікірлер мен бағалар",
+   "en": "Comments and ratings under them"
+  },
+  {
+   "kind": "text",
+   "ru": "Можно публиковать свои рецепты",
+   "kk": "Өз рецептеріңді жариялауға болады",
+   "en": "You can publish your recipes"
+  },
+  {
+   "kind": "text",
+   "ru": "Публичная страница автора",
+   "kk": "Автордың жария беті",
+   "en": "A public author page"
+  },
+  {
+   "kind": "text",
+   "ru": "Согласие",
+   "kk": "Келісім",
+   "en": "Consent"
+  },
+  {
+   "kind": "text",
+   "ru": "Клиент решает, что тебе видно",
+   "kk": "Саған не көрінетінін клиент шешеді",
+   "en": "The client decides what you see"
+  },
+  {
+   "kind": "text",
+   "ru": "Понажимай переключатели — справа ровно то, что увидишь ты.",
+   "kk": "Ауыстырғыштарды басып көр — оң жақта дәл сен көретін нәрсе.",
+   "en": "Flip the switches — on the right is exactly what you'll see."
+  },
+  {
+   "kind": "text",
+   "ru": "Дневник питания",
+   "kk": "Тамақтану күнделігі",
+   "en": "Food diary"
+  },
+  {
+   "kind": "text",
+   "ru": "Что ел, калории и Б/Ж/У",
+   "kk": "Не жеді, калория және А/М/К",
+   "en": "What they ate, calories and macros"
+  },
+  {
+   "kind": "text",
+   "ru": "План меню",
+   "kk": "Мәзір жоспары",
+   "en": "Meal plan"
+  },
+  {
+   "kind": "text",
+   "ru": "То, что ты ему выдал",
+   "kk": "Сен берген жоспар",
+   "en": "The one you gave them"
+  },
+  {
+   "kind": "text",
+   "ru": "История, а не одно число",
+   "kk": "Бір сан емес, тарих",
+   "en": "A history, not one number"
+  },
+  {
+   "kind": "text",
+   "ru": "Фотографии блюд",
+   "kk": "Тағам суреттері",
+   "en": "Meal photos"
+  },
+  {
+   "kind": "text",
+   "ru": "Снимки живут 90 дней",
+   "kk": "Суреттер 90 күн сақталады",
+   "en": "Photos are kept for 90 days"
+  },
+  {
+   "kind": "text",
+   "ru": "А",
+   "kk": null,
+   "en": "S"
+  },
+  {
+   "kind": "text",
+   "ru": "Айгерим",
+   "kk": "Айгерім",
+   "en": "Sarah"
+  },
+  {
+   "kind": "text",
+   "ru": "клиент · связь активна",
+   "kk": "клиент · байланыс белсенді",
+   "en": "client · link active"
+  },
+  {
+   "kind": "text",
+   "ru": "Клиент пока ничего не открыл",
+   "kk": "Клиент әлі ештеңе ашқан жоқ",
+   "en": "The client hasn't shared anything yet"
+  },
+  {
+   "kind": "text",
+   "ru": "Дневник · вторник",
+   "kk": "Күнделік · сейсенбі",
+   "en": "Diary · Tuesday"
+  },
+  {
+   "kind": "text",
+   "ru": "Овсянка с бананом",
+   "kk": "Бананы бар сұлы ботқасы",
+   "en": "Oatmeal with banana"
+  },
+  {
+   "kind": "text",
+   "ru": "Куриная грудка с брокколи",
+   "kk": "Брокколи қосылған тауық төсі",
+   "en": "Chicken breast with broccoli"
+  },
+  {
+   "kind": "text",
+   "ru": "Творожная запеканка",
+   "kk": "Сүзбе пісірмесі",
+   "en": "Cottage cheese bake"
+  },
+  {
+   "kind": "text",
+   "ru": "310 ккал",
+   "kk": null,
+   "en": "310 kcal"
+  },
+  {
+   "kind": "text",
+   "ru": "420 ккал",
+   "kk": null,
+   "en": "420 kcal"
+  },
+  {
+   "kind": "text",
+   "ru": "260 ккал",
+   "kk": null,
+   "en": "260 kcal"
+  },
+  {
+   "kind": "text",
+   "ru": "220 ккал",
+   "kk": null,
+   "en": "220 kcal"
+  },
+  {
+   "kind": "text",
+   "ru": "290 ккал",
+   "kk": null,
+   "en": "290 kcal"
+  },
+  {
+   "kind": "text",
+   "ru": "План на завтра",
+   "kk": "Ертеңгі жоспар",
+   "en": "Plan for tomorrow"
+  },
+  {
+   "kind": "text",
+   "ru": "Завтрак · Сырники",
+   "kk": "Таңғы ас · Омлет",
+   "en": "Breakfast · Pancakes"
+  },
+  {
+   "kind": "text",
+   "ru": "Обед · Харчо",
+   "kk": "Түскі ас · Сорпа",
+   "en": "Lunch · Chicken soup"
+  },
+  {
+   "kind": "text",
+   "ru": "Ужин · Треска в духовке",
+   "kk": "Кешкі ас · Мәнті",
+   "en": "Dinner · Baked cod"
+  },
+  {
+   "kind": "text",
+   "ru": "Вес за месяц",
+   "kk": "Бір айдағы салмақ",
+   "en": "Weight this month"
+  },
+  {
+   "kind": "text",
+   "ru": "68,4 кг",
+   "kk": null,
+   "en": "68.4 kg"
+  },
+  {
+   "kind": "text",
+   "ru": "−2,1 кг за месяц",
+   "kk": "айына −2,1 кг",
+   "en": "−2.1 kg this month"
+  },
+  {
+   "kind": "text",
+   "ru": "Снимки за неделю",
+   "kk": "Аптадағы суреттер",
+   "en": "Photos this week"
+  },
+  {
+   "kind": "attr",
+   "ru": "Овсянка с бананом и мёдом",
+   "kk": "Банан және бал қосылған сұлы ботқасы",
+   "en": "Oatmeal with Banana and Honey"
+  },
+  {
+   "kind": "attr",
+   "ru": "Куриная грудка с брокколи",
+   "kk": "Брокколи қосылған тауық төсі",
+   "en": "Chicken Breast with Broccoli"
+  },
+  {
+   "kind": "attr",
+   "ru": "Творожная запеканка",
+   "kk": "Сүзбе пісірмесі",
+   "en": "Cottage Cheese Casserole"
+  },
+  {
+   "kind": "attr",
+   "ru": "Греческий салат",
+   "kk": "Грек салаты",
+   "en": "Greek Salad"
+  },
+  {
+   "kind": "text",
+   "ru": "Связь закончилась — данные остаются у клиента целиком: дневник, история веса, планы. Ничего не стирается.",
+   "kk": "Байланыс аяқталды — деректер клиентте толық қалады: күнделік, салмақ тарихы, жоспарлар. Ештеңе өшірілмейді.",
+   "en": "When the link ends, the client keeps all their data: diary, weight history, plans. Nothing is deleted."
+  },
+  {
+   "kind": "text",
+   "ru": "Цена",
+   "kk": "Баға",
+   "en": "Price"
+  },
+  {
+   "kind": "text",
+   "ru": "Дешевле одного занятия",
+   "kk": "Бір сабақтан арзан",
+   "en": "Less than one session"
+  },
+  {
+   "kind": "text",
+   "ru": "в месяц · первые 14 дней бесплатно",
+   "kk": "айына · алғашқы 14 күн тегін",
+   "en": "per month · first 14 days free"
+  },
+  {
+   "kind": "text",
+   "ru": "15 клиентов, приложение им достаётся бесплатно",
+   "kk": "15 клиент, қолданба оларға тегін",
+   "en": "15 clients get the app for free"
+  },
+  {
+   "kind": "text",
+   "ru": "Их дневник питания с фотографиями",
+   "kk": "Олардың фотосы бар тамақтану күнделігі",
+   "en": "Their food diary with photos"
+  },
+  {
+   "kind": "text",
+   "ru": "Планы питания и списки покупок",
+   "kk": "Тамақтану жоспарлары мен сатып алу тізімдері",
+   "en": "Meal plans and shopping lists"
+  },
+  {
+   "kind": "text",
+   "ru": "Вес и замеры с графиками",
+   "kk": "Графиктері бар салмақ пен өлшемдер",
+   "en": "Weight and measurements with charts"
+  },
+  {
+   "kind": "text",
+   "ru": "До 250 своих рецептов",
+   "kk": "250-ге дейін өз рецептерің",
+   "en": "Up to 250 of your own recipes"
+  },
+  {
+   "kind": "text",
+   "ru": "Нужно больше — плюс десять мест за 4 990 ₸",
+   "kk": "Көбірек керек болса — 4 990 ₸-ге тағы он орын",
+   "en": "Need more — ten more seats for 4,990 ₸"
+  },
+  {
+   "kind": "text",
+   "ru": "Скачать приложение",
+   "kk": "Қолданбаны жүктеу",
+   "en": "Download the app"
+  },
+  {
+   "kind": "text",
+   "ru": "Все тарифы",
+   "kk": "Барлық тарифтер",
+   "en": "All plans"
+  },
+  {
+   "kind": "text",
+   "ru": "Вопросы",
+   "kk": "Сұрақтар",
+   "en": "Questions"
+  },
+  {
+   "kind": "text",
+   "ru": "Остались вопросы?",
+   "kk": "Сұрақтар қалды ма?",
+   "en": "Still have questions?"
+  },
+  {
+   "kind": "text",
+   "ru": "Зачем это, если я уже веду клиентов в мессенджере?",
+   "kk": "Клиенттерді мессенджерде жүргізіп жүрсем, бұл не үшін керек?",
+   "en": "Why use this if I already coach clients in a messenger?"
+  },
+  {
+   "kind": "text",
+   "ru": "В переписке клиент присылает фото тарелки, а считать калории и искать, что он ел во вторник, приходится тебе. Здесь это уже посчитано: калории и БЖУ по дням против нормы, вес и замеры на графике. Неделя клиента видна одним экраном, и история не тонет в чате.",
+   "kk": "Хат алмасуда клиент тәрелкенің суретін жібереді, ал калорияны есептеу мен сейсенбіде не жегенін іздеу саған қалады. Мұнда бәрі есептеліп қойған: күндер бойынша калория мен АМК нормамен салыстырғанда, салмақ пен өлшемдер графикте. Клиенттің аптасы бір экранда көрінеді, тарих чатта жоғалмайды.",
+   "en": "In a chat, the client sends a photo of their plate, and it's on you to count calories and dig up what they ate on Tuesday. Here it's already counted: calories and macros by day against the target, weight and measurements on a chart. The client's week fits on one screen, and nothing gets lost in the chat."
+  },
+  {
+   "kind": "text",
+   "ru": "Клиент правда будет вести дневник?",
+   "kk": "Клиент шынымен күнделік жүргізе ме?",
+   "en": "Will clients actually keep the diary?"
+  },
+  {
+   "kind": "text",
+   "ru": "Чем проще записывать, тем дольше ведут. Здесь запись занимает секунды: сфотографировал тарелку, и блюдо с калориями и составом распознаётся само. Если клиент ест по твоему плану, блюда уже стоят в его календаре, а список покупок к ним собирается сам.",
+   "kk": "Жазу неғұрлым оңай болса, соғұрлым ұзақ жүргізеді. Мұнда жазу бірнеше секунд алады: тәрелкені суретке түсірдің, тағам калориясы мен құрамымен өзі танылады. Клиент сенің жоспарың бойынша тамақтанса, тағамдар оның күнтізбесінде тұр, ал оларға сатып алу тізімі өзі жиналады.",
+   "en": "The easier it is to log, the longer they keep at it. Here a log takes seconds: snap the plate, and the dish is recognised with its calories and nutrients. If the client eats to your plan, the meals are already in their calendar, and the shopping list for them builds itself."
+  },
+  {
+   "kind": "text",
+   "ru": "Сколько времени у меня займёт один клиент?",
+   "kk": "Бір клиентке қанша уақытым кетеді?",
+   "en": "How much time will one client take?"
+  },
+  {
+   "kind": "text",
+   "ru": "Столько, сколько нужно на разбор. Неделя открывается одним экраном: где перебор, где недобор, как меняется вес. План собираешь из каталога прямо в календаре клиента, а порции и список покупок приложение считает само.",
+   "kk": "Талдауға қанша керек болса, сонша. Апта бір экранда ашылады: қай жерде артық, қай жерде жетіспеушілік, салмақ қалай өзгеріп жатыр. Жоспарды каталогтан тікелей клиенттің күнтізбесінде жинайсың, ал үлестер мен сатып алу тізімін қолданба өзі есептейді.",
+   "en": "As much as the review needs. The week opens on one screen: where they're over, where they're under, how the weight is changing. You build the plan from the catalog right in the client's calendar, and the app works out portions and the shopping list."
+  },
+  {
+   "kind": "text",
+   "ru": "Клиенту придётся платить?",
+   "kk": "Клиент төлеуі керек пе?",
+   "en": "Will my client have to pay?"
+  },
+  {
+   "kind": "text",
+   "ru": "Нет, пока он занимает место в твоём тарифе. Ему нужно только установить приложение и открыть твою ссылку. У него будет дневник питания, твой план со списком покупок, вес и замеры и весь каталог рецептов.",
+   "kk": "Жоқ, ол сенің тарифіңдегі орынды алып тұрғанша. Оған тек қолданбаны орнатып, сенің сілтемеңді ашу керек. Оның тамақтану күнделігі, сенің жоспарың сатып алу тізімімен, салмақ пен өлшемдер және бүкіл рецептер каталогы болады.",
+   "en": "No, as long as they hold a seat in your plan. All they need is to install the app and open your link. They get the food diary, your plan with its shopping list, weight and measurements, and the whole recipe catalog."
+  },
+  {
+   "kind": "text",
+   "ru": "Что будет, если клиент купит свою подписку?",
+   "kk": "Клиент өз жазылымын сатып алса не болады?",
+   "en": "What happens if a client buys their own subscription?"
+  },
+  {
+   "kind": "text",
+   "ru": "Вы продолжите работать как раньше: ты видишь его прогресс и выдаёшь планы. Меняется только то, откуда у него приложение, а место в твоём тарифе освобождается под нового человека.",
+   "kk": "Бұрынғыдай жұмыс істей бересіңдер: сен оның прогресін көріп, жоспар бересің. Тек оның қолданбасы қайдан екені өзгереді, ал сенің тарифіңдегі орын жаңа адамға босайды.",
+   "en": "You keep working as before: you see their progress and hand out plans. The only change is where their app access comes from, and the seat in your plan frees up for someone new."
+  },
+  {
+   "kind": "text",
+   "ru": "Насколько точно считаются калории?",
+   "kk": "Калория қаншалықты дәл есептеледі?",
+   "en": "How accurate are the calories?"
+  },
+  {
+   "kind": "text",
+   "ru": "Рецепты считаются по ингредиентам из справочника, с точностью до грамма и с порцией на каждого человека. Норма — по Миффлину–Сан Жеору: пол, вес, рост, возраст и активность, а поправить её под клиента можешь ты. Распознавание по фото даёт оценку, поэтому для точного учёта лучше записывать блюда из каталога.",
+   "kk": "Рецептер анықтамалықтағы ингредиенттер бойынша, грамға дейінгі дәлдікпен және әр адамға үлеспен есептеледі. Норма — Миффлин–Сан Жеор бойынша: жынысы, салмағы, бойы, жасы және белсенділігі, ал оны клиентке сай түзете аласың. Фото бойынша тану шамалап баға береді, сондықтан дәл есеп үшін тағамдарды каталогтан жазған дұрыс.",
+   "en": "Recipes are counted from ingredients in the reference database, down to the gram and with a portion for each person. The target follows Mifflin–St Jeor: sex, weight, height, age and activity, and you can adjust it for the client. Photo recognition gives an estimate, so for precise tracking it's better to log dishes from the catalog."
+  },
+  {
+   "kind": "text",
+   "ru": "Сколько это стоит?",
+   "kk": "Бұл қанша тұрады?",
+   "en": "How much does it cost?"
+  },
+  {
+   "kind": "text",
+   "ru": "9 990 ₸ в месяц, в тариф входит 15 клиентов. Нужно больше — плюс десять мест за 4 990 ₸, до сорока пяти. Первые 14 дней бесплатно, отменить подписку можно в любой момент в настройках App Store или Google Play.",
+   "kk": "Айына 9 990 ₸, тарифке 15 клиент кіреді. Көбірек керек болса — 4 990 ₸-ге тағы он орын, қырық беске дейін. Алғашқы 14 күн тегін, жазылымнан кез келген уақытта App Store немесе Google Play баптауларында бас тартуға болады.",
+   "en": "9,990 ₸ a month, with 15 clients included. Need more — ten more seats for 4,990 ₸, up to forty-five. The first 14 days are free, and you can cancel any time in your App Store or Google Play settings."
+  },
+  {
+   "kind": "text",
+   "ru": "На главную",
+   "kk": "Басты бетке",
+   "en": "Home"
+  },
+  {
+   "kind": "text",
+   "ru": "Конфиденциальность",
+   "kk": "Құпиялылық",
+   "en": "Privacy"
+  },
+  {
+   "kind": "text",
+   "ru": "Условия",
+   "kk": "Шарттар",
+   "en": "Terms"
+  },
+  {
+   "kind": "raw",
+   "ru": "var word = function(n){ var d = n % 10, h = n % 100;\n      if (d === 1 && h !== 11) return 'клиента'; return 'клиентов'; };",
+   "kk": "var word = function(n){ return 'клиент'; };",
+   "en": "var word = function(n){ return n === 1 ? 'client' : 'clients'; };"
+  },
+  {
+   "kind": "js",
+   "ru": " мест",
+   "kk": " орын",
+   "en": " seats"
+  },
+  {
+   "kind": "js",
+   "ru": "не нужно",
+   "kk": "керек емес",
+   "en": "not needed"
+  },
+  {
+   "kind": "js",
+   "ru": "Хватает тарифа: ",
+   "kk": "Тариф жетеді: ",
+   "en": "Included in the plan: "
+  },
+  {
+   "kind": "js",
+   "ru": " из 15 мест",
+   "kk": " / 15 орын",
+   "en": " of 15 seats"
+  },
+  {
+   "kind": "js",
+   "ru": "Нужна докупка: ",
+   "kk": "Қосымша орын керек: ",
+   "en": "Extra seats needed: "
+  },
+  {
+   "kind": "js",
+   "ru": " × 10 мест по 4 990 ₸",
+   "kk": " × 10 орын, әрқайсысы 4 990 ₸",
+   "en": " × 10 seats at 4,990 ₸ each"
+  },
+  {
+   "kind": "raw",
+   "ru": "sum.toLocaleString('ru-RU').replace(/\\u00A0/g, ' ') + ' ₸';",
+   "kk": null,
+   "en": "sum.toLocaleString('en-US') + ' ₸';"
+  }
+ ]
+}
