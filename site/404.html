@@ -7,13 +7,16 @@
 <meta name="robots" content="noindex">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
 <style>
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
 @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 html,body{height:100%}
-body{margin:0;background:#0C0A09 url(/assets/table-bg.jpg) center/cover no-repeat;color:#F6F1E8;font:400 18px/1.6 'Manrope',system-ui,sans-serif;display:grid;place-items:center;text-align:center;padding:24px}
-body::before{content:"";position:fixed;inset:0;background:radial-gradient(ellipse 60% 50% at 50% 40%,rgba(212,175,55,.14),transparent 70%),rgba(6,4,3,.55);pointer-events:none}
+body{margin:0;background:#0C0A09 url(/assets/hero-ending.jpg) 32% 72%/cover no-repeat;color:#F6F1E8;font:400 18px/1.6 'Manrope',system-ui,sans-serif;display:grid;place-items:center;text-align:center;padding:24px}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;background:radial-gradient(ellipse 44% 38% at 50% 50%,rgba(8,6,4,.82),rgba(8,6,4,.5) 60%,transparent 100%),radial-gradient(ellipse 60% 50% at 50% 40%,rgba(212,175,55,.10),transparent 70%),rgba(6,4,3,.36)}
+@media (max-width:760px){body{background-image:url(/assets/hero-ending-1280.jpg);background-position:22% 78%}body::before{background:radial-gradient(ellipse 80% 42% at 50% 50%,rgba(8,6,4,.84),rgba(8,6,4,.52) 62%,transparent 100%),rgba(6,4,3,.4)}}
 main{position:relative;max-width:560px}
 .k{font-family:ui-monospace,Menlo,monospace;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#D4AF37}
 h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(40px,7vw,72px);line-height:1.05;margin:14px 0 18px}
@@ -24,9 +27,47 @@ a.btn{display:inline-flex;align-items:center;min-height:48px;padding:0 24px;bord
 <body>
 <main>
   <div class="k">404</div>
-  <h1>Этой полки на кухне нет.</h1>
-  <p>Страница переехала или никогда не существовала. Мұндай бет жоқ. This page does not exist.</p>
-  <a class="btn" href="/">На главную</a>
+  <h1 id="h">Этой полки на кухне нет.</h1>
+  <p id="t">Страница переехала или никогда не существовала.</p>
+  <a class="btn" id="b" href="/">На главную</a>
 </main>
+<script>
+(function(){
+  var COPY = {
+    ru: {title:'Страница не найдена. KitchenPlus', h:'Этой полки на кухне нет.', t:'Страница переехала или никогда не существовала.', b:'На главную', home:'/'},
+    kk: {title:'Бет табылмады. KitchenPlus', h:'Ас үйде мұндай сөре жоқ.', t:'Бет көшірілген немесе мүлде болмаған.', b:'Басты бетке', home:'/kk/'},
+    en: {title:'Page not found. KitchenPlus', h:'There is no such shelf in this kitchen.', t:'The page has moved or never existed.', b:'Back to home', home:'/en/'}
+  };
+
+  // Язык: адрес (/kk/…, /en/…) → выбор на сайте → язык браузера → русский
+  function pick(path, stored, langs){
+    var m = /^\/(kk|en)(\/|$)/.exec(path || '');
+    if (m) return m[1];
+    if (stored && COPY[stored]) return stored;
+    for (var i = 0; i < (langs || []).length; i++){
+      var l = String(langs[i]).toLowerCase();
+      if (l.indexOf('kk') === 0) return 'kk';
+      if (l.indexOf('ru') === 0) return 'ru';
+      if (l.indexOf('en') === 0) return 'en';
+    }
+    return 'ru';
+  }
+  window.kp404pick = pick;
+
+  var stored = null;
+  try { stored = localStorage.getItem('kp-lang'); } catch (e) {}
+  var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+  var lang = pick(location.pathname, stored, langs);
+  var c = COPY[lang];
+
+  document.documentElement.lang = lang;
+  document.title = c.title;
+  document.getElementById('h').textContent = c.h;
+  document.getElementById('t').textContent = c.t;
+  var b = document.getElementById('b');
+  b.textContent = c.b;
+  b.href = c.home;
+})();
+</script>
 </body>
 </html>
