@@ -4,12 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>KitchenPlus для специалистов — тренерам, нутрициологам, блогерам</title>
-<meta name="description" content="Приглашаешь клиента ссылкой — приложение достаётся ему бесплатно. Ты видишь его дневник питания с фото, вес и замеры, выдаёшь план и список покупок.">
+<meta name="description" content="Приглашаешь клиента ссылкой, и приложение достаётся ему бесплатно. Ты видишь его прогресс: дневник питания, вес и замеры, выдаёшь план и список покупок.">
 <link rel="canonical" href="https://kitchenplus.kz/specialists.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="KitchenPlus">
 <meta property="og:title" content="KitchenPlus для специалистов">
-<meta property="og:description" content="Твои клиенты получают приложение бесплатно. Ты видишь, что они едят.">
+<meta property="og:description" content="Твои клиенты получают приложение бесплатно. Ты видишь их прогресс.">
 <meta property="og:url" content="https://kitchenplus.kz/specialists.html">
 <meta property="og:image" content="https://kitchenplus.kz/assets/hero-ending-1280.jpg">
 <meta name="theme-color" content="#0C0A09">
@@ -75,19 +75,19 @@ p{margin:0}
 .btn-ghost:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px)}
 
 /* Hero */
-.top{position:relative;padding:calc(var(--nav-h) + 80px) 0 64px;overflow:hidden}
-.top::after{content:"";position:absolute;left:50%;top:-10%;width:min(980px,120vw);height:520px;transform:translateX(-50%);pointer-events:none;
-  background:radial-gradient(ellipse at center,rgba(212,175,55,.15),transparent 68%);filter:blur(30px)}
-.top .wrap{position:relative;z-index:2}
-.top h1{max-width:17ch}
+.top{position:relative;padding:calc(var(--nav-h) + 64px) 0 72px;overflow:hidden}
+.top::after{content:"";position:absolute;left:72%;top:4%;width:min(760px,110vw);height:620px;transform:translateX(-50%);pointer-events:none;
+  background:radial-gradient(ellipse at center,rgba(212,175,55,.13),transparent 66%);filter:blur(30px)}
+.top .wrap{position:relative;z-index:2;display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr);gap:52px;align-items:center}
+.top h1{font-size:clamp(36px,4.9vw,60px)}
 .top h1 em{font-style:normal;color:var(--accent)}
-.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px;align-items:center}
+.ctas{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;align-items:center}
 .small{font:500 12px/1.5 var(--mono);color:var(--text-2);letter-spacing:.04em}
 
 /* Link diagram */
-.linkfig{margin-top:62px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(180deg,rgba(24,20,17,.75),rgba(12,10,9,.4));padding:34px 28px 26px;overflow:hidden}
-.linkfig svg{width:100%;height:auto;display:block;max-width:900px;margin:0 auto}
-.linkfig .cap{margin-top:18px;text-align:center;font:500 12px/1.5 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--text-2)}
+.hero-fig{margin:0}
+.hero-fig svg{width:100%;height:auto;max-width:430px;display:block;margin:0 auto}
+.hero-fig .cap{margin:12px auto 0;max-width:340px;text-align:center;font:500 11px/1.65 var(--mono);letter-spacing:.08em;text-transform:uppercase;color:var(--text-2)}
 .thread-draw{stroke-dasharray:var(--len);stroke-dashoffset:var(--len);animation:draw 2.2s var(--ease-out) .25s forwards}
 @keyframes draw{to{stroke-dashoffset:0}}
 .node-in{opacity:0;animation:nodein .7s var(--ease-out) forwards}
@@ -108,7 +108,7 @@ p{margin:0}
 .soon{display:inline-block;margin-left:9px;font:500 10px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);border:1px solid var(--accent-muted);background:rgba(212,175,55,.08);border-radius:999px;padding:5px 9px;vertical-align:2px}
 
 /* Seats */
-.seats{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;margin-top:40px}
+.seats{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:start;margin-top:40px}
 .seatgrid{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
 .seat{aspect-ratio:1;border-radius:12px;border:1px solid var(--line);background:rgba(255,255,255,.02);display:flex;align-items:center;justify-content:center}
 .seat.on{border-color:rgba(212,175,55,.55);background:rgba(212,175,55,.1)}
@@ -129,7 +129,9 @@ p{margin:0}
 .scope i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block;flex:0 0 auto}
 
 /* Price */
-.pricebox{border:1px solid rgba(212,175,55,.34);border-radius:22px;background:linear-gradient(180deg,rgba(212,175,55,.07),rgba(12,10,9,.2));padding:40px 34px;margin-top:40px;text-align:center}
+.pricebox{border:1px solid rgba(212,175,55,.34);border-radius:22px;background:linear-gradient(180deg,rgba(212,175,55,.07),rgba(12,10,9,.2));padding:40px 36px;margin:40px auto 0;max-width:600px;text-align:center}
+#start .kicker{justify-content:center}
+#start h2{text-align:center}
 .pricebox .amount{font-family:var(--display);font-size:clamp(40px,6vw,62px);line-height:1;margin:10px 0 6px}
 .pricebox .per{color:var(--text-2);font-size:15px}
 .pricebox ul{list-style:none;margin:26px auto 0;padding:0;max-width:520px;display:grid;gap:11px;text-align:left}
@@ -166,12 +168,7 @@ p{margin:0}
 .bleed{position:relative;margin-top:54px;border-radius:22px;overflow:hidden;border:1px solid var(--line)}
 .bleed img{width:100%;height:clamp(240px,34vw,420px);object-fit:cover}
 .bleed figcaption{position:absolute;left:0;right:0;bottom:0;padding:30px 32px;background:linear-gradient(180deg,transparent,rgba(12,10,9,.88));
-  font-family:var(--display);font-size:clamp(20px,2.6vw,30px);line-height:1.2;max-width:22ch}
-
-/* --- Живая схема: огонёк бежит по нити --- */
-.spark{fill:#F6F1E8}
-.spark-run{offset-path:path('M 150 115 C 300 40, 600 40, 750 115');offset-rotate:0deg;animation:run 3.4s cubic-bezier(.5,0,.5,1) 2.2s infinite}
-@keyframes run{0%{offset-distance:0%;opacity:0}8%{opacity:1}86%{opacity:1}100%{offset-distance:100%;opacity:0}}
+  font-family:var(--display);font-size:clamp(19px,2.3vw,27px);line-height:1.22;max-width:34ch}
 
 /* --- Интерактив: согласия --- */
 .demo{display:grid;grid-template-columns:.92fr 1.08fr;gap:34px;margin-top:40px;align-items:start}
@@ -206,10 +203,12 @@ p{margin:0}
 
 /* --- Неделя --- */
 .week{margin-top:34px;border:1px solid var(--line);border-radius:18px;background:var(--panel);padding:26px 24px}
-.week .bars{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;align-items:end;height:160px;margin-top:20px;position:relative}
-.week .norm{position:absolute;left:0;right:0;bottom:52%;border-top:1px dashed rgba(212,175,55,.55)}
-.week .norm span{position:absolute;right:0;top:-20px;font:500 10px var(--mono);letter-spacing:.12em;color:var(--accent)}
-.bar{position:relative;border-radius:7px 7px 3px 3px;height:0;transition:height 1s var(--ease-out);background:rgba(212,175,55,.45)}
+.week .bars{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;align-items:end;height:190px;margin-top:34px;position:relative}
+.week .norm{position:absolute;left:0;right:0;bottom:52%;border-top:1px dashed rgba(212,175,55,.55);z-index:1;pointer-events:none}
+.week .norm span{position:absolute;right:0;top:-20px;font:500 10px var(--mono);letter-spacing:.12em;color:var(--accent);background:var(--panel);padding-left:8px}
+.bar span{position:absolute;left:50%;bottom:100%;transform:translateX(-50%);margin-bottom:6px;font:500 10.5px var(--mono);color:var(--text-2);white-space:nowrap;opacity:0;transition:opacity .5s .7s}
+.bar.grown span{opacity:1}
+.bar{position:relative;border-radius:7px 7px 3px 3px;height:0;transition:height 1s var(--ease-out);background:rgba(212,175,55,.8)}
 .bar.over{background:rgba(255,140,66,.5)}
 .bar.under{background:rgba(255,255,255,.13)}
 .week .days{display:grid;grid-template-columns:repeat(7,1fr);gap:12px;margin-top:10px;font:500 11px var(--mono);color:var(--text-2);text-align:center;letter-spacing:.06em}
@@ -230,14 +229,11 @@ p{margin:0}
 @media (max-width:900px){.demo{grid-template-columns:1fr}}
 
 @media (max-width:900px){
+  .top .wrap{grid-template-columns:1fr;gap:40px}
+  .hero-fig svg{max-width:340px}
   .steps,.who{grid-template-columns:1fr}
   .seats{grid-template-columns:1fr;gap:30px}
   .rw{grid-template-columns:1fr;gap:8px}
-}
-@media (max-width:620px){
-  .linkfig{overflow-x:auto;-webkit-overflow-scrolling:touch}
-  .linkfig svg{min-width:470px}
-  .linkfig .cap{min-width:470px}
 }
 @media (max-width:560px){
   .back{display:none}
@@ -250,12 +246,12 @@ p{margin:0}
   .sec{padding:68px 0}
   .top{padding:calc(var(--nav-h) + 54px) 0 46px}
   .ctas .btn{width:100%}
-  .linkfig{padding:22px 14px 18px}
 }
 @media (prefers-reduced-motion:reduce){
   .reveal{opacity:1;transform:none;transition:none}
   .thread-draw{animation:none;stroke-dashoffset:0}
   .node-in{animation:none;opacity:1}
+  .flow{display:none}
   html{scroll-behavior:auto}
 }
 </style>
@@ -278,17 +274,19 @@ p{margin:0}
 <!-- Hero -->
 <section class="top">
   <div class="wrap">
-    <div class="kicker">Для специалистов</div>
-    <h1>Твои клиенты получают приложение <em>бесплатно</em>. Ты видишь, что они едят.</h1>
-    <p class="lead">Тренерам, нутрициологам и тем, кто ведёт людей по питанию. Приглашаешь клиента ссылкой, он сам решает, что тебе показывать, а дальше ты просто работаешь: смотришь дневник, выдаёшь план, следишь за весом.</p>
-    <div class="ctas">
-      <a class="btn btn-gold" href="#start">14 дней бесплатно</a>
-      <a class="btn btn-ghost" href="#how">Как это работает</a>
+    <div class="hero-copy">
+      <div class="kicker">Для специалистов</div>
+      <h1>Твои клиенты получают приложение <em>бесплатно</em>. Ты видишь их прогресс.</h1>
+      <p class="lead">Тренерам, нутрициологам, блогерам и тем, кто ведёт людей по питанию. Приглашаешь клиента ссылкой, он становится твоим клиентом, а дальше ты просто работаешь: смотришь дневник, выдаёшь план, следишь за весом.</p>
+      <div class="ctas">
+        <a class="btn btn-gold" href="#start">14 дней бесплатно</a>
+        <a class="btn btn-ghost" href="#how">Как это работает</a>
+      </div>
+      <p class="small" style="margin-top:18px">Платишь только ты. Клиенту приложение ничего не стоит.</p>
     </div>
-    <p class="small" style="margin-top:18px">Платишь только ты. Клиенту приложение ничего не стоит.</p>
 
-    <figure class="linkfig">
-      <svg viewBox="0 0 900 230" role="img" aria-label="Схема связи: специалист приглашает клиента ссылкой, клиент открывает доступ к дневнику, плану и замерам">
+    <figure class="hero-fig">
+      <svg id="linksvg" viewBox="0 0 440 540" role="img" aria-label="Схема связи: ты отправляешь клиенту приглашение, а от клиента к тебе сами приходят дневник, замеры и план">
         <defs>
           <radialGradient id="glow" cx="50%" cy="50%">
             <stop offset="0%" stop-color="#D4AF37" stop-opacity=".5"/>
@@ -296,41 +294,100 @@ p{margin:0}
           </radialGradient>
         </defs>
 
-        <!-- thread -->
-        <path id="thr" class="thread-draw" style="--len:760"
-              d="M 150 115 C 300 40, 600 40, 750 115" fill="none"
-              stroke="#D4AF37" stroke-opacity=".55" stroke-width="1.6" stroke-linecap="round"/>
-        <path class="thread-draw" style="--len:760;animation-delay:.5s"
-              d="M 750 115 C 600 190, 300 190, 150 115" fill="none"
-              stroke="#D4AF37" stroke-opacity=".28" stroke-width="1.2" stroke-linecap="round" stroke-dasharray="4 7"/>
+        <!-- приглашение: от тебя к клиенту, справа -->
+        <path id="p-invite" class="thread-draw" style="--len:420"
+              d="M 252 112 C 392 190, 392 350, 252 428" fill="none"
+              stroke="#D4AF37" stroke-opacity=".6" stroke-width="1.6" stroke-linecap="round"/>
+        <!-- прогресс: от клиента к тебе, слева -->
+        <path id="p-back" class="thread-draw" style="--len:420;animation-delay:.6s"
+              d="M 188 428 C 48 350, 48 190, 188 112" fill="none"
+              stroke="#D4AF37" stroke-opacity=".38" stroke-width="1.4" stroke-linecap="round"/>
 
-        <!-- specialist node -->
+        <!-- направление -->
+        <g class="node-in" style="animation-delay:1.4s" stroke="#D4AF37" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M 351 263 L 357 271 L 363 263" stroke-opacity=".8"/>
+          <path d="M 77 277 L 83 269 L 89 277" stroke-opacity=".6"/>
+        </g>
+
+        <!-- ты -->
         <g class="node-in" style="animation-delay:.15s">
-          <circle cx="150" cy="115" r="54" fill="url(#glow)"/>
-          <circle cx="150" cy="115" r="38" fill="#11100E" stroke="#D4AF37" stroke-opacity=".6" stroke-width="1.3"/>
-          <path d="M150 104a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0 6c-11 0-22 6-22 16v6h44v-6c0-10-11-16-22-16Z"
-                fill="#D4AF37" fill-opacity=".9" transform="translate(0,8) scale(1)"/>
-          <text x="150" y="186" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="15" font-weight="600">Ты</text>
+          <text x="220" y="26" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="15" font-weight="600">Ты</text>
+          <circle cx="220" cy="86" r="56" fill="url(#glow)"/>
+          <circle cx="220" cy="86" r="38" fill="#11100E" stroke="#D4AF37" stroke-opacity=".6" stroke-width="1.3"/>
+          <path d="M220 83a11 11 0 1 0 0-22 11 11 0 0 0 0 22Zm0 6c-11 0-22 6-22 16v6h44v-6c0-10-11-16-22-16Z" fill="#D4AF37" fill-opacity=".9"/>
         </g>
 
-        <!-- client node -->
+        <!-- клиент -->
         <g class="node-in" style="animation-delay:.85s">
-          <circle cx="750" cy="115" r="54" fill="url(#glow)"/>
-          <circle cx="750" cy="115" r="38" fill="#11100E" stroke="#D4AF37" stroke-opacity=".45" stroke-width="1.3"/>
-          <rect x="737" y="96" width="26" height="42" rx="5" fill="none" stroke="#D4AF37" stroke-opacity=".9" stroke-width="1.4"/>
-          <line x1="745" y1="104" x2="755" y2="104" stroke="#D4AF37" stroke-opacity=".9" stroke-width="1.4" stroke-linecap="round"/>
-          <text x="750" y="186" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="15" font-weight="600">Клиент</text>
+          <circle cx="220" cy="454" r="56" fill="url(#glow)"/>
+          <circle cx="220" cy="454" r="38" fill="#11100E" stroke="#D4AF37" stroke-opacity=".45" stroke-width="1.3"/>
+          <rect x="207" y="433" width="26" height="42" rx="5" fill="none" stroke="#D4AF37" stroke-opacity=".9" stroke-width="1.4"/>
+          <line x1="215" y1="441" x2="225" y2="441" stroke="#D4AF37" stroke-opacity=".9" stroke-width="1.4" stroke-linecap="round"/>
+          <text x="220" y="528" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="15" font-weight="600">Клиент</text>
         </g>
 
-        <circle class="spark spark-run" r="3.2" cx="0" cy="0"/>
+        <!-- в центре: связь жива -->
+        <g class="node-in" style="animation-delay:1.6s">
+          <circle cx="160" cy="266" r="3.4" fill="#D4AF37">
+            <animate attributeName="opacity" values="1;.25;1" dur="2s" repeatCount="indefinite"/>
+          </circle>
+          <text x="172" y="270" fill="#B9AEA2" font-family="'JetBrains Mono',monospace" font-size="10.5" letter-spacing="2">СВЯЗЬ АКТИВНА</text>
+        </g>
 
-        <!-- labels on the thread -->
-        <g class="node-in" style="animation-delay:1.5s">
-          <text x="450" y="52" text-anchor="middle" fill="#D4AF37" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2">ПРИГЛАШЕНИЕ</text>
-          <text x="450" y="182" text-anchor="middle" fill="#B9AEA2" font-family="'JetBrains Mono',monospace" font-size="11" letter-spacing="2">ДНЕВНИК · ПЛАН · ЗАМЕРЫ</text>
+        <!-- живой поток: цикл 7 секунд после того, как нить нарисована -->
+        <g class="flow">
+          <!-- вспышки на узлах, когда что-то пришло -->
+          <circle cx="220" cy="454" r="40" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0">
+            <animate attributeName="opacity" begin="2.4s" dur="7s" repeatCount="indefinite"
+                     keyTimes="0;0.256;0.257;0.34;1" values="0;0;.65;0;0"/>
+            <animate attributeName="r" begin="2.4s" dur="7s" repeatCount="indefinite"
+                     keyTimes="0;0.256;0.257;0.34;1" values="40;40;40;58;40"/>
+          </circle>
+          <circle cx="220" cy="86" r="40" fill="none" stroke="#D4AF37" stroke-width="1.2" opacity="0">
+            <animate attributeName="opacity" begin="2.4s" dur="7s" repeatCount="indefinite"
+                     keyTimes="0;0.556;0.557;0.63;0.656;0.657;0.73;0.756;0.757;0.83;1" values="0;0;.65;0;0;.65;0;0;.65;0;0"/>
+            <animate attributeName="r" begin="2.4s" dur="7s" repeatCount="indefinite"
+                     keyTimes="0;0.556;0.557;0.63;0.656;0.657;0.73;0.756;0.757;0.83;1" values="40;40;40;58;40;40;58;40;40;58;40"/>
+          </circle>
+
+          <!-- приглашение уходит клиенту -->
+          <g opacity="0">
+            <rect x="-52" y="-12" width="104" height="24" rx="12" fill="#1A1511" stroke="#D4AF37" stroke-opacity=".75"/>
+            <text x="0" y="4.5" text-anchor="middle" fill="#D4AF37" font-family="Manrope,sans-serif" font-size="12.5" font-weight="600">Приглашение</text>
+            <animateMotion begin="2.4s" dur="7s" repeatCount="indefinite" calcMode="spline"
+                           keyTimes="0;0.257;1" keyPoints="0;1;1" keySplines=".45 0 .55 1;0 0 1 1"><mpath href="#p-invite" xlink:href="#p-invite"/></animateMotion>
+            <animate attributeName="opacity" begin="2.4s" dur="7s" repeatCount="indefinite"
+                     keyTimes="0;0.03;0.23;0.257;1" values="0;1;1;0;0"/>
+          </g>
+
+          <!-- от клиента сами приходят дневник, замеры, план -->
+          <g opacity="0">
+            <rect x="-40" y="-12" width="80" height="24" rx="12" fill="#1A1511" stroke="#D4AF37" stroke-opacity=".5"/>
+            <text x="0" y="4.5" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="12.5" font-weight="600">Дневник</text>
+            <animateMotion begin="2.4s" dur="7s" repeatCount="indefinite" calcMode="spline"
+                           keyTimes="0;0.3;0.557;1" keyPoints="0;0;1;1" keySplines="0 0 1 1;.45 0 .55 1;0 0 1 1"><mpath href="#p-back" xlink:href="#p-back"/></animateMotion>
+            <animate attributeName="opacity" begin="2.4s" dur="7s" repeatCount="indefinite"
+                     keyTimes="0;0.3;0.33;0.53;0.557;1" values="0;0;1;1;0;0"/>
+          </g>
+          <g opacity="0">
+            <rect x="-38" y="-12" width="76" height="24" rx="12" fill="#1A1511" stroke="#D4AF37" stroke-opacity=".5"/>
+            <text x="0" y="4.5" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="12.5" font-weight="600">Замеры</text>
+            <animateMotion begin="2.4s" dur="7s" repeatCount="indefinite" calcMode="spline"
+                           keyTimes="0;0.4;0.657;1" keyPoints="0;0;1;1" keySplines="0 0 1 1;.45 0 .55 1;0 0 1 1"><mpath href="#p-back" xlink:href="#p-back"/></animateMotion>
+            <animate attributeName="opacity" begin="2.4s" dur="7s" repeatCount="indefinite"
+                     keyTimes="0;0.4;0.43;0.63;0.657;1" values="0;0;1;1;0;0"/>
+          </g>
+          <g opacity="0">
+            <rect x="-30" y="-12" width="60" height="24" rx="12" fill="#1A1511" stroke="#D4AF37" stroke-opacity=".5"/>
+            <text x="0" y="4.5" text-anchor="middle" fill="#F6F1E8" font-family="Manrope,sans-serif" font-size="12.5" font-weight="600">План</text>
+            <animateMotion begin="2.4s" dur="7s" repeatCount="indefinite" calcMode="spline"
+                           keyTimes="0;0.5;0.757;1" keyPoints="0;0;1;1" keySplines="0 0 1 1;.45 0 .55 1;0 0 1 1"><mpath href="#p-back" xlink:href="#p-back"/></animateMotion>
+            <animate attributeName="opacity" begin="2.4s" dur="7s" repeatCount="indefinite"
+                     keyTimes="0;0.5;0.53;0.73;0.757;1" values="0;0;1;1;0;0"/>
+          </g>
         </g>
       </svg>
-      <figcaption class="cap">Связь работает, пока её не закрыл клиент или ты</figcaption>
+      <figcaption class="cap">Ты отправляешь приглашение, а дневник, замеры и план приходят к тебе сами</figcaption>
     </figure>
   </div>
 </section>
@@ -349,18 +406,18 @@ p{margin:0}
       <article class="step">
         <span class="n">02</span>
         <h3>Клиент даёт доступ</h3>
-        <p>На экране согласия он отмечает, что тебе видно: дневник, план, вес, фотографии. По умолчанию не открыто ничего.</p>
+        <p>На экране согласия он отмечает, что тебе видно: дневник, план, вес, фотографии.</p>
       </article>
       <article class="step">
         <span class="n">03</span>
         <h3>Ведёшь</h3>
-        <p>Он записывает, что съел, ты смотришь неделю целиком и выдаёшь план. Списки покупок к плану собираются сами.</p>
+        <p>Он записывает, что съел, ты смотришь неделю целиком и выдаёшь план. Список покупок собирается сам.</p>
       </article>
     </div>
 
     <figure class="bleed">
       <img src="/assets/sp-band.jpg" alt="Вечерняя кухня: телефон рядом с готовым ужином" loading="lazy" width="1600" height="686">
-      <figcaption>Человек готовит ужин, а ты утром видишь, что он съел</figcaption>
+      <figcaption>Человек готовит ужин, а ты утром видишь, что он съел, с распределением калорий, белков, жиров и углеводов</figcaption>
     </figure>
   </div>
 </section>
@@ -369,7 +426,7 @@ p{margin:0}
 <section class="sec reveal">
   <div class="wrap">
     <div class="kicker">Карточка клиента</div>
-    <h2>Видно, что человек ел на самом деле</h2>
+    <h2>Прогресс клиента виден целиком</h2>
     <p class="text">Не «я нормально питался», а лента приёмов пищи с фотографиями и цифрами. Всё, что ниже, открыто только для чтения: чужой дневник ты не редактируешь, иначе теряется смысл наблюдения.</p>
 
     <dl class="rows">
@@ -378,26 +435,26 @@ p{margin:0}
       <div class="rw"><dt>Вес и замеры</dt><dd>История, а не одно текущее число: график веса, процент жира, талия, грудь, бёдра.</dd></div>
       <div class="rw"><dt>План и список покупок</dt><dd>Собираешь меню в календаре клиента, список продуктов к нему считается сам.</dd></div>
       <div class="rw"><dt>Свои заметки</dt><dd>Видны только тебе. Клиент их не читает.</dd></div>
-      <div class="rw"><dt>Шаблоны планов<span class="soon">Скоро</span></dt><dd>Собрал «неделя, 1600 ккал, без лактозы» один раз — выдаёшь за минуту следующему.</dd></div>
-      <div class="rw"><dt>Публичная страница<span class="soon">Скоро</span></dt><dd>Твоё имя, описание, ссылки и твои рецепты по адресу вида kitchenplus.kz/@name.</dd></div>
+      <div class="rw"><dt>Шаблоны планов</dt><dd>Собрал «неделя, 1600 ккал, без лактозы» один раз — выдаёшь за минуту следующему.</dd></div>
+      <div class="rw"><dt>Публичная страница</dt><dd>Твоё имя, описание, ссылки и твои рецепты по адресу вида kitchenplus.kz/@name.</dd></div>
     </dl>
 
     <div class="week" id="week">
-      <div class="kicker" style="margin-bottom:0">Неделя Айгерим</div>
-      <p class="text" style="margin-top:10px">Столбик выше пунктира — перебор, ниже — недобор. Вся неделя видна одним взглядом, разбираться в цифрах не нужно.</p>
+      <div class="kicker" style="margin-bottom:0">Калории за неделю · Айгерим</div>
+      <p class="text" style="margin-top:10px">Сколько клиент съел за каждый день против его нормы. Столбик выше пунктира — перебор, ниже — недобор.</p>
       <div class="bars" aria-hidden="true">
-        <div class="norm"><span>НОРМА</span></div>
-        <div class="bar" data-h="52"></div>
-        <div class="bar under" data-h="31"></div>
-        <div class="bar" data-h="49"></div>
-        <div class="bar over" data-h="74"></div>
-        <div class="bar" data-h="54"></div>
-        <div class="bar over" data-h="88"></div>
-        <div class="bar under" data-h="26"></div>
+        <div class="norm"><span>НОРМА · 1 800 ККАЛ</span></div>
+        <div class="bar" data-h="50"><span>1 730</span></div>
+        <div class="bar under" data-h="36"><span>1 250</span></div>
+        <div class="bar" data-h="49"><span>1 700</span></div>
+        <div class="bar over" data-h="66"><span>2 280</span></div>
+        <div class="bar" data-h="53"><span>1 830</span></div>
+        <div class="bar over" data-h="78"><span>2 700</span></div>
+        <div class="bar under" data-h="38"><span>1 320</span></div>
       </div>
       <div class="days"><span>ПН</span><span>ВТ</span><span>СР</span><span>ЧТ</span><span>ПТ</span><span>СБ</span><span>ВС</span></div>
       <div class="wlegend">
-        <span><i style="background:rgba(212,175,55,.45)"></i>В норме</span>
+        <span><i style="background:rgba(212,175,55,.8)"></i>В норме</span>
         <span><i style="background:rgba(255,140,66,.5)"></i>Перебор</span>
         <span><i style="background:rgba(255,255,255,.13)"></i>Недобор</span>
       </div>
@@ -412,7 +469,7 @@ p{margin:0}
     <h2>Не нужно уговаривать клиента платить</h2>
     <div class="seats">
       <div>
-        <p class="text" style="margin-top:0">Тренер, который просит клиента купить ещё и приложение, выглядит так, будто что-то впаривает. Половина откажется, и ты останешься без дневника ровно тех, за кем хотел следить.</p>
+        <p class="text" style="margin-top:0">Тренер, который просит клиента купить ещё и приложение, выглядит так, будто что-то впаривает.</p>
         <p class="text">Поэтому в тариф входят места. Пока связь активна, клиент пользуется приложением бесплатно. Разговор звучит иначе: «я работаю через приложение, вот ссылка, для тебя бесплатно». Это не продажа, а условие работы.</p>
         <p class="text"><strong style="color:var(--text)">Купил свою подписку — место освободилось,</strong> а связь осталась. Ты по-прежнему видишь дневник и выдаёшь планы, а место уходит следующему человеку.</p>
       </div>
@@ -473,7 +530,7 @@ p{margin:0}
         <div class="ph"><img src="/assets/sp-blogger.jpg" alt="Тарелка на тёмном камне и объектив камеры в кадре" loading="lazy" width="800" height="603"></div>
         <div class="body">
           <h3>Фуд-блогер</h3>
-          <ul><li>Свои рецепты с фото и видео</li><li>Комментарии и оценки под ними</li><li>До 250 своих рецептов</li><li>Публичная страница автора — скоро</li></ul>
+          <ul><li>Свои рецепты с фото и видео</li><li>Комментарии и оценки под ними</li><li>Можно публиковать свои рецепты</li><li>Публичная страница автора</li></ul>
         </div>
       </article>
     </div>
@@ -485,7 +542,7 @@ p{margin:0}
   <div class="wrap">
     <div class="kicker">Согласие</div>
     <h2>Клиент решает, что тебе видно</h2>
-    <p class="text">По умолчанию не открыто ничего. Понажимай переключатели — справа ровно то, что увидишь ты.</p>
+    <p class="text">Понажимай переключатели — справа ровно то, что увидишь ты.</p>
 
     <div class="demo">
       <div>
@@ -507,7 +564,6 @@ p{margin:0}
             <span class="t"><b>Фотографии блюд</b><span>Снимки живут 90 дней</span></span>
           </button>
         </div>
-        <p class="swnote">Отзыв мгновенный. Спрашивать тебя приложение не будет.</p>
       </div>
 
       <div class="cli" aria-live="polite">
@@ -586,31 +642,35 @@ p{margin:0}
 <section class="sec reveal">
   <div class="wrap">
     <div class="kicker">Вопросы</div>
-    <h2>То, что спрашивают первым</h2>
+    <h2>Остались вопросы?</h2>
     <div class="faq">
       <details class="qa">
-        <summary>Вы заберёте у меня клиентов?</summary>
-        <p>Нет. Если клиент купит свою подписку, связь с тобой остаётся: ты по-прежнему видишь дневник и выдаёшь планы. Меняется только то, откуда у него доступ к приложению, а у тебя при этом освобождается место под нового человека.</p>
+        <summary>Зачем это, если я уже веду клиентов в мессенджере?</summary>
+        <p>В переписке клиент присылает фото тарелки, а считать калории и искать, что он ел во вторник, приходится тебе. Здесь это уже посчитано: калории и БЖУ по дням против нормы, вес и замеры на графике. Неделя клиента видна одним экраном, и история не тонет в чате.</p>
+      </details>
+      <details class="qa">
+        <summary>Клиент правда будет вести дневник?</summary>
+        <p>Чем проще записывать, тем дольше ведут. Здесь запись занимает секунды: сфотографировал тарелку, и блюдо с калориями и составом распознаётся само. Если клиент ест по твоему плану, блюда уже стоят в его календаре, а список покупок к ним собирается сам.</p>
+      </details>
+      <details class="qa">
+        <summary>Сколько времени у меня займёт один клиент?</summary>
+        <p>Столько, сколько нужно на разбор. Неделя открывается одним экраном: где перебор, где недобор, как меняется вес. План собираешь из каталога прямо в календаре клиента, а порции и список покупок приложение считает само.</p>
       </details>
       <details class="qa">
         <summary>Клиенту придётся платить?</summary>
-        <p>Нет, пока он занимает место в твоём тарифе. Место даёт ему дневник, твой план, список покупок к нему, вес и замеры и весь каталог рецептов. Своя семья и свои группы в место не входят — это то, за что платит обычный пользователь.</p>
+        <p>Нет, пока он занимает место в твоём тарифе. Ему нужно только установить приложение и открыть твою ссылку. У него будет дневник питания, твой план со списком покупок, вес и замеры и весь каталог рецептов.</p>
       </details>
       <details class="qa">
-        <summary>А если клиентов больше пятнадцати?</summary>
-        <p>Места докупаются пачками по десять, каждая 4 990 ₸ в месяц, до сорока пяти мест. При этом пятнадцать мест — это не пятнадцать клиентов, а пятнадцать бесплатных одновременно: те, кто купил свою подписку, места не занимают.</p>
+        <summary>Что будет, если клиент купит свою подписку?</summary>
+        <p>Вы продолжите работать как раньше: ты видишь его прогресс и выдаёшь планы. Меняется только то, откуда у него приложение, а место в твоём тарифе освобождается под нового человека.</p>
       </details>
       <details class="qa">
-        <summary>Я увижу, что у клиента в холодильнике?</summary>
-        <p>Нет. Продукты дома — личное, и в доступы они не входят. Ты видишь то, что клиент открыл сам: дневник, план, замеры, фотографии.</p>
+        <summary>Насколько точно считаются калории?</summary>
+        <p>Рецепты считаются по ингредиентам из справочника, с точностью до грамма и с порцией на каждого человека. Норма — по Миффлину–Сан Жеору: пол, вес, рост, возраст и активность, а поправить её под клиента можешь ты. Распознавание по фото даёт оценку, поэтому для точного учёта лучше записывать блюда из каталога.</p>
       </details>
       <details class="qa">
-        <summary>Что будет со снимками еды?</summary>
-        <p>Фотографии блюд хранятся 90 дней, потом удаляются. Калории и БЖУ остаются навсегда — пропадает только картинка. Ценность снимка почти вся в первые недели, а хранить десятки тысяч файлов вечно мы не готовы и не хотим брать за это с тебя денег.</p>
-      </details>
-      <details class="qa">
-        <summary>Клиент может отключить доступ?</summary>
-        <p>Да, в любой момент и по каждому пункту отдельно. Это не жест вежливости: речь о данных про питание и вес, и человек должен управлять ими сам.</p>
+        <summary>Сколько это стоит?</summary>
+        <p>9 990 ₸ в месяц, в тариф входит 15 клиентов. Нужно больше — плюс десять мест за 4 990 ₸, до сорока пяти. Первые 14 дней бесплатно, отменить подписку можно в любой момент в настройках App Store или Google Play.</p>
       </details>
     </div>
   </div>
@@ -669,7 +729,7 @@ p{margin:0}
       es.forEach(function(e){
         if (!e.isIntersecting) return;
         week.querySelectorAll('.bar').forEach(function(b, i){
-          setTimeout(function(){ b.style.height = b.dataset.h + '%'; }, 90 * i);
+          setTimeout(function(){ b.style.height = b.dataset.h + '%'; b.classList.add('grown'); }, 90 * i);
         });
         wio.unobserve(e.target);
       });
