@@ -982,7 +982,7 @@ body.paused *,body.paused *::before,body.paused *::after{animation-play-state:pa
         <div class="name" data-i18n="s10.prem.name">Premium</div>
         <div class="who" data-i18n="s10.prem.who">Для специалистов</div>
         <p class="desc" data-i18n="s10.prem.desc">Нутрициологам, тренерам и блогерам: календари клиентов, публичный профиль и повышенные лимиты.</p>
-        <div class="price"><b data-price="prem">4 990 ₸</b><span class="per" data-i18n="s10.perMonth">в месяц</span></div>
+        <div class="price"><b data-price="prem">9 990 ₸</b><span class="per" data-i18n="s10.perMonth">в месяц</span></div>
         <p class="ysave" data-save="prem"></p>
         <button type="button" class="more" aria-expanded="false" aria-controls="feat-prem"><span data-i18n="s10.more">Что входит</span><span class="pm" aria-hidden="true"></span></button>
         <div class="feats" id="feat-prem">
@@ -1339,7 +1339,7 @@ nums.forEach(n=>numIO.observe(n));
 
 /* ---------- Pricing by region (timezone based, no server, manual override) ---------- */
 /* Store prices set by hand in App Store Connect and Google Play: tenge for Kazakhstan, dollars elsewhere. Keep in sync with the store: the store charges, the site only shows. */
-const PRICING={pro:{KZT:1290,USD:4.99},fam:{KZT:2490,USD:9.99},prem:{KZT:4990,USD:19.99}}; /* Family USD price is a placeholder until the owner sets it in the stores */
+const PRICING={pro:{KZT:1290,USD:4.99},fam:{KZT:2490,USD:9.99},prem:{KZT:9990,USD:19.99}}; /* Family USD price is a placeholder until the owner sets it in the stores */
 const YEAR_OFF=.2;
 /* Currency follows the site language: Russian and Kazakh show tenge, English shows dollars. No currency switch on purpose. */
 const CUR_BY_LANG={ru:'KZT',kk:'KZT',en:'USD'};
