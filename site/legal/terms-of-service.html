@@ -7,10 +7,16 @@
     <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
     <style>
 @font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 @font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 *{box-sizing:border-box}
 body{margin:0;background:#0C0A09;color:#F6F1E8;font:400 17px/1.7 'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
@@ -35,6 +41,9 @@ th{background:rgba(255,255,255,.05);font-weight:600}
 a{color:#D4AF37}
 strong{color:#F6F1E8}
 .highlight{background:rgba(212,175,55,.08);border-left:2px solid #D4AF37;padding:14px 18px;margin:18px 0;border-radius:0 10px 10px 0}
+
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0}
+.tw table{margin:0;min-width:460px}
 </style>
 </head>
 <body>
@@ -42,7 +51,7 @@ strong{color:#F6F1E8}
 <div class="container">
 
 <h1>Terms of Service</h1>
-<p class="date">Effective date: March 4, 2026 &nbsp;|&nbsp; Last updated: March 4, 2026</p>
+<p class="date">Effective date: March 4, 2026 &nbsp;|&nbsp; Last updated: October 23, 2026</p>
 
 <p>These Terms of Service ("Terms") govern your use of the KitchenPlus mobile application ("App") operated by TOO KitchenPlus ("KitchenPlus", "we", "us", or "our"). By downloading, installing, or using the App, you agree to these Terms. If you do not agree, do not use the App.</p>
 
@@ -77,25 +86,19 @@ strong{color:#F6F1E8}
 <h2>4. Subscription Plans and Payments</h2>
 
 <h3>4.1 Plans</h3>
-<p>KitchenPlus offers three subscription tiers:</p>
-
-<table>
-    <thead>
-        <tr><th>Feature</th><th>Free</th><th>Pro</th><th>Premium</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Family groups</td><td>1</td><td>Up to 5</td><td>Up to 20</td></tr>
-        <tr><td>Calendars</td><td>1</td><td>Up to 3</td><td>Up to 10</td></tr>
-        <tr><td>Recipe creation</td><td>Up to 10</td><td>Up to 50</td><td>Up to 250</td></tr>
-        <tr><td>Video recipes</td><td>No</td><td>Yes</td><td>Yes</td></tr>
-        <tr><td>Shopping list history</td><td>7 days</td><td>31 days</td><td>31 days</td></tr>
-        <tr><td>Comments</td><td>No</td><td>Yes</td><td>Yes</td></tr>
-    </tbody>
-</table>
+<p>KitchenPlus offers four plans:</p>
+<ul>
+    <li><strong>Free</strong>: free with no time limit, the core features for one person.</li>
+    <li><strong>Pro</strong>: extended features for one person (more recipes and meal types, a shopping list a month ahead, videos and comments on recipes, AI features).</li>
+    <li><strong>Family ("Дом")</strong>: shared access to one kitchen for several people, each with their own sign-in.</li>
+    <li><strong>For specialists</strong>: working with clients (invitations, following the food diary and measurements with the client's consent).</li>
+</ul>
+<p>The exact contents and limits of each plan are shown on the Plans screen in the App and may change; the ones shown at the time of purchase apply.</p>
 
 <h3>4.2 Billing</h3>
 <ul>
     <li>Paid subscriptions are billed through the Apple App Store or Google Play Store, depending on your platform.</li>
+    <li>New subscribers may be offered a free trial (usually 14 days). If you do not cancel before it ends, the subscription automatically becomes paid at the price shown when you subscribed.</li>
     <li>Subscriptions automatically renew at the end of each billing period unless cancelled at least 24 hours before the renewal date.</li>
     <li>You can manage and cancel your subscription through your device's App Store or Google Play settings.</li>
     <li>Prices may vary by region and are displayed in your local currency at the time of purchase.</li>
@@ -139,6 +142,7 @@ strong{color:#F6F1E8}
     <li>The account holder who creates a family group is the owner and is responsible for managing members and access.</li>
     <li>Family members invited to a group can access shared meal plans, shopping lists, and recipes within that group.</li>
     <li>The family owner can remove members at any time.</li>
+    <li>If you accept an invitation from a specialist (a coach or dietitian), you choose which data they can see and you can withdraw access or disconnect the specialist at any time.</li>
     <li>Children's profiles within a family are managed by the adult account holder. No separate accounts are created for children.</li>
 </ul>
 

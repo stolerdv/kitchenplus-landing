@@ -7,10 +7,16 @@
     <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
     <style>
 @font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 @font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 *{box-sizing:border-box}
 body{margin:0;background:#0C0A09;color:#F6F1E8;font:400 17px/1.7 'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
@@ -35,6 +41,9 @@ th{background:rgba(255,255,255,.05);font-weight:600}
 a{color:#D4AF37}
 strong{color:#F6F1E8}
 .highlight{background:rgba(212,175,55,.08);border-left:2px solid #D4AF37;padding:14px 18px;margin:18px 0;border-radius:0 10px 10px 0}
+
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0}
+.tw table{margin:0;min-width:460px}
 </style>
 </head>
 <body>
@@ -42,7 +51,7 @@ strong{color:#F6F1E8}
 <div class="container">
 
 <h1>Privacy Policy</h1>
-<p class="date">Effective date: March 4, 2026 &nbsp;|&nbsp; Last updated: March 4, 2026</p>
+<p class="date">Effective date: March 4, 2026 &nbsp;|&nbsp; Last updated: October 23, 2026</p>
 
 <p>TOO KitchenPlus ("KitchenPlus", "we", "us", or "our") operates the KitchenPlus mobile application (the "App"). This Privacy Policy explains how we collect, use, store, and protect your personal data when you use the App.</p>
 
@@ -55,6 +64,7 @@ strong{color:#F6F1E8}
     <li><strong>Account data:</strong> email address, first and last name, profile photo, language preference (Russian, English, or Kazakh).</li>
     <li><strong>Authentication data:</strong> password (stored in hashed form only), or third-party sign-in tokens (Apple ID, Google).</li>
     <li><strong>Family data:</strong> family name, family photo, family member names, member types (child, woman, man), and portion coefficients.</li>
+    <li><strong>Specialist connection:</strong> if you accept an invitation from a specialist (a coach or dietitian), the App stores the link to them and the permissions you choose: which data they can see (for example the food diary, measurements, the plan). You can change the permissions or disconnect the specialist at any time. If you are a specialist yourself, your profile and your client list are stored.</li>
     <li><strong>Recipe data:</strong> recipes you create including title, description, ingredients, preparation steps, photos, and videos.</li>
     <li><strong>Kitchen inventory:</strong> item names, quantities, measurement units, categories, and expiry dates.</li>
     <li><strong>Meal plans:</strong> calendar entries, meal types, and portion assignments per family member.</li>
@@ -67,6 +77,8 @@ strong{color:#F6F1E8}
 <h3>1.2 Information Collected Automatically</h3>
 <ul>
     <li><strong>Platform:</strong> whether you use iOS or Android (for subscription routing).</li>
+    <li><strong>Push notification token:</strong> a technical device identifier from Firebase Cloud Messaging, used to send you notifications. You can turn notifications off in your device settings.</li>
+    <li><strong>Crash reports:</strong> device model, operating system and app version, technical details of the crash, and an anonymous installation identifier (Firebase Crashlytics). Reports do not include your recipes, name or email.</li>
     <li><strong>Server logs:</strong> HTTP request method, URL path, response status code, and response time. These logs do not contain personal identifiers.</li>
 </ul>
 
@@ -81,7 +93,7 @@ strong{color:#F6F1E8}
 
 <h2>2. How We Use Your Information</h2>
 
-<table>
+<div class="tw"><table>
     <thead>
         <tr><th>Purpose</th><th>Data used</th><th>Legal basis (GDPR)</th></tr>
     </thead>
@@ -94,13 +106,13 @@ strong{color:#F6F1E8}
         <tr><td>Content moderation (recipe reports)</td><td>Report reason, description</td><td>Legitimate interest</td></tr>
         <tr><td>Service improvement and bug fixing</td><td>Server logs (anonymized)</td><td>Legitimate interest</td></tr>
     </tbody>
-</table>
+</table></div>
 
 <h2>3. Third-Party Services</h2>
 
 <p>We share data with the following service providers, solely to operate the App:</p>
 
-<table>
+<div class="tw"><table>
     <thead>
         <tr><th>Service</th><th>Purpose</th><th>Data shared</th><th>Location</th></tr>
     </thead>
@@ -114,8 +126,9 @@ strong{color:#F6F1E8}
         <tr><td>Resend</td><td>Transactional email delivery</td><td>Email address, email content</td><td>US</td></tr>
         <tr><td>Apple App Store / Google Play</td><td>Payment processing</td><td>Purchase receipts, transaction IDs</td><td>US</td></tr>
         <tr><td>Railway</td><td>Application hosting</td><td>Application logs</td><td>US</td></tr>
+        <tr><td>Google Firebase (Cloud Messaging, Crashlytics)</td><td>Push notifications and crash reports</td><td>Device token, technical crash details</td><td>US</td></tr>
     </tbody>
-</table>
+</table></div>
 
 <p>We do not sell your personal data to any third party. Data shared with service providers is used solely for the purposes described above.</p>
 
@@ -147,7 +160,7 @@ strong{color:#F6F1E8}
     <li><strong>Receipt images sent to AI:</strong> not stored after processing.</li>
 </ul>
 
-<p>When you delete your account, all associated data is permanently removed from our systems, including family data, recipes, ratings, comments, and media files.</p>
+<p>When you delete your account, all associated data is permanently removed from our systems, including family data, recipes, ratings, comments, and media files. Step-by-step instructions and the list of what is deleted: <a href="https://kitchenplus.kz/legal/delete-account.html">kitchenplus.kz/legal/delete-account.html</a>.</p>
 
 <h2>7. Your Rights</h2>
 

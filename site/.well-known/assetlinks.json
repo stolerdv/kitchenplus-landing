@@ -1,0 +1,10 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.stolerdv.kitchenplus",
+    "sha256_cert_fingerprints": [
+      "4A:66:3C:29:3F:19:C8:8B:EA:AF:DA:6B:56:35:BC:DB:23:CC:2C:BF:95:AF:34:6C:FA:E8:38:54:F9:21:BA:6B"
+    ]
+  }
+}]

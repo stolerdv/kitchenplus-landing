@@ -7,10 +7,16 @@
     <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png">
     <style>
 @font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Cormorant Garamond';font-weight:600;font-display:swap;src:url(/assets/fonts/cormorant-garamond-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(/assets/fonts/manrope-400-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 @font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
+@font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-cyrillic-ext.woff2) format('woff2');unicode-range:U+0460-052F,U+1C80-1C8A,U+20B4,U+2DE0-2DFF,U+A640-A69F,U+FE2E-FE2F}
 @font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(/assets/fonts/manrope-600-latin.woff2) format('woff2');unicode-range:U+0000-00FF}
 *{box-sizing:border-box}
 body{margin:0;background:#0C0A09;color:#F6F1E8;font:400 17px/1.7 'Manrope',system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-text-size-adjust:100%}
@@ -35,6 +41,9 @@ th{background:rgba(255,255,255,.05);font-weight:600}
 a{color:#D4AF37}
 strong{color:#F6F1E8}
 .highlight{background:rgba(212,175,55,.08);border-left:2px solid #D4AF37;padding:14px 18px;margin:18px 0;border-radius:0 10px 10px 0}
+
+.tw{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:16px 0}
+.tw table{margin:0;min-width:460px}
 </style>
 </head>
 <body>
@@ -42,7 +51,7 @@ strong{color:#F6F1E8}
 <div class="container">
 
 <h1>Пользовательское соглашение</h1>
-<p class="date">Дата вступления в силу: 4 марта 2026 г. &nbsp;|&nbsp; Последнее обновление: 4 марта 2026 г.</p>
+<p class="date">Дата вступления в силу: 4 марта 2026 г. &nbsp;|&nbsp; Последнее обновление: 23 октября 2026 г.</p>
 
 <p>Настоящее Пользовательское соглашение («Соглашение») регулирует использование вами мобильного приложения KitchenPlus («Приложение»), управляемого ТОО «KitchenPlus» («KitchenPlus», «мы», «нас» или «наш»). Загружая, устанавливая или используя Приложение, вы соглашаетесь с настоящим Соглашением. Если вы не согласны, не используйте Приложение.</p>
 
@@ -77,25 +86,19 @@ strong{color:#F6F1E8}
 <h2>4. Тарифные планы и оплата</h2>
 
 <h3>4.1 Тарифы</h3>
-<p>KitchenPlus предлагает три уровня подписки:</p>
-
-<table>
-    <thead>
-        <tr><th>Функция</th><th>Free</th><th>Pro</th><th>Premium</th></tr>
-    </thead>
-    <tbody>
-        <tr><td>Семейные группы</td><td>1</td><td>До 5</td><td>До 20</td></tr>
-        <tr><td>Календари</td><td>1</td><td>До 3</td><td>До 10</td></tr>
-        <tr><td>Создание рецептов</td><td>До 10</td><td>До 50</td><td>До 250</td></tr>
-        <tr><td>Видеорецепты</td><td>Нет</td><td>Да</td><td>Да</td></tr>
-        <tr><td>История списка покупок</td><td>7 дней</td><td>31 день</td><td>31 день</td></tr>
-        <tr><td>Комментарии</td><td>Нет</td><td>Да</td><td>Да</td></tr>
-    </tbody>
-</table>
+<p>KitchenPlus предлагает четыре тарифа:</p>
+<ul>
+    <li><strong>Free</strong>: бесплатно и без срока действия, основные возможности для одного человека.</li>
+    <li><strong>Pro</strong>: расширенные возможности для одного человека (больше рецептов и приёмов пищи, список покупок на месяц вперёд, видео и комментарии к рецептам, AI-функции).</li>
+    <li><strong>Дом</strong>: общий доступ к одной кухне для нескольких людей, у каждого свой вход.</li>
+    <li><strong>Для специалистов</strong>: работа с клиентами (приглашения, наблюдение за дневником и замерами с согласия клиента).</li>
+</ul>
+<p>Точный состав и лимиты каждого тарифа показаны на экране «Тарифы» в Приложении и могут меняться; действуют те, что показаны при покупке.</p>
 
 <h3>4.2 Оплата</h3>
 <ul>
     <li>Платные подписки оплачиваются через Apple App Store или Google Play Store в зависимости от вашей платформы.</li>
+    <li>Новым подписчикам может предлагаться бесплатный пробный период (обычно 14 дней). Если не отменить подписку до его окончания, она автоматически становится платной по цене, показанной при оформлении.</li>
     <li>Подписки автоматически продлеваются в конце каждого расчётного периода, если не отменены как минимум за 24 часа до даты продления.</li>
     <li>Вы можете управлять подпиской и отменить её через настройки App Store или Google Play на вашем устройстве.</li>
     <li>Цены могут варьироваться в зависимости от региона и отображаются в вашей местной валюте на момент покупки.</li>
@@ -139,6 +142,7 @@ strong{color:#F6F1E8}
     <li>Владелец аккаунта, создавший семейную группу, является её владельцем и несёт ответственность за управление участниками и доступом.</li>
     <li>Участники семьи, приглашённые в группу, получают доступ к общим планам питания, спискам покупок и рецептам в рамках этой группы.</li>
     <li>Владелец семьи может удалять участников в любое время.</li>
+    <li>Если вы приняли приглашение специалиста (тренера, диетолога), вы сами выбираете, какие данные ему видны, и можете отозвать доступ или отключить специалиста в любой момент.</li>
     <li>Профили детей в семье управляются взрослым владельцем аккаунта. Для детей не создаются отдельные аккаунты.</li>
 </ul>
 
